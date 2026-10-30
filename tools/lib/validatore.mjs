@@ -166,6 +166,9 @@ function validaProp(def, dato, percorso, ctx) {
         ctx.errore(percorso, `valore "${dato}" non presente nell'Analisi`);
       }
       return;
+    case 'scelta':
+      if (!def.opzioni.includes(dato)) ctx.errore(percorso, `valore "${dato}" non ammesso (ammessi: ${elenca(def.opzioni)})`);
+      return;
     case 'serie': {
       if (typeof dato !== 'string' || !Object.hasOwn(ctx.analisi.serie, dato)) {
         return ctx.errore(percorso, `serie "${dato}" non presente nell'Analisi`);

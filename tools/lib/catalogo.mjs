@@ -41,12 +41,35 @@ function erroriManifestLayout(m) {
   return errori;
 }
 
+const TIPI_PROP = ['testo', 'valore', 'serie', 'lista', 'scelta'];
+
+function erroriDefinizioniProp(defs, percorso = 'props') {
+  const errori = [];
+  for (const [nome, def] of Object.entries(defs)) {
+    const dove = `${percorso} › "${nome}"`;
+    if (typeof def !== 'object' || def === null || !TIPI_PROP.includes(def.tipo)) {
+      errori.push(`${dove}: tipo di proprietà non valido (ammessi: ${TIPI_PROP.join(', ')})`);
+    } else if (def.tipo === 'scelta') {
+      if (!Array.isArray(def.opzioni) || def.opzioni.length < 2 || !def.opzioni.every((o) => typeof o === 'string' && NOME_VALIDO.test(o))) {
+        errori.push(`${dove}: "opzioni" deve elencare almeno 2 valori (a-z, 0-9, -)`);
+      }
+      if (typeof def.vocabolario !== 'string' || !NOME_VALIDO.test(def.vocabolario)) {
+        errori.push(`${dove}: "vocabolario" mancante o non valido (a-z, 0-9, -)`);
+      }
+    } else if (def.tipo === 'lista') {
+      if (typeof def.elementi !== 'object' || def.elementi === null) errori.push(`${dove}: "elementi" mancante`);
+      else errori.push(...erroriDefinizioniProp(def.elementi, dove));
+    }
+  }
+  return errori;
+}
+
 function erroriManifest(m, tipo) {
   if (typeof m.nome !== 'string' || !NOME_VALIDO.test(m.nome)) return ['nome mancante o non valido (a-z, 0-9, -)'];
   if (typeof m.scopo !== 'string' || !m.scopo) return ['scopo mancante'];
   if (tipo === 'layout') return erroriManifestLayout(m);
   if (typeof m.props !== 'object' || m.props === null) return ['props mancanti'];
-  return [];
+  return erroriDefinizioniProp(m.props);
 }
 
 /**

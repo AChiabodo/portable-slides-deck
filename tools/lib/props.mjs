@@ -4,7 +4,8 @@ import { risolviTesto } from './testo.mjs';
 
 /**
  * Trasforma il valore scritto nella Specifica nella forma consumata dal render del componente:
- * testo -> HTML già escapato, valore -> { etichetta, testo }, lista -> array di oggetti risolti.
+ * testo -> HTML già escapato, valore -> { etichetta, testo, numero, formato },
+ * scelta -> { valore, testo }, lista -> array di oggetti risolti.
  */
 export function risolviProp(def, dato, ctx) {
   switch (def.tipo) {
@@ -12,8 +13,16 @@ export function risolviProp(def, dato, ctx) {
       return risolviTesto(dato, ctx.analisi, ctx.lingua);
     case 'valore': {
       const v = ctx.analisi.valori[dato];
-      return { etichetta: esc(v.etichetta), testo: esc(formattaValore(v, v.valore, ctx.lingua.formato)) };
+      // `numero` (numero, o data AAAA-MM-GG) serve a disegnare, mai a stampare cifre nuove.
+      return {
+        etichetta: esc(v.etichetta),
+        testo: esc(formattaValore(v, v.valore, ctx.lingua.formato)),
+        numero: v.valore,
+        formato: v.formato.tipo,
+      };
     }
+    case 'scelta':
+      return { valore: dato, testo: esc(ctx.t(`scelte.${def.vocabolario}.${dato}`)) };
     case 'serie': {
       // Dati grezzi: i componenti che li disegnano (es. SVG) devono usare ctx.esc.
       const s = ctx.analisi.serie[dato];
