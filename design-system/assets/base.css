@@ -17,7 +17,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-serif);
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
 }
 :focus-visible {
@@ -51,7 +51,7 @@ h3 {
   width: 100%;
   max-width: 1200px;
   overflow: hidden;
-  background: var(--colore-carta);
+  background: var(--colore-superficie);
   border: 1px solid var(--colore-linea);
   scroll-margin-top: 1rem;
 }
@@ -60,8 +60,107 @@ h3 {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: 7cqw 6cqw;
+  padding: 8cqw 6cqw 11cqw;
   font-size: 4.2cqw;
+}
+
+/* Cornice comune: barra in alto, titolo della presentazione e numero in basso. */
+.slide-contenuto::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1.4cqw;
+  background: var(--colore-accento);
+}
+.slide::before,
+.slide::after {
+  position: absolute;
+  bottom: 3cqw;
+  padding-top: 1.4cqw;
+  border-top: 1px solid var(--colore-linea);
+  font-size: 2.6cqw;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--colore-tenue);
+}
+.slide::before {
+  content: attr(data-titolo);
+  left: 6cqw;
+  right: 6cqw;
+  padding-right: 14cqw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.slide::after {
+  content: attr(data-indice);
+  right: 6cqw;
+  width: 8cqw;
+  border-top-color: transparent;
+  text-align: right;
+  font-weight: 700;
+  color: var(--colore-accento);
+}
+/* Slide su fondo scuro: nessuna cornice. */
+.slide-copertina,
+.slide-sezione,
+.slide-chiusura {
+  background: var(--colore-copertina-sfondo);
+  color: var(--colore-copertina-testo);
+  border-color: var(--colore-copertina-sfondo);
+}
+.slide-copertina::before,
+.slide-copertina::after,
+.slide-sezione::before,
+.slide-sezione::after,
+.slide-chiusura::before,
+.slide-chiusura::after,
+.slide-copertina .slide-contenuto::before,
+.slide-sezione .slide-contenuto::before,
+.slide-chiusura .slide-contenuto::before {
+  display: none;
+}
+
+/* Elementi condivisi dai layout strutturati. */
+.slide-contenuto h2 {
+  font-size: 1.9em;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  max-width: 30em;
+}
+.occhiello {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  margin: 0 0 0.55em;
+  font-size: 0.72em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--colore-accento);
+}
+.occhiello::before {
+  content: "";
+  width: 2em;
+  height: 0.2em;
+  background: currentColor;
+}
+.introduzione {
+  margin: 0.6em 0 0;
+  max-width: 46em;
+  font-size: 1.05em;
+  color: var(--colore-tenue);
+}
+.pannello {
+  min-width: 0;
+  min-height: 0;
+  padding: 1.1em 1.3em;
+  background: var(--colore-carta);
+  border: 1px solid var(--colore-linea);
+  border-radius: 0.6em;
+  box-shadow: var(--ombra-scheda);
 }
 
 @media (min-width: 900px) {
@@ -69,8 +168,26 @@ h3 {
     aspect-ratio: 16 / 9;
   }
   .slide-contenuto {
-    padding: 4.5cqw 5cqw;
+    padding: 3.4cqw 5cqw 6.6cqw;
     font-size: 1.55cqw;
+  }
+  .slide-contenuto::before {
+    height: 0.55cqw;
+  }
+  .slide::before,
+  .slide::after {
+    bottom: 2cqw;
+    padding-top: 0.7cqw;
+    font-size: 0.85cqw;
+  }
+  .slide::before {
+    left: 5cqw;
+    right: 5cqw;
+    padding-right: 8cqw;
+  }
+  .slide::after {
+    right: 5cqw;
+    width: 6cqw;
   }
   /* Con JavaScript una sola slide alla volta, centrata e scalata al viewport. */
   .js .presentazione {
@@ -153,11 +270,32 @@ h3 {
     break-after: page;
     break-inside: avoid;
   }
+  .slide:last-of-type,
+  .js .slide:last-of-type {
+    break-after: auto;
+  }
   .slide-contenuto {
-    padding: 4.5cqw 5cqw;
+    padding: 3.4cqw 5cqw 6.6cqw;
     font-size: 1.55cqw;
   }
-  .avanzamento,
+  .slide-contenuto::before {
+    height: 0.55cqw;
+  }
+  .slide::before,
+  .slide::after {
+    bottom: 2cqw;
+    padding-top: 0.7cqw;
+    font-size: 0.85cqw;
+  }
+  .slide::before {
+    left: 5cqw;
+    right: 5cqw;
+    padding-right: 8cqw;
+  }
+  .slide::after {
+    right: 5cqw;
+    width: 6cqw;
+  }
   .salta {
     display: none;
   }

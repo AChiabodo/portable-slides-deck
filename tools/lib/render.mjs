@@ -37,7 +37,7 @@ function renderSlide(slide, numero, ctx) {
   const id = `slide-${numero}`;
   const interno = layout.render({ zone: renderZone(layout, slide, id, ctx), t: ctx.t, id });
   return (
-    `<section class="slide slide-${layout.manifest.nome}" id="${id}" aria-labelledby="${id}-titolo" data-indice="${numero}">` +
+    `<section class="slide slide-${layout.manifest.nome}" id="${id}" aria-labelledby="${id}-titolo" data-indice="${numero}" data-titolo="${esc(ctx.titolo)}">` +
     `<div class="slide-contenuto">${interno}</div></section>`
   );
 }
@@ -47,7 +47,7 @@ export function generaPresentazione({ specifica, analisi, risorse }) {
   const lingua = risorse.lingue.get(specifica.lingua ?? LINGUA_PREDEFINITA);
   const tema = risorse.temi.get(specifica.tema ?? TEMA_PREDEFINITO);
   const t = (chiave) => cerca(lingua, chiave) ?? chiave;
-  const ctx = { risorse, analisi, lingua, t };
+  const ctx = { risorse, analisi, lingua, t, titolo: specifica.titolo };
 
   const slide = specifica.slide.map((s, i) => renderSlide(s, i + 1, ctx)).join('\n');
   const variabili = Object.entries(tema.variabili)
