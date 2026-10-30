@@ -16,8 +16,13 @@ Le radici del Catalogo sono `design-system/` e, per prove o estensioni locali, o
 | `confronto` | due situazioni affiancate | titolo, intestazione e voci (1-4) per sinistra e destra |
 | `messaggio` | una frase da ricordare | titolo (etichetta), messaggio, fonte |
 | `chiusura` | ultima slide, decisioni | titolo, passi (1-5) |
+| `dashboard-analisi` | cruscotto: grafico o tabella con KPI laterali, commento e nota | occhiello, titolo, principale (1-2), kpi, commento, nota |
+| `griglia-schede` | 2-6 concetti in schede numerate | occhiello, titolo, introduzione, schede, nota |
+| `percorso-fasi` | processo in fasi consecutive | occhiello, titolo, introduzione, fasi (flusso), dettaglio |
+| `confronto-affiancato` | due pannelli ricchi di componenti | titolo, intestazione e componenti per sinistra e destra, conclusione |
+| `sintesi` | conclusioni: messaggio e KPI su pannello scuro, punti numerati | occhiello, titolo, messaggio, kpi, punti (2-5) |
 
-Componenti: `kpi`, `grafico-barre`. Temi: `quiet-editorial` (carta e grazie), `cobalto` (bianco e blu, senza grazie). I limiti esatti sono nei `manifest.json`.
+Componenti: `kpi`, `grafico-barre`, `grafico-linee` (1-3 linee), `tabella-serie` (1-5 colonne, una serie ciascuna), `schede` (2-6), `flusso` (2-5 passi), `nota`. Temi: `quiet-editorial` (carta e grazie), `cobalto` (bianco e blu, senza grazie), `executive` (fondo grigio-blu, schede bianche, accento petrolio, copertina blu notte). Ogni slide di contenuto ha una cornice comune: barra in alto e piè di pagina con titolo della Presentazione (`data-titolo` sulla `<section>`) e numero. I limiti esatti sono nei `manifest.json`.
 
 ## Componente
 
@@ -59,11 +64,11 @@ Le slide sono contenitori 16:9 con `container-type: inline-size`: dimensiona il 
 
 ## Tema
 
-`temi/<nome>/tema.json`: `variabili` (proprietà CSS senza `--`, es. `colore-carta`) e `contrasti`, coppie di variabili colore verificate contro WCAG AA (rapporto ≥ 4,5:1). Un Tema sotto soglia è rifiutato dal validatore. Un nuovo Tema deve definire le stesse variabili degli altri (un test lo controlla): copia `quiet-editorial` e cambia i valori.
+`temi/<nome>/tema.json`: `variabili` (proprietà CSS senza `--`, es. `colore-carta`) e `contrasti`, coppie di variabili colore verificate contro WCAG AA (rapporto ≥ 4,5:1). Un Tema sotto soglia è rifiutato dal validatore. Un nuovo Tema deve definire le stesse variabili degli altri (un test lo controlla), comprese `colore-accento-tenue`, `colore-accento-secondario`, `colore-positivo` e `ombra-scheda` usate da cornice e schede: copia `executive` o `quiet-editorial` e cambia i valori.
 
 ## Lingua
 
-`lingue/<codice>.json`: `ui`, `grafici` e `formato` (`separatoreDecimale`, `separatoreMigliaia`, `separatoreUnita`, `suffissoPercentuale`, `data`). Si seleziona con il campo `lingua` della Specifica.
+`lingue/<codice>.json`: `ui`, `grafici` (`barre`, `linee`) e `formato` (`separatoreDecimale`, `separatoreMigliaia`, `separatoreUnita`, `suffissoPercentuale`, `data`). Si seleziona con il campo `lingua` della Specifica.
 
 ## Dopo l'aggiunta
 
