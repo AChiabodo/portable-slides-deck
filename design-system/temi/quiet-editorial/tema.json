@@ -1,0 +1,30 @@
+{
+  "nome": "quiet-editorial",
+  "descrizione": "Tema neutro: carta, inchiostro, un accento strutturale; titoli con grazie, testo senza grazie.",
+  "variabili": {
+    "colore-sfondo-pagina": "#ecebe4",
+    "colore-carta": "#fbfaf6",
+    "colore-superficie": "#f0eee6",
+    "colore-inchiostro": "#1c1b17",
+    "colore-tenue": "#57534a",
+    "colore-linea": "#d8d4c8",
+    "colore-accento": "#1f6050",
+    "colore-negativo": "#9a3b2e",
+    "colore-copertina-sfondo": "#17231e",
+    "colore-copertina-testo": "#f6f3ea",
+    "colore-copertina-accento": "#e8d96a",
+    "font-serif": "Georgia, 'Times New Roman', serif",
+    "font-sans": "system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "font-mono": "ui-monospace, 'Cascadia Mono', Consolas, monospace"
+  },
+  "contrasti": [
+    ["colore-inchiostro", "colore-carta"],
+    ["colore-inchiostro", "colore-superficie"],
+    ["colore-tenue", "colore-carta"],
+    ["colore-tenue", "colore-superficie"],
+    ["colore-accento", "colore-carta"],
+    ["colore-negativo", "colore-carta"],
+    ["colore-copertina-testo", "colore-copertina-sfondo"],
+    ["colore-copertina-accento", "colore-copertina-sfondo"]
+  ]
+}

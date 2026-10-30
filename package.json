@@ -1,0 +1,13 @@
+{
+  "name": "presentazioni",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Presentazioni HTML generate da una Specifica validata contro un Catalogo di componenti",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test tests/",
+    "valida": "node tools/cli.mjs valida",
+    "genera": "node tools/cli.mjs genera"
+  }
+}

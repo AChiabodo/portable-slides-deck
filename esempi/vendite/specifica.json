@@ -1,0 +1,45 @@
+{
+  "titolo": "Vendite del primo semestre",
+  "lingua": "it",
+  "tema": "quiet-editorial",
+  "slide": [
+    {
+      "layout": "copertina",
+      "zone": {
+        "titolo": "Vendite del primo semestre",
+        "sottotitolo": "Ricavi e ordini per regione, dati di esempio"
+      }
+    },
+    {
+      "layout": "risultato-grafico-commento",
+      "zone": {
+        "titolo": "I ricavi crescono nel semestre, con il Nord in testa",
+        "kpi": [
+          {
+            "componente": "kpi",
+            "voci": [
+              { "etichetta": "Ricavi", "valore": "ricavi_totale" },
+              { "etichetta": "Ordini", "valore": "ordini_totale" },
+              { "etichetta": "Da gennaio a giugno", "valore": "crescita_semestre" }
+            ]
+          }
+        ],
+        "grafico": [
+          { "componente": "grafico-barre", "serie": "ricavi_per_regione", "titolo": "Ricavi per regione" }
+        ],
+        "commento": "Il Nord pesa per {{quota_nord}} dei ricavi. Centro e Sud hanno volumi più contenuti; la crescita riguarda tutte le regioni."
+      }
+    },
+    {
+      "layout": "chiusura",
+      "zone": {
+        "titolo": "Consolidare il Nord e sostenere il Sud",
+        "passi": [
+          "Verificare le cause della crescita nel Nord",
+          "Definire un piano commerciale per il Sud",
+          "Aggiornare l'analisi con i dati del prossimo trimestre"
+        ]
+      }
+    }
+  ]
+}

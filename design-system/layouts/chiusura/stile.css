@@ -1,0 +1,26 @@
+.slide-chiusura h2 {
+  font-size: 2.4em;
+  line-height: 1.15;
+}
+.chiusura-passi {
+  margin: 2em 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: passo;
+  max-width: 36em;
+}
+.chiusura-passi li {
+  counter-increment: passo;
+  display: grid;
+  grid-template-columns: 2.4em 1fr;
+  padding: 0.9em 0;
+  border-top: 1px solid var(--colore-linea);
+  font-size: 1.25em;
+}
+.chiusura-passi li::before {
+  content: counter(passo, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  color: var(--colore-accento);
+  padding-top: 0.2em;
+}

@@ -1,0 +1,13 @@
+{
+  "nome": "risultato-grafico-commento",
+  "scopo": "Slide d'analisi: un titolo che afferma il risultato, un grafico (con KPI opzionali) e il commento che lo interpreta.",
+  "quandoUsarlo": "Caso principale per presentare un'evidenza dei dati. Il titolo è una frase con il risultato, non un'etichetta del tema; il commento spiega il perché.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 70,
+  "zone": [
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 20 },
+    { "nome": "kpi", "tipo": "componenti", "ammessi": ["kpi"], "min": 0, "max": 1 },
+    { "nome": "grafico", "tipo": "componenti", "ammessi": ["grafico-barre"], "min": 0, "max": 1 },
+    { "nome": "commento", "tipo": "testo", "maxParole": 45 }
+  ]
+}

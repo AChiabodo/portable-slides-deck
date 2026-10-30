@@ -1,0 +1,33 @@
+.kpi-riga {
+  display: grid;
+  grid-template-columns: repeat(var(--colonne), minmax(0, 1fr));
+  gap: 1.5em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.kpi {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.2em;
+  padding-top: 0.8em;
+  border-top: 0.1em solid var(--colore-accento);
+}
+.kpi-valore {
+  font-family: var(--font-serif);
+  font-size: 2.4em;
+  line-height: 1.1;
+  color: var(--colore-accento);
+  overflow-wrap: anywhere;
+}
+.kpi-etichetta {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--colore-tenue);
+}
+@container (max-width: 600px) {
+  .kpi-riga {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1em;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "codice": "it",
+  "ui": {
+    "saltaAlContenuto": "Vai al contenuto",
+    "avanzamento": "Avanzamento della presentazione",
+    "schermoIntero": "Schermo intero"
+  },
+  "grafici": {
+    "barre": "Grafico a barre"
+  },
+  "formato": {
+    "separatoreDecimale": ",",
+    "separatoreMigliaia": ".",
+    "separatoreUnita": "\u00a0",
+    "suffissoPercentuale": "%",
+    "data": "dd/MM/yyyy"
+  }
+}

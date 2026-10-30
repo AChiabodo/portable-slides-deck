@@ -1,0 +1,32 @@
+.slide-risultato-grafico-commento h2 {
+  font-size: 2.1em;
+  line-height: 1.15;
+  max-width: 28em;
+}
+.rgc-kpi {
+  margin-top: 1.6em;
+}
+.rgc-corpo {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 3em;
+  align-items: center;
+  margin-top: 1.4em;
+}
+.rgc-corpo > :only-child {
+  grid-column: 1 / -1;
+}
+.rgc-commento {
+  margin: 0;
+  font-size: 1.15em;
+  padding-left: 1.2em;
+  border-left: 0.1em solid var(--colore-linea);
+}
+
+@container (max-width: 899px) {
+  .rgc-corpo {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5em;
+  }
+}

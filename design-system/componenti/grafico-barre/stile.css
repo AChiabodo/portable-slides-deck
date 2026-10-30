@@ -1,0 +1,33 @@
+.grafico {
+  margin: 0;
+}
+.grafico figcaption {
+  margin-bottom: 0.8em;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--colore-tenue);
+}
+.grafico svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: var(--font-sans);
+  font-size: 15px;
+}
+.grafico-barre .barra {
+  fill: var(--colore-accento);
+}
+.grafico-barre .barra.negativa {
+  fill: var(--colore-negativo);
+}
+.grafico-barre .asse {
+  stroke: var(--colore-linea);
+  stroke-width: 2;
+}
+.grafico-barre .etichetta {
+  fill: var(--colore-inchiostro);
+}
+.grafico-barre .valore {
+  fill: var(--colore-inchiostro);
+  font-family: var(--font-mono);
+}

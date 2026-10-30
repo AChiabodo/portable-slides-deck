@@ -1,0 +1,9 @@
+{
+  "nome": "grafico-barre",
+  "scopo": "Grafico a barre orizzontali generato da una serie dell'Analisi: confronta una misura tra categorie.",
+  "quandoUsarlo": "Per confrontare 2-8 categorie sulla stessa misura (es. ricavi per regione). Per andamenti nel tempo serve un grafico a linee; per quote di un totale, una torta.",
+  "props": {
+    "serie": { "tipo": "serie", "obbligatoria": true, "maxPunti": 8 },
+    "titolo": { "tipo": "testo", "maxParole": 12 }
+  }
+}

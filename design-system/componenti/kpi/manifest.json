@@ -1,0 +1,17 @@
+{
+  "nome": "kpi",
+  "scopo": "Riga di indicatori chiave: ogni voce mostra un valore dell'Analisi in evidenza con la sua etichetta.",
+  "quandoUsarlo": "Per 1-4 numeri che sintetizzano il risultato e che il pubblico deve ricordare. Non per serie di dati: per quelle serve un grafico.",
+  "props": {
+    "voci": {
+      "tipo": "lista",
+      "obbligatoria": true,
+      "min": 1,
+      "max": 4,
+      "elementi": {
+        "etichetta": { "tipo": "testo", "obbligatoria": true, "maxParole": 4 },
+        "valore": { "tipo": "valore", "obbligatoria": true }
+      }
+    }
+  }
+}

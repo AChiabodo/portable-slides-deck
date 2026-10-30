@@ -1,0 +1,11 @@
+{
+  "nome": "chiusura",
+  "scopo": "Slide finale: sintesi e prossimi passi concreti.",
+  "quandoUsarlo": "Come ultima slide. Il titolo dice cosa si chiede o si decide; ogni passo è un'azione.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 70,
+  "zone": [
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 12 },
+    { "nome": "passi", "tipo": "elenco", "obbligatoria": true, "minVoci": 1, "maxVoci": 5, "maxParoleVoce": 14 }
+  ]
+}

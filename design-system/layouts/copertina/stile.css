@@ -1,0 +1,23 @@
+.slide-copertina {
+  background: var(--colore-copertina-sfondo);
+  color: var(--colore-copertina-testo);
+  border-color: var(--colore-copertina-sfondo);
+}
+.slide-copertina .slide-contenuto {
+  justify-content: flex-end;
+}
+.slide-copertina .copertina-corpo {
+  border-top: 0.12em solid var(--colore-copertina-accento);
+  padding-top: 1.6em;
+  max-width: 34em;
+}
+.slide-copertina h1 {
+  font-size: 3.4em;
+  line-height: 1.1;
+}
+.copertina-sottotitolo {
+  margin: 1.2em 0 0;
+  font-size: 1.3em;
+  color: var(--colore-copertina-testo);
+  opacity: 0.85;
+}

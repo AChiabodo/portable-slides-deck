@@ -1,0 +1,11 @@
+{
+  "nome": "copertina",
+  "scopo": "Frontespizio della presentazione: titolo e, se serve, una riga di contesto.",
+  "quandoUsarlo": "Sempre come prima slide. Il titolo dichiara l'argomento, il sottotitolo il periodo o il perimetro dei dati.",
+  "livelloTitolo": 1,
+  "maxParoleSlide": 30,
+  "zone": [
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 12 },
+    { "nome": "sottotitolo", "tipo": "testo", "maxParole": 20 }
+  ]
+}

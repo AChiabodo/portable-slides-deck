@@ -1,0 +1,5 @@
+node_modules/
+**/dist/
+__pycache__/
+# Presentazioni di lavoro con dati riservati: gli esempi versionati stanno in esempi/
+presentazioni/
