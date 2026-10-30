@@ -163,6 +163,46 @@ h3 {
   box-shadow: var(--ombra-scheda);
 }
 
+/* Stato: icona di forma propria e testo, il colore da solo non basta. Usare `badgeStato` di assets/stato.mjs. */
+[data-stato] {
+  --stato-contrasto: var(--colore-carta);
+}
+[data-stato="completato"] {
+  --stato-colore: var(--colore-accento);
+}
+[data-stato="in-linea"],
+[data-stato="superato"] {
+  --stato-colore: var(--colore-stato-ok);
+}
+[data-stato="a-rischio"],
+[data-stato="parziale"] {
+  --stato-colore: var(--colore-stato-attenzione);
+}
+[data-stato="in-ritardo"],
+[data-stato="non-superato"] {
+  --stato-colore: var(--colore-stato-critico);
+}
+[data-stato="non-avviato"] {
+  --stato-colore: var(--colore-stato-neutro);
+}
+.stato {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-family: var(--font-sans);
+  font-size: 0.85em;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--colore-inchiostro);
+}
+.stato-icona {
+  flex: none;
+  width: 1.05em;
+  height: 1.05em;
+  color: var(--stato-colore);
+}
+
 @media (min-width: 900px) {
   .slide {
     aspect-ratio: 16 / 9;

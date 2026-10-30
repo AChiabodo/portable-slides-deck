@@ -7,7 +7,50 @@
   },
   "grafici": {
     "barre": "Grafico a barre",
-    "linee": "Grafico a linee"
+    "linee": "Grafico a linee",
+    "ciambella": "Grafico a ciambella",
+    "cascata": "Grafico a cascata"
+  },
+  "scelte": {
+    "stato": {
+      "completato": "Completato",
+      "in-linea": "In linea",
+      "a-rischio": "A rischio",
+      "in-ritardo": "In ritardo",
+      "non-avviato": "Non avviato"
+    },
+    "esito": {
+      "superato": "Superato",
+      "parziale": "Parziale",
+      "non-superato": "Non superato"
+    },
+    "livello": {
+      "basso": "Basso",
+      "medio": "Medio",
+      "alto": "Alto"
+    },
+    "ruolo-opzione": {
+      "raccomandata": "Raccomandata",
+      "alternativa": "Alternativa"
+    }
+  },
+  "componenti": {
+    "timeline": { "etichetta": "Timeline delle milestone" },
+    "matrice-rischi": { "etichetta": "Matrice dei rischi", "probabilita": "Probabilità", "impatto": "Impatto" },
+    "barra-avanzamento": { "etichetta": "Avanzamento" },
+    "criteri-esito": { "criterio": "Criterio", "soglia": "Soglia", "risultato": "Risultato", "esito": "Esito" },
+    "elenco-azioni": { "azione": "Azione", "responsabile": "Responsabile", "scadenza": "Scadenza" },
+    "opzioni-decisione": { "vantaggi": "Vantaggi", "svantaggi": "Svantaggi" },
+    "semaforo": { "stato": "Stato" },
+    "scheda-dati": { "etichetta": "Scheda dati" }
+  },
+  "layout": {
+    "decisione": { "contesto": "Contesto", "opzioni": "Opzioni", "raccomandazione": "Raccomandazione" },
+    "sommario-esecutivo": { "raccomandazione": "Raccomandazione" },
+    "stato-avanzamento": { "complessivo": "Stato complessivo" },
+    "rischi-matrice": { "mitigazioni": "Mitigazioni" },
+    "esperimento": { "ipotesi": "Ipotesi", "metodo": "Metodo", "risultato": "Risultato", "conclusione": "Conclusione" },
+    "cartella-appendice": { "appendice": "Appendice" }
   },
   "formato": {
     "separatoreDecimale": ",",
