@@ -1,32 +1,49 @@
 .slide-risultato-grafico-commento h2 {
-  font-size: 2.1em;
-  line-height: 1.15;
-  max-width: 28em;
+  font-size: 2em;
 }
 .rgc-kpi {
-  margin-top: 1.6em;
+  margin-top: 1.2em;
 }
 .rgc-corpo {
   flex: 1;
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 3em;
-  align-items: center;
-  margin-top: 1.4em;
+  gap: 1.4em;
+  align-items: stretch;
+  margin-top: 1.2em;
 }
 .rgc-corpo > :only-child {
   grid-column: 1 / -1;
 }
+.rgc-grafico {
+  display: flex;
+  align-items: center;
+  padding: 1.1em 1.3em;
+  background: var(--colore-carta);
+  border: 1px solid var(--colore-linea);
+  border-radius: 0.6em;
+  box-shadow: var(--ombra-scheda);
+}
+.rgc-grafico > * {
+  flex: 1;
+  min-width: 0;
+}
 .rgc-commento {
+  display: flex;
+  align-items: center;
   margin: 0;
-  font-size: 1.15em;
-  padding-left: 1.2em;
-  border-left: 0.1em solid var(--colore-linea);
+  padding: 1.1em 1.3em;
+  background: var(--colore-carta);
+  border: 1px solid var(--colore-linea);
+  border-left: 0.3em solid var(--colore-accento);
+  border-radius: 0.6em;
+  box-shadow: var(--ombra-scheda);
+  font-size: 1.1em;
 }
 
 @container (max-width: 899px) {
   .rgc-corpo {
     grid-template-columns: minmax(0, 1fr);
-    gap: 1.5em;
+    gap: 1.2em;
   }
 }

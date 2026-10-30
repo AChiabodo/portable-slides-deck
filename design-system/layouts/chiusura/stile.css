@@ -1,26 +1,55 @@
+.slide-chiusura .slide-contenuto::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: 28%;
+  height: auto;
+  background: linear-gradient(115deg, transparent 0 40%, color-mix(in srgb, var(--colore-copertina-accento) 16%, transparent) 40% 64%, transparent 64%);
+}
+.slide-chiusura .slide-contenuto::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.8cqw;
+  background: var(--colore-copertina-accento);
+}
 .slide-chiusura h2 {
-  font-size: 2.4em;
-  line-height: 1.15;
+  font-size: 2.3em;
+  line-height: 1.12;
 }
 .chiusura-passi {
-  margin: 2em 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  margin: 1.6em 0 0;
   padding: 0;
   list-style: none;
   counter-reset: passo;
-  max-width: 36em;
+  max-width: 38em;
 }
 .chiusura-passi li {
   counter-increment: passo;
-  display: grid;
-  grid-template-columns: 2.4em 1fr;
-  padding: 0.9em 0;
-  border-top: 1px solid var(--colore-linea);
-  font-size: 1.25em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0.7em 1.1em;
+  background: color-mix(in srgb, var(--colore-copertina-testo) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--colore-copertina-testo) 22%, transparent);
+  border-left: 0.3em solid var(--colore-copertina-accento);
+  border-radius: 0.4em;
+  font-size: 1.15em;
 }
 .chiusura-passi li::before {
   content: counter(passo, decimal-leading-zero);
-  font-family: var(--font-mono);
-  font-size: 0.8em;
-  color: var(--colore-accento);
-  padding-top: 0.2em;
+  flex: none;
+  font-family: var(--font-serif);
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--colore-copertina-accento);
 }

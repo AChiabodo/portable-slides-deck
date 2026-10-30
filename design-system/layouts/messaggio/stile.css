@@ -2,26 +2,33 @@
   justify-content: center;
 }
 .messaggio-corpo {
-  max-width: 34em;
+  position: relative;
+  max-width: 38em;
+  padding: 2em 2.4em 2em 2.8em;
+  background: var(--colore-carta);
+  border: 1px solid var(--colore-linea);
+  border-left: 0.5em solid var(--colore-accento);
+  border-radius: 0.6em;
+  box-shadow: var(--ombra-scheda);
 }
 .slide-messaggio h2 {
-  font-family: var(--font-mono);
-  font-size: 0.95em;
-  font-weight: 400;
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--colore-accento);
-  padding-top: 0.8em;
-  border-top: 0.1em solid var(--colore-accento);
-  display: inline-block;
-  min-width: 8em;
 }
 .messaggio-testo {
-  margin: 0.8em 0 0;
+  margin: 0.6em 0 0;
   font-family: var(--font-serif);
-  font-size: 2.4em;
+  font-size: 2.2em;
+  font-weight: 600;
   line-height: 1.2;
 }
 .messaggio-fonte {
-  margin: 1.4em 0 0;
-  font-size: 1em;
+  margin: 1.2em 0 0;
+  padding-top: 0.8em;
+  border-top: 1px solid var(--colore-linea);
+  font-size: 0.95em;
   color: var(--colore-tenue);
 }

@@ -1,38 +1,58 @@
 .slide-confronto h2 {
-  font-size: 2.1em;
-  line-height: 1.15;
-  max-width: 28em;
+  font-size: 2em;
 }
 .confronto-corpo {
   flex: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 3em;
-  margin-top: 1.6em;
+  gap: 1.4em;
+  margin-top: 1.4em;
+}
+.confronto-colonna {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--colore-carta);
+  border: 1px solid var(--colore-linea);
+  border-radius: 0.6em;
+  box-shadow: var(--ombra-scheda);
 }
 .confronto-intestazione {
   margin: 0;
-  padding-top: 0.8em;
-  border-top: 0.1em solid var(--colore-accento);
-  font-family: var(--font-mono);
-  font-size: 0.95em;
-  font-weight: 400;
+  padding: 0.75em 1.3em;
+  background: var(--colore-superficie);
+  border-bottom: 1px solid var(--colore-linea);
+  font-size: 0.9em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--colore-tenue);
 }
+.confronto-colonna:last-child .confronto-intestazione {
+  background: var(--colore-accento);
+  border-bottom-color: var(--colore-accento);
+  color: var(--colore-carta);
+}
 .confronto-elenco {
-  margin: 0.8em 0 0;
-  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0 1.3em;
   list-style: none;
 }
 .confronto-elenco li {
-  padding: 0.6em 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
   border-bottom: 1px solid var(--colore-linea);
-  font-size: 1.2em;
+  font-size: 1.15em;
+}
+.confronto-elenco li:last-child {
+  border-bottom: 0;
 }
 
 @container (max-width: 899px) {
   .confronto-corpo {
     grid-template-columns: minmax(0, 1fr);
-    gap: 1.5em;
   }
 }

@@ -1,22 +1,43 @@
-.slide-copertina {
-  background: var(--colore-copertina-sfondo);
-  color: var(--colore-copertina-testo);
-  border-color: var(--colore-copertina-sfondo);
-}
 .slide-copertina .slide-contenuto {
   justify-content: flex-end;
+  padding-bottom: 6cqw;
+}
+.slide-copertina .slide-contenuto::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: 40%;
+  height: auto;
+  background:
+    linear-gradient(115deg, transparent 0 38%, color-mix(in srgb, var(--colore-copertina-accento) 16%, transparent) 38% 62%, transparent 62%),
+    linear-gradient(115deg, transparent 0 66%, color-mix(in srgb, var(--colore-copertina-accento) 28%, transparent) 66% 74%, transparent 74%);
+}
+.slide-copertina .slide-contenuto::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.8cqw;
+  background: var(--colore-copertina-accento);
 }
 .slide-copertina .copertina-corpo {
-  border-top: 0.12em solid var(--colore-copertina-accento);
-  padding-top: 1.6em;
-  max-width: 34em;
+  position: relative;
+  border-left: 0.5em solid var(--colore-copertina-accento);
+  padding-left: 1.4em;
+  max-width: 30em;
 }
 .slide-copertina h1 {
-  font-size: 3.4em;
-  line-height: 1.1;
+  font-size: 3.2em;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
 }
 .copertina-sottotitolo {
-  margin: 1.2em 0 0;
+  margin: 1em 0 0;
   font-size: 1.3em;
   color: var(--colore-copertina-testo);
   opacity: 0.85;

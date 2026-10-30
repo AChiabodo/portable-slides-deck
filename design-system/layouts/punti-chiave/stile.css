@@ -1,26 +1,26 @@
 .slide-punti-chiave h2 {
-  font-size: 2.1em;
-  line-height: 1.15;
-  max-width: 28em;
+  font-size: 2em;
 }
 .punti-elenco {
-  margin: 1.6em 0 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  margin: 1.4em 0 0;
   padding: 0;
   list-style: none;
-  max-width: 38em;
+  max-width: 42em;
 }
 .punti-elenco li {
   position: relative;
-  padding: 0.7em 0 0.7em 1.6em;
-  border-top: 1px solid var(--colore-linea);
-  font-size: 1.3em;
-}
-.punti-elenco li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 1.25em;
-  width: 0.55em;
-  height: 0.55em;
-  background: var(--colore-accento);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0.5em 1.2em 0.5em 1.6em;
+  background: var(--colore-carta);
+  border: 1px solid var(--colore-linea);
+  border-left: 0.35em solid var(--colore-accento);
+  border-radius: 0.4em;
+  box-shadow: var(--ombra-scheda);
+  font-size: 1.2em;
 }
