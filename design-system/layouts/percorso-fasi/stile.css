@@ -1,0 +1,86 @@
+.percorso-testa {
+  flex: none;
+}
+.percorso-fasi-corpo {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  margin-top: 1.2em;
+}
+.slide-percorso-fasi .flusso {
+  flex: 1;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 1.6em;
+  counter-reset: fase;
+}
+.slide-percorso-fasi .passo {
+  flex: 1;
+  counter-increment: fase;
+  gap: 0.35em;
+  padding: 3.3em 1.1em 1.1em;
+  background: var(--colore-carta);
+  border: 1px solid var(--colore-linea);
+  border-top: 0.25em solid var(--colore-accento);
+  border-left: 1px solid var(--colore-linea);
+  border-radius: 0.5em;
+  box-shadow: var(--ombra-scheda);
+}
+.slide-percorso-fasi .passo::after {
+  content: counter(fase);
+  position: absolute;
+  left: 0.8em;
+  top: 0.55em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: var(--colore-accento);
+  color: var(--colore-carta);
+  font-weight: 700;
+}
+.slide-percorso-fasi .passo + .passo::before {
+  left: -1.35em;
+  top: 50%;
+  margin-top: -0.45em;
+  border-top: 0.45em solid transparent;
+  border-bottom: 0.45em solid transparent;
+  border-right: 0;
+  border-left: 0.6em solid var(--colore-tenue);
+}
+.slide-percorso-fasi .passo-titolo {
+  font-size: 1.15em;
+}
+.percorso-dettaglio {
+  flex: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 1em;
+  margin-top: 1em;
+}
+.percorso-dettaglio > * {
+  align-self: stretch;
+}
+.percorso-dettaglio .nota {
+  height: 100%;
+  align-items: center;
+}
+
+@container (max-width: 899px) {
+  .slide-percorso-fasi .flusso {
+    flex-direction: column;
+    gap: 1em;
+  }
+  .slide-percorso-fasi .passo + .passo::before {
+    left: 1.2em;
+    top: -0.8em;
+    margin-top: 0;
+    border-left: 0.45em solid transparent;
+    border-right: 0.45em solid transparent;
+    border-top: 0.55em solid var(--colore-tenue);
+    border-bottom: 0;
+  }
+}

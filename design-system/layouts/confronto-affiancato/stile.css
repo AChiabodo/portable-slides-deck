@@ -1,0 +1,59 @@
+.affiancato-testa {
+  flex: none;
+}
+.affiancato-corpo {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.4em;
+  margin-top: 1.1em;
+}
+.affiancato-pannello {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9em;
+  padding: 0;
+  overflow: hidden;
+}
+.affiancato-intestazione {
+  flex: none;
+  padding: 0.7em 1.3em;
+  background: var(--colore-superficie);
+  border-bottom: 1px solid var(--colore-linea);
+  font-size: 0.85em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--colore-tenue);
+}
+.affiancato-destra .affiancato-intestazione {
+  background: var(--colore-accento);
+  border-bottom-color: var(--colore-accento);
+  color: var(--colore-carta);
+}
+.affiancato-contenuto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+  min-height: 0;
+  padding: 0.2em 1.3em 1em;
+  font-size: 0.94em;
+}
+.affiancato-sinistra .passo {
+  border-left-color: var(--colore-tenue);
+}
+.affiancato-sinistra .passo-etichetta {
+  color: var(--colore-tenue);
+}
+.affiancato-conclusione {
+  flex: none;
+  margin-top: 1em;
+}
+
+@container (max-width: 899px) {
+  .affiancato-corpo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

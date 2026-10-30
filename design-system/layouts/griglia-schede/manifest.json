@@ -1,0 +1,14 @@
+{
+  "nome": "griglia-schede",
+  "scopo": "Titolo con un'introduzione e una griglia di 2-6 schede numerate (titolo, spiegazione, evidenza), più una nota facoltativa.",
+  "quandoUsarlo": "Per presentare un concetto scomposto in parti parallele (cos'è, caratteristiche, vantaggi, ruoli). Per sequenze ordinate usa percorso-fasi, per confrontare due alternative confronto-affiancato.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 130,
+  "zone": [
+    { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 18 },
+    { "nome": "introduzione", "tipo": "testo", "maxParole": 30 },
+    { "nome": "schede", "tipo": "componenti", "obbligatoria": true, "ammessi": ["schede"], "min": 1, "max": 1 },
+    { "nome": "nota", "tipo": "componenti", "ammessi": ["nota"], "min": 0, "max": 1 }
+  ]
+}

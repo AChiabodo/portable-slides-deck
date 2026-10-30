@@ -1,0 +1,17 @@
+.griglia-testa {
+  flex: none;
+}
+.griglia-corpo {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  margin-top: 1.2em;
+}
+.griglia-corpo .schede {
+  flex: 1;
+  align-content: stretch;
+}
+.griglia-nota {
+  flex: none;
+  margin-top: 1em;
+}

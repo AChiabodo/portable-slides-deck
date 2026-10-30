@@ -1,0 +1,14 @@
+{
+  "nome": "percorso-fasi",
+  "scopo": "Titolo con introduzione e un percorso orizzontale di 2-5 fasi numerate collegate da frecce; sotto, un dettaglio facoltativo (indicatori e nota).",
+  "quandoUsarlo": "Per spiegare come funziona un processo, una pipeline o un metodo passo per passo. Le fasi sono ordinate; per concetti paralleli usa griglia-schede.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 120,
+  "zone": [
+    { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 18 },
+    { "nome": "introduzione", "tipo": "testo", "maxParole": 30 },
+    { "nome": "fasi", "tipo": "componenti", "obbligatoria": true, "ammessi": ["flusso"], "min": 1, "max": 1 },
+    { "nome": "dettaglio", "tipo": "componenti", "ammessi": ["kpi", "nota"], "min": 0, "max": 2 }
+  ]
+}

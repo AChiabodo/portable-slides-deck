@@ -1,0 +1,16 @@
+{
+  "nome": "confronto-affiancato",
+  "scopo": "Due pannelli affiancati con intestazione, ciascuno con un componente (flusso, schede, indicatori, grafico), e una conclusione in fondo.",
+  "quandoUsarlo": "Per mettere a confronto due approcci, processi o scenari mostrando per ciascuno una struttura (es. due pipeline, prima e dopo). Per due semplici elenchi di voci usa confronto.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 130,
+  "zone": [
+    { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 18 },
+    { "nome": "intestazione-sinistra", "tipo": "testo", "obbligatoria": true, "maxParole": 5 },
+    { "nome": "sinistra", "tipo": "componenti", "obbligatoria": true, "ammessi": ["flusso", "schede", "kpi", "grafico-barre", "nota"], "min": 1, "max": 2 },
+    { "nome": "intestazione-destra", "tipo": "testo", "obbligatoria": true, "maxParole": 5 },
+    { "nome": "destra", "tipo": "componenti", "obbligatoria": true, "ammessi": ["flusso", "schede", "kpi", "grafico-barre", "nota"], "min": 1, "max": 2 },
+    { "nome": "conclusione", "tipo": "componenti", "ammessi": ["nota"], "min": 0, "max": 1 }
+  ]
+}

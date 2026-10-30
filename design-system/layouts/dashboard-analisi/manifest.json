@@ -1,0 +1,15 @@
+{
+  "nome": "dashboard-analisi",
+  "scopo": "Slide d'analisi strutturata come un cruscotto: occhiello e titolo che afferma il risultato, un pannello con grafico o tabella, una colonna laterale con indicatori e commento, una nota finale.",
+  "quandoUsarlo": "Per presentare un'evidenza dei dati con più livelli di lettura: il grafico o la tabella mostrano il dettaglio, i KPI il numero da ricordare, il commento il perché, la nota l'avvertenza o la conclusione operativa. È il layout d'analisi di default per i temi con cornice.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 120,
+  "zone": [
+    { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 20 },
+    { "nome": "principale", "tipo": "componenti", "obbligatoria": true, "ammessi": ["grafico-barre", "grafico-linee", "tabella-serie"], "min": 1, "max": 2 },
+    { "nome": "kpi", "tipo": "componenti", "ammessi": ["kpi"], "min": 0, "max": 1 },
+    { "nome": "commento", "tipo": "testo", "maxParole": 40 },
+    { "nome": "nota", "tipo": "componenti", "ammessi": ["nota"], "min": 0, "max": 1 }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "nome": "sintesi",
+  "scopo": "Slide di sintesi su due colonne: a sinistra un pannello scuro con il titolo-messaggio, una frase e gli indicatori chiave; a destra un elenco numerato di 2-5 punti.",
+  "quandoUsarlo": "Per chiudere un blocco di analisi con il messaggio principale e i punti da ricordare o le azioni successive. Non per introdurre un argomento.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 120,
+  "zone": [
+    { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 16 },
+    { "nome": "messaggio", "tipo": "testo", "maxParole": 30 },
+    { "nome": "kpi", "tipo": "componenti", "ammessi": ["kpi"], "min": 0, "max": 1 },
+    { "nome": "punti", "tipo": "elenco", "obbligatoria": true, "minVoci": 2, "maxVoci": 5, "maxParoleVoce": 22 }
+  ]
+}
