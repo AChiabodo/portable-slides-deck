@@ -2,10 +2,12 @@
 import { parseArgs } from 'node:util';
 import { genera, valida, esportaSingolo } from './lib/pipeline.mjs';
 import { esportaPdf } from './lib/esporta-pdf.mjs';
+import { nuova } from './lib/nuova.mjs';
 
 const USO = `Uso: node tools/cli.mjs <comando> <cartella-presentazione> [--catalogo <cartella>]...
 
 Comandi:
+  nuova            crea la struttura di una Presentazione (un nome semplice diventa presentazioni/<nome>)
   valida           controlla Specifica e Analisi contro il Catalogo
   genera           valida e genera dist/index.html con gli asset
   esporta-singolo  valida e produce dist/presentazione.html, un unico file autonomo
@@ -16,7 +18,7 @@ const { values, positionals } = parseArgs({
   options: { catalogo: { type: 'string', multiple: true, default: [] } },
 });
 const [comando, cartella] = positionals;
-const comandi = { valida, genera, 'esporta-singolo': esportaSingolo, 'esporta-pdf': esportaPdf };
+const comandi = { nuova, valida, genera, 'esporta-singolo': esportaSingolo, 'esporta-pdf': esportaPdf };
 
 if (!comandi[comando] || !cartella) {
   console.error(USO);

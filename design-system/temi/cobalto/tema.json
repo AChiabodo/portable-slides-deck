@@ -1,0 +1,30 @@
+{
+  "nome": "cobalto",
+  "descrizione": "Tema moderno: fondo bianco, accento blu cobalto, titoli e testi senza grazie; copertina blu notte.",
+  "variabili": {
+    "colore-sfondo-pagina": "#e8edf4",
+    "colore-carta": "#ffffff",
+    "colore-superficie": "#eef2f8",
+    "colore-inchiostro": "#111827",
+    "colore-tenue": "#4b5563",
+    "colore-linea": "#cfd8e6",
+    "colore-accento": "#1d4ed8",
+    "colore-negativo": "#b42318",
+    "colore-copertina-sfondo": "#0b1f4d",
+    "colore-copertina-testo": "#f4f7ff",
+    "colore-copertina-accento": "#ffd166",
+    "font-serif": "system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "font-sans": "system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "font-mono": "ui-monospace, 'Cascadia Mono', Consolas, monospace"
+  },
+  "contrasti": [
+    ["colore-inchiostro", "colore-carta"],
+    ["colore-inchiostro", "colore-superficie"],
+    ["colore-tenue", "colore-carta"],
+    ["colore-tenue", "colore-superficie"],
+    ["colore-accento", "colore-carta"],
+    ["colore-negativo", "colore-carta"],
+    ["colore-copertina-testo", "colore-copertina-sfondo"],
+    ["colore-copertina-accento", "colore-copertina-sfondo"]
+  ]
+}

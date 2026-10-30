@@ -4,6 +4,21 @@ Il Catalogo è l'insieme di Layout, Componenti, Temi e lingue che una Specifica 
 
 Le radici del Catalogo sono `design-system/` e, per prove o estensioni locali, ogni cartella passata con `--catalogo <cartella>` (ripetibile). Ogni radice può contenere `layouts/`, `componenti/`, `temi/` e `lingue/`. Un nome già definito è un errore.
 
+## Catalogo di partenza
+
+| Layout | Quando usarlo | Zone principali |
+|--------|---------------|-----------------|
+| `copertina` | prima slide | titolo, sottotitolo |
+| `indice` | agenda subito dopo la copertina | titolo, voci (2-6, max 6 parole) |
+| `sezione` | separatore tra le parti | titolo, sottotitolo |
+| `risultato-grafico-commento` | evidenza dei dati: KPI, grafico, commento | titolo, kpi, grafico, commento |
+| `punti-chiave` | argomento senza grafico | titolo, punti (2-5) |
+| `confronto` | due situazioni affiancate | titolo, intestazione e voci (1-4) per sinistra e destra |
+| `messaggio` | una frase da ricordare | titolo (etichetta), messaggio, fonte |
+| `chiusura` | ultima slide, decisioni | titolo, passi (1-5) |
+
+Componenti: `kpi`, `grafico-barre`. Temi: `quiet-editorial` (carta e grazie), `cobalto` (bianco e blu, senza grazie). I limiti esatti sono nei `manifest.json`.
+
 ## Componente
 
 `componenti/<nome>/` con `manifest.json`, `render.mjs` (export default) e `stile.css` (opzionale). Il nome usa solo `a-z`, `0-9`, `-`.
@@ -44,7 +59,7 @@ Le slide sono contenitori 16:9 con `container-type: inline-size`: dimensiona il 
 
 ## Tema
 
-`temi/<nome>/tema.json`: `variabili` (proprietà CSS senza `--`, es. `colore-carta`) e `contrasti`, coppie di variabili colore verificate contro WCAG AA (rapporto ≥ 4,5:1). Un Tema sotto soglia è rifiutato dal validatore.
+`temi/<nome>/tema.json`: `variabili` (proprietà CSS senza `--`, es. `colore-carta`) e `contrasti`, coppie di variabili colore verificate contro WCAG AA (rapporto ≥ 4,5:1). Un Tema sotto soglia è rifiutato dal validatore. Un nuovo Tema deve definire le stesse variabili degli altri (un test lo controlla): copia `quiet-editorial` e cambia i valori.
 
 ## Lingua
 

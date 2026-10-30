@@ -1,0 +1,14 @@
+{
+  "titolo": "Titolo della presentazione",
+  "lingua": "it",
+  "tema": "quiet-editorial",
+  "slide": [
+    {
+      "layout": "copertina",
+      "zone": {
+        "titolo": "Titolo della presentazione",
+        "sottotitolo": "Periodo e perimetro dei dati"
+      }
+    }
+  ]
+}

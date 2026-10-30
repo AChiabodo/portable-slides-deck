@@ -1,0 +1,12 @@
+{
+  "nome": "messaggio",
+  "scopo": "Una sola frase in grande, con un'etichetta sopra e una fonte opzionale sotto.",
+  "quandoUsarlo": "Per il messaggio che il pubblico deve portarsi via, o per una citazione. Una frase sola: se servono più concetti usa punti-chiave.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 40,
+  "zone": [
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 6 },
+    { "nome": "messaggio", "tipo": "testo", "obbligatoria": true, "maxParole": 25 },
+    { "nome": "fonte", "tipo": "testo", "maxParole": 10 }
+  ]
+}

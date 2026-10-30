@@ -1,0 +1,14 @@
+{
+  "nome": "confronto",
+  "scopo": "Due colonne affiancate, ciascuna con un'intestazione e da 1 a 4 voci.",
+  "quandoUsarlo": "Per confrontare due situazioni, opzioni o periodi (prima e dopo, scenario A e B). Le voci delle due colonne si rispondono una a una.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 80,
+  "zone": [
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 14 },
+    { "nome": "intestazione-sinistra", "tipo": "testo", "obbligatoria": true, "maxParole": 4 },
+    { "nome": "sinistra", "tipo": "elenco", "obbligatoria": true, "minVoci": 1, "maxVoci": 4, "maxParoleVoce": 12 },
+    { "nome": "intestazione-destra", "tipo": "testo", "obbligatoria": true, "maxParole": 4 },
+    { "nome": "destra", "tipo": "elenco", "obbligatoria": true, "minVoci": 1, "maxVoci": 4, "maxParoleVoce": 12 }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "nome": "sezione",
+  "scopo": "Slide di separazione tra le parti della presentazione: un titolo grande e, se serve, una riga di contesto.",
+  "quandoUsarlo": "Per aprire un nuovo capitolo. Il titolo nomina la parte che inizia; il sottotitolo dice cosa contiene o a quale periodo si riferisce.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 30,
+  "zone": [
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 10 },
+    { "nome": "sottotitolo", "tipo": "testo", "maxParole": 20 }
+  ]
+}

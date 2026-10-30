@@ -1,0 +1,11 @@
+{
+  "nome": "indice",
+  "scopo": "Indice o agenda: l'elenco numerato delle parti della presentazione.",
+  "quandoUsarlo": "Subito dopo la copertina, per dire in che ordine si procede. Ogni voce nomina una parte, non la descrive.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 50,
+  "zone": [
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 10 },
+    { "nome": "voci", "tipo": "elenco", "obbligatoria": true, "minVoci": 2, "maxVoci": 6, "maxParoleVoce": 6 }
+  ]
+}

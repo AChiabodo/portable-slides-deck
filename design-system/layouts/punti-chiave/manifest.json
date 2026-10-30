@@ -1,0 +1,11 @@
+{
+  "nome": "punti-chiave",
+  "scopo": "Titolo e da 2 a 5 punti brevi che riassumono un argomento.",
+  "quandoUsarlo": "Per messaggi che non hanno un grafico: contesto, ipotesi, conclusioni. Il titolo afferma la tesi; ogni punto è una frase sola.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 80,
+  "zone": [
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 14 },
+    { "nome": "punti", "tipo": "elenco", "obbligatoria": true, "minVoci": 2, "maxVoci": 5, "maxParoleVoce": 18 }
+  ]
+}

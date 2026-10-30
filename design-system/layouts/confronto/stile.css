@@ -1,0 +1,38 @@
+.slide-confronto h2 {
+  font-size: 2.1em;
+  line-height: 1.15;
+  max-width: 28em;
+}
+.confronto-corpo {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 3em;
+  margin-top: 1.6em;
+}
+.confronto-intestazione {
+  margin: 0;
+  padding-top: 0.8em;
+  border-top: 0.1em solid var(--colore-accento);
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  font-weight: 400;
+  color: var(--colore-tenue);
+}
+.confronto-elenco {
+  margin: 0.8em 0 0;
+  padding: 0;
+  list-style: none;
+}
+.confronto-elenco li {
+  padding: 0.6em 0;
+  border-bottom: 1px solid var(--colore-linea);
+  font-size: 1.2em;
+}
+
+@container (max-width: 899px) {
+  .confronto-corpo {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5em;
+  }
+}

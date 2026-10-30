@@ -1,0 +1,20 @@
+.slide-sezione {
+  background: var(--colore-superficie);
+}
+.slide-sezione .slide-contenuto {
+  justify-content: center;
+}
+.sezione-corpo {
+  border-left: 0.25em solid var(--colore-accento);
+  padding-left: 1.4em;
+  max-width: 30em;
+}
+.slide-sezione h2 {
+  font-size: 3em;
+  line-height: 1.1;
+}
+.sezione-sottotitolo {
+  margin: 1em 0 0;
+  font-size: 1.3em;
+  color: var(--colore-tenue);
+}
