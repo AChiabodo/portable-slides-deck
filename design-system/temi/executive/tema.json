@@ -1,0 +1,40 @@
+{
+  "nome": "executive",
+  "descrizione": "Tema aziendale: fondo grigio chiaro con schede bianche, blu notte e verde acqua, titoli in grassetto senza grazie; copertina, sezioni e chiusura su blu notte.",
+  "variabili": {
+    "colore-sfondo-pagina": "#dde3ec",
+    "colore-carta": "#ffffff",
+    "colore-superficie": "#f0f3f8",
+    "colore-inchiostro": "#0e1a2b",
+    "colore-tenue": "#475467",
+    "colore-linea": "#d3dbe7",
+    "colore-accento": "#00708f",
+    "colore-accento-tenue": "#e0f0f5",
+    "colore-accento-secondario": "#9a4a06",
+    "colore-positivo": "#15803d",
+    "colore-negativo": "#b42318",
+    "colore-copertina-sfondo": "#0a1f3d",
+    "colore-copertina-testo": "#f5f8fc",
+    "colore-copertina-accento": "#4fd1c5",
+    "ombra-scheda": "0 1px 2px rgba(14, 26, 43, 0.08), 0 4px 14px rgba(14, 26, 43, 0.07)",
+    "font-serif": "'Segoe UI Variable Display', 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif",
+    "font-sans": "'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif",
+    "font-mono": "ui-monospace, 'Cascadia Mono', Consolas, monospace"
+  },
+  "contrasti": [
+    ["colore-inchiostro", "colore-carta"],
+    ["colore-inchiostro", "colore-superficie"],
+    ["colore-inchiostro", "colore-accento-tenue"],
+    ["colore-tenue", "colore-carta"],
+    ["colore-tenue", "colore-superficie"],
+    ["colore-accento", "colore-carta"],
+    ["colore-accento", "colore-superficie"],
+    ["colore-accento", "colore-accento-tenue"],
+    ["colore-accento-secondario", "colore-carta"],
+    ["colore-accento-secondario", "colore-superficie"],
+    ["colore-positivo", "colore-carta"],
+    ["colore-negativo", "colore-carta"],
+    ["colore-copertina-testo", "colore-copertina-sfondo"],
+    ["colore-copertina-accento", "colore-copertina-sfondo"]
+  ]
+}
