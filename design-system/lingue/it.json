@@ -6,7 +6,8 @@
     "schermoIntero": "Schermo intero"
   },
   "grafici": {
-    "barre": "Grafico a barre"
+    "barre": "Grafico a barre",
+    "linee": "Grafico a linee"
   },
   "formato": {
     "separatoreDecimale": ",",

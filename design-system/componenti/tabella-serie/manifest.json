@@ -1,0 +1,19 @@
+{
+  "nome": "tabella-serie",
+  "scopo": "Tabella che affianca 1-5 serie dell'Analisi: le righe sono le etichette della prima serie, ogni colonna è una serie con una barra proporzionale al valore.",
+  "quandoUsarlo": "Per leggere con precisione più misure sugli stessi punti (es. più indicatori per soglia o per politica). Le serie devono avere le stesse etichette di punto, nello stesso ordine. Per un solo andamento è meglio un grafico.",
+  "props": {
+    "titolo": { "tipo": "testo", "maxParole": 12 },
+    "intestazione": { "tipo": "testo", "obbligatoria": true, "maxParole": 3 },
+    "colonne": {
+      "tipo": "lista",
+      "obbligatoria": true,
+      "min": 1,
+      "max": 5,
+      "elementi": {
+        "titolo": { "tipo": "testo", "obbligatoria": true, "maxParole": 4 },
+        "serie": { "tipo": "serie", "obbligatoria": true, "maxPunti": 10 }
+      }
+    }
+  }
+}

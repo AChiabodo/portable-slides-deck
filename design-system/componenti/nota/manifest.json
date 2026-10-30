@@ -1,0 +1,9 @@
+{
+  "nome": "nota",
+  "scopo": "Riquadro di richiamo con un'etichetta e una frase: evidenzia un'avvertenza, un'ipotesi o la lettura da portare a casa.",
+  "quandoUsarlo": "Per una sola frase che merita di essere distinta dal resto (limite dei dati, ipotesi, conclusione operativa). Non per più di una frase.",
+  "props": {
+    "etichetta": { "tipo": "testo", "obbligatoria": true, "maxParole": 3 },
+    "testo": { "tipo": "testo", "obbligatoria": true, "maxParole": 30 }
+  }
+}

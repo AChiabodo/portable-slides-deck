@@ -1,0 +1,18 @@
+{
+  "nome": "flusso",
+  "scopo": "Sequenza di passi collegati da frecce: ogni passo ha un titolo, una breve descrizione e un'etichetta di tipo (es. il componente che lo esegue).",
+  "quandoUsarlo": "Per 2-5 passi ordinati di un processo o di una pipeline. Per elementi non ordinati servono delle schede.",
+  "props": {
+    "passi": {
+      "tipo": "lista",
+      "obbligatoria": true,
+      "min": 2,
+      "max": 5,
+      "elementi": {
+        "titolo": { "tipo": "testo", "obbligatoria": true, "maxParole": 5 },
+        "testo": { "tipo": "testo", "maxParole": 14 },
+        "etichetta": { "tipo": "testo", "maxParole": 3 }
+      }
+    }
+  }
+}

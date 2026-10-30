@@ -1,0 +1,18 @@
+{
+  "nome": "schede",
+  "scopo": "Griglia di schede numerate: ogni scheda ha un titolo, una breve spiegazione e, se serve, un'evidenza in grande.",
+  "quandoUsarlo": "Per 2-6 concetti paralleli che il pubblico deve confrontare a colpo d'occhio (caratteristiche, vantaggi, ruoli). Non per sequenze ordinate: per quelle serve un flusso.",
+  "props": {
+    "voci": {
+      "tipo": "lista",
+      "obbligatoria": true,
+      "min": 2,
+      "max": 6,
+      "elementi": {
+        "titolo": { "tipo": "testo", "obbligatoria": true, "maxParole": 6 },
+        "testo": { "tipo": "testo", "obbligatoria": true, "maxParole": 28 },
+        "evidenza": { "tipo": "testo", "maxParole": 3 }
+      }
+    }
+  }
+}

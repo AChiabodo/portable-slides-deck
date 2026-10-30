@@ -1,0 +1,88 @@
+.grafico-linee .guida {
+  stroke: var(--colore-linea);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+.grafico-linee .tacca {
+  fill: var(--colore-tenue);
+  font-family: var(--font-mono);
+  font-size: 17px;
+}
+.grafico-linee .linea {
+  fill: none;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.grafico-linee .linea.linea-1 {
+  stroke: var(--colore-accento);
+}
+.grafico-linee .linea.linea-2 {
+  stroke: var(--colore-accento-secondario);
+  stroke-dasharray: 9 6;
+}
+.grafico-linee .linea.linea-3 {
+  stroke: var(--colore-inchiostro);
+  stroke-dasharray: 2 6;
+}
+.grafico-linee .punto {
+  stroke: var(--colore-carta);
+  stroke-width: 2;
+}
+.grafico-linee .punto.linea-1 {
+  fill: var(--colore-accento);
+}
+.grafico-linee .punto.linea-2 {
+  fill: var(--colore-accento-secondario);
+}
+.grafico-linee .punto.linea-3 {
+  fill: var(--colore-inchiostro);
+}
+.grafico-linee .valore-linea {
+  font-family: var(--font-mono);
+  font-size: 17px;
+  font-weight: 700;
+}
+.grafico-linee .valore-linea.linea-1 {
+  fill: var(--colore-accento);
+}
+.grafico-linee .valore-linea.linea-2 {
+  fill: var(--colore-accento-secondario);
+}
+.grafico-linee .valore-linea.linea-3 {
+  fill: var(--colore-inchiostro);
+}
+.legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em 1.4em;
+  margin: 0 0 0.4em;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85em;
+}
+.legenda li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.legenda-segno {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  background: var(--colore-accento);
+  border-radius: 50%;
+}
+.legenda-segno.linea-2 {
+  background: var(--colore-accento-secondario);
+}
+.legenda-segno.linea-3 {
+  background: var(--colore-inchiostro);
+}
+.legenda-segno.quadrato {
+  border-radius: 0.1em;
+}
+.legenda-segno.rombo {
+  border-radius: 0.1em;
+  transform: rotate(45deg) scale(0.85);
+}

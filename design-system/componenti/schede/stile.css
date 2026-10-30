@@ -1,0 +1,49 @@
+.schede {
+  display: grid;
+  grid-template-columns: repeat(var(--colonne), minmax(0, 1fr));
+  gap: 1.1em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.scheda {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+  min-width: 0;
+  padding: 1.1em 1.3em 1.2em;
+  background: var(--colore-carta);
+  border: 1px solid var(--colore-linea);
+  border-top: 0.25em solid var(--colore-accento);
+  border-radius: 0.5em;
+  box-shadow: var(--ombra-scheda);
+}
+.scheda-numero {
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--colore-accento);
+}
+.scheda-titolo {
+  font-size: 1.2em;
+  line-height: 1.2;
+}
+.scheda-evidenza {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 2.2em;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--colore-accento);
+}
+.scheda-testo {
+  margin: 0;
+  color: var(--colore-tenue);
+}
+@container (max-width: 600px) {
+  .schede {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

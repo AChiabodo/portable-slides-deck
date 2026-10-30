@@ -1,0 +1,62 @@
+.tabella-serie {
+  margin: 0;
+}
+.tabella-serie figcaption {
+  margin-bottom: 0.6em;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--colore-tenue);
+}
+.tabella-serie table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+.tabella-serie thead th {
+  padding: 0.45em 0.7em;
+  background: var(--colore-inchiostro);
+  color: var(--colore-carta);
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.tabella-serie tbody th {
+  padding: 0.4em 0.7em;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+}
+.tabella-serie td {
+  padding: 0.4em 0.7em;
+  min-width: 0;
+}
+.tabella-serie tbody tr {
+  border-bottom: 1px solid var(--colore-linea);
+}
+.tabella-serie tbody tr:nth-child(even) {
+  background: var(--colore-superficie);
+}
+.cella-valore {
+  display: block;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+.cella-barra {
+  display: block;
+  height: 0.3em;
+  margin-top: 0.25em;
+  background: var(--colore-linea);
+  border-radius: 0.15em;
+  overflow: hidden;
+}
+.cella-barra i {
+  display: block;
+  height: 100%;
+  background: var(--colore-accento);
+}
+.cella-barra.negativa i {
+  background: var(--colore-negativo);
+}
