@@ -1,0 +1,16 @@
+{
+  "nome": "esperimento",
+  "scopo": "Slide di un esperimento o PoC: ipotesi e metodo in una colonna, il risultato (grafici, criteri, indicatori o tabella) nella colonna principale, la conclusione in evidenza a tutta larghezza in fondo e, se serve, la scheda dei dati.",
+  "quandoUsarlo": "Per raccontare una prova in ordine: cosa si voleva verificare, come, che cosa è risultato e cosa se ne conclude. Il titolo afferma l'esito. Con due risultati affiancali solo se si leggono insieme. Non per un'analisi senza ipotesi: usa dashboard-analisi.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 120,
+  "zone": [
+    { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 16 },
+    { "nome": "ipotesi", "tipo": "testo", "maxParole": 22 },
+    { "nome": "metodo", "tipo": "testo", "maxParole": 22 },
+    { "nome": "risultato", "tipo": "componenti", "obbligatoria": true, "ammessi": ["grafico-barre", "grafico-linee", "grafico-cascata", "grafico-ciambella", "criteri-esito", "kpi", "tabella-serie"], "min": 1, "max": 2 },
+    { "nome": "conclusione", "tipo": "testo", "maxParole": 30 },
+    { "nome": "dati", "tipo": "componenti", "ammessi": ["scheda-dati"], "min": 0, "max": 1 }
+  ]
+}

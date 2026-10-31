@@ -1,0 +1,12 @@
+{
+  "nome": "cartella-appendice",
+  "scopo": "Slide scura che apre l'appendice: occhiello fisso «Appendice», titolo, una riga di contesto e l'elenco numerato dei materiali che seguono.",
+  "quandoUsarlo": "Una sola volta, prima delle slide di approfondimento che stanno dopo le conclusioni. I contenuti sono 1-6 titoli brevi di ciò che segue, nell'ordine in cui compaiono. Non come separatore di capitoli della parte principale: usa sezione.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 90,
+  "zone": [
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 10 },
+    { "nome": "sottotitolo", "tipo": "testo", "maxParole": 20 },
+    { "nome": "contenuti", "tipo": "elenco", "obbligatoria": true, "minVoci": 1, "maxVoci": 6, "maxParoleVoce": 8 }
+  ]
+}

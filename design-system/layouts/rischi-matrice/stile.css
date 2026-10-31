@@ -1,0 +1,103 @@
+.rm-testa {
+  flex: none;
+}
+.slide-rischi-matrice h2 {
+  font-size: 1.7em;
+}
+.rm-corpo {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  grid-template-rows: minmax(0, 1fr);
+  gap: 1.2em;
+  margin-top: 1em;
+}
+.rm-matrice {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.rm-matrice > * {
+  flex: 1;
+  min-width: 0;
+}
+.rm-mitigazioni {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  overflow: hidden;
+  border-left: calc(0.3em * var(--bordo-scheda-accento)) solid var(--colore-accento);
+}
+.rm-intestazione {
+  flex: none;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: var(--trasformazione-etichetta);
+  color: var(--colore-accento);
+}
+.rm-elenco {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0.5em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.86em;
+  line-height: 1.3;
+}
+.rm-elenco li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.7em;
+  padding-bottom: 0.5em;
+  border-bottom: var(--spessore-filetto) solid var(--colore-linea);
+}
+.rm-elenco li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.rm-elenco li::before {
+  content: "";
+  width: 0.6em;
+  height: 0.6em;
+  margin-top: 0.4em;
+  background: var(--colore-accento);
+  border-radius: calc(0.15em * var(--raggio-scheda));
+}
+
+/* Con fino a otto rischi la legenda deve stare nell'altezza della slide: matrice più stretta e voci compatte. */
+@container (min-width: 601px) {
+  .rm-matrice .matrice-rischi {
+    gap: 1.2em;
+  }
+  .rm-matrice .mr-griglia {
+    width: 13em;
+  }
+  .rm-matrice .mr-legenda {
+    gap: 0.3em;
+    font-size: 0.85em;
+  }
+  .rm-matrice .mr-voce {
+    padding-bottom: 0.3em;
+  }
+}
+
+@container (max-width: 899px) {
+  .rm-corpo {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+  }
+}
+@media print {
+  .rm-matrice,
+  .rm-mitigazioni {
+    box-shadow: none;
+  }
+}

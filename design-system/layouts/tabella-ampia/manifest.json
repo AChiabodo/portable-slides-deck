@@ -1,0 +1,14 @@
+{
+  "nome": "tabella-ampia",
+  "scopo": "Slide a tutta larghezza per una tabella: occhiello e titolo che afferma la lettura, la tabella sull'intera slide, una nota e la fonte.",
+  "quandoUsarlo": "Quando il contenuto è una tabella da leggere riga per riga (confronto di serie, criteri di accettazione, azioni aperte) e serve tutta la larghezza. Una sola tabella per slide. Non per un grafico con commento: usa dashboard-analisi.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 130,
+  "zone": [
+    { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 16 },
+    { "nome": "tabella", "tipo": "componenti", "obbligatoria": true, "ammessi": ["tabella-serie", "criteri-esito", "elenco-azioni"], "min": 1, "max": 1 },
+    { "nome": "nota", "tipo": "componenti", "ammessi": ["nota"], "min": 0, "max": 1 },
+    { "nome": "fonte", "tipo": "testo", "maxParole": 12 }
+  ]
+}

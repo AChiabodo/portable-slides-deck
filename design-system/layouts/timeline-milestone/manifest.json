@@ -1,0 +1,14 @@
+{
+  "nome": "timeline-milestone",
+  "scopo": "Titolo con un'introduzione e una timeline orizzontale di milestone con data e stato; sotto, un dettaglio facoltativo (nota, barre di avanzamento, prossime azioni).",
+  "quandoUsarlo": "Per mostrare il piano o l'avanzamento di un progetto nel tempo: milestone raggiunte, in corso e future. Il dettaglio (0-2 componenti) può dire a che punto si è (barra-avanzamento), cosa fare adesso (elenco-azioni) o un'avvertenza (nota). Con sei o sette milestone o un elenco di azioni lungo il dettaglio si fa fitto: tieni le azioni sotto le quattro righe. Per processi senza date usa percorso-fasi; per lo stato di più filoni in parallelo usa stato-avanzamento.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 140,
+  "zone": [
+    { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo",     "obbligatoria": true, "maxParole": 12 },
+        { "nome": "introduzione", "tipo": "testo", "maxParole": 24 },
+    { "nome": "timeline", "tipo": "componenti", "obbligatoria": true, "ammessi": ["timeline"], "min": 1, "max": 1 },
+    { "nome": "dettaglio", "tipo": "componenti", "ammessi": ["nota", "barra-avanzamento", "elenco-azioni"], "min": 0, "max": 2 }
+  ]
+}

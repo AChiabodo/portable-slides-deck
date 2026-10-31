@@ -1,0 +1,13 @@
+{
+  "nome": "rischi-matrice",
+  "scopo": "Slide dei rischi di un progetto: titolo, matrice probabilità/impatto con legenda a testo in una colonna ampia e, in una colonna stretta, le mitigazioni.",
+  "quandoUsarlo": "Per mostrare dove cadono 1-8 rischi e cosa si fa per ridurli. Le mitigazioni sono 2-5 frasi brevi, in ordine di priorità: non sono associate una per una ai rischi. Non per un elenco di rischi senza stima di probabilità e impatto: usa punti-chiave.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 150,
+  "zone": [
+    { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 14 },
+    { "nome": "matrice", "tipo": "componenti", "obbligatoria": true, "ammessi": ["matrice-rischi"], "min": 1, "max": 1 },
+    { "nome": "mitigazioni", "tipo": "elenco", "obbligatoria": true, "minVoci": 2, "maxVoci": 5, "maxParoleVoce": 18 }
+  ]
+}

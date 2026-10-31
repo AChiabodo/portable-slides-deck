@@ -1,4 +1,4 @@
-const CENTRO = 100;
+﻿const CENTRO = 100;
 const RAGGIO = 74;
 const SPAZIO = 0.7;
 
@@ -21,9 +21,15 @@ export default function render({ serie, totale }, { esc, t, id }) {
     })
     .join('');
 
+  const righeEtichetta = totale ? totale.etichetta.split(' ') : [];
+  const meta = Math.ceil(righeEtichetta.length / 2);
+  const doppia = totale && totale.etichetta.length > 12 && righeEtichetta.length > 1;
+  const linee = doppia ? [righeEtichetta.slice(0, meta).join(' '), righeEtichetta.slice(meta).join(' ')] : totale ? [totale.etichetta] : [];
   const centro = totale
-    ? `<text class="totale-valore${totale.testo.length > 9 ? ' lungo' : ''}" x="${CENTRO}" y="${CENTRO + 4}" text-anchor="middle">${totale.testo}</text>` +
-      `<text class="totale-etichetta" x="${CENTRO}" y="${CENTRO + 24}" text-anchor="middle">${totale.etichetta}</text>`
+    ? `<text class="totale-valore${totale.testo.length > 9 ? ' lungo' : ''}" x="${CENTRO}" y="${CENTRO - (doppia ? 4 : 0) + 4}" text-anchor="middle">${totale.testo}</text>` +
+      `<text class="totale-etichetta" x="${CENTRO}" y="${CENTRO + (doppia ? 14 : 24)}" text-anchor="middle">` +
+      linee.map((l, i) => `<tspan x="${CENTRO}" dy="${i === 0 ? 0 : 12}">${l}</tspan>`).join('') +
+      `</text>`
     : '';
 
   const legenda = serie.punti

@@ -97,7 +97,7 @@ describe('grafico-ciambella', () => {
     assert.match(html, /stroke-dasharray="49\.300 50\.700" stroke-dashoffset="0\.000"/);
     assert.match(html, /stroke-dasharray="29\.300 70\.700" stroke-dashoffset="-50\.000"/);
     assert.match(html, /<text class="totale-valore"[^>]*>100\u00a0€<\/text>/);
-    assert.match(html, /<text class="totale-etichetta"[^>]*>Budget totale<\/text>/);
+    assert.match(html, /<text class="totale-etichetta"[^>]*><tspan[^>]*>Budget<\/tspan><tspan[^>]*>totale<\/tspan><\/text>/);
     assert.match(html, /<span class="ciambella-nome">Centro<\/span><span class="ciambella-valore">30<\/span>/);
     assert.match(html, /aria-labelledby="[^"]+-t [^"]+-d"/);
     assert.match(html, /Grafico a ciambella/);

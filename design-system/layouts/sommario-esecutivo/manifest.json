@@ -1,0 +1,15 @@
+{
+  "nome": "sommario-esecutivo",
+  "scopo": "Prima pagina di un report o di una proposta: i messaggi principali numerati con la raccomandazione, accanto agli indicatori chiave e a una scheda d'identità facoltativa del progetto.",
+  "quandoUsarlo": "Per riassumere in una slide cosa è successo (2-4 messaggi), i numeri da ricordare (kpi) e cosa si raccomanda; la scheda d'identità (scheda-dati) dice di che progetto si parla. Di norma è la prima slide dopo la copertina. Non per chiudere un blocco d'analisi (usa sintesi) né per chiedere un'approvazione tra alternative (usa decisione).",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 150,
+  "zone": [
+    { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 14 },
+    { "nome": "identita", "tipo": "componenti", "ammessi": ["scheda-dati"], "min": 0, "max": 1 },
+    { "nome": "kpi", "tipo": "componenti", "obbligatoria": true, "ammessi": ["kpi"], "min": 1, "max": 1 },
+    { "nome": "messaggi", "tipo": "elenco", "obbligatoria": true, "minVoci": 2, "maxVoci": 4, "maxParoleVoce": 18 },
+    { "nome": "raccomandazione", "tipo": "testo", "maxParole": 26 }
+  ]
+}

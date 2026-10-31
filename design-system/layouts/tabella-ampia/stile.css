@@ -1,0 +1,91 @@
+.ta-testa {
+  flex: none;
+}
+.slide-tabella-ampia h2 {
+  font-size: 1.7em;
+}
+.ta-tabella {
+  flex: 0 1 auto;
+  min-height: 0;
+  margin-top: 1em;
+  padding: 0.4em 0.6em;
+  overflow: hidden;
+}
+.ta-tabella > * {
+  min-width: 0;
+}
+.ta-piede {
+  flex: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.2em;
+  margin-top: 0.7em;
+}
+.ta-nota {
+  flex: 1;
+  min-width: 0;
+}
+.ta-nota .nota {
+  padding: 0.55em 1em;
+}
+.ta-fonte {
+  flex: 0 1 18em;
+  margin: 0;
+  font-size: 0.8em;
+  line-height: 1.35;
+  color: var(--colore-tenue);
+}
+.ta-piede .ta-nota + .ta-fonte {
+  text-align: right;
+}
+
+/* Tabella densa: la slide non ha altezza da spendere, le righe restano leggibili ma strette. */
+@container (min-width: 601px) {
+  .ta-tabella:not(.ta-ariosa) .criteri,
+  .ta-tabella:not(.ta-ariosa) .azioni {
+    font-size: 0.85em;
+  }
+  .ta-tabella:not(.ta-ariosa) .criteri tbody th,
+  .ta-tabella:not(.ta-ariosa) .criteri td,
+  .ta-tabella:not(.ta-ariosa) .azioni tbody th,
+  .ta-tabella:not(.ta-ariosa) .azioni td {
+    padding: 0.5em 0.8em;
+  }
+  .ta-tabella:not(.ta-ariosa) .tabella-serie table {
+    font-size: 0.8em;
+    line-height: 1.2;
+  }
+  .ta-tabella:not(.ta-ariosa) .tabella-serie tbody th,
+  .ta-tabella:not(.ta-ariosa) .tabella-serie td {
+    padding: 0.2em 0.7em;
+  }
+  .ta-tabella:not(.ta-ariosa) .tabella-serie figcaption {
+    margin-bottom: 0.3em;
+  }
+  .ta-tabella:not(.ta-ariosa) .cella-barra {
+    height: 0.22em;
+    margin-top: 0.12em;
+  }
+}
+
+/* Vista stretta: la tabella a più colonne si comprime invece di uscire dalla slide. */
+@container (max-width: 600px) {
+  .ta-tabella .tabella-serie table {
+    table-layout: fixed;
+    font-size: 0.78em;
+  }
+  .ta-tabella .tabella-serie thead th,
+  .ta-tabella .tabella-serie tbody th,
+  .ta-tabella .tabella-serie td {
+    padding: 0.35em 0.4em;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media print {
+  .ta-tabella {
+    box-shadow: none;
+  }
+}

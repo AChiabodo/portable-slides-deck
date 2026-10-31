@@ -1,0 +1,16 @@
+{
+  "nome": "decisione",
+  "scopo": "Slide per chiedere una decisione: titolo, la richiesta di approvazione in evidenza, contesto ed evidenze di supporto, le opzioni affiancate con vantaggi e svantaggi e la raccomandazione finale.",
+  "quandoUsarlo": "Per proposte e passaggi di approvazione: la richiesta dice cosa si chiede di approvare, le opzioni (opzioni-decisione, 2-4) mostrano le alternative, la raccomandazione dice quale scegliere e perché. Le evidenze sono facoltative (kpi o scheda-dati). Con tre o quattro opzioni tieni vantaggi e svantaggi sotto le 12 parole ciascuno: il limite di parole della slide comprende anche il testo delle opzioni. Non per presentare risultati d'analisi (usa dashboard-analisi) né per sintetizzare conclusioni già prese (usa sintesi).",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 130,
+  "zone": [
+    { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 12 },
+    { "nome": "richiesta", "tipo": "testo", "obbligatoria": true, "maxParole": 20 },
+    { "nome": "contesto", "tipo": "testo", "maxParole": 30 },
+    { "nome": "evidenze", "tipo": "componenti", "ammessi": ["kpi", "scheda-dati"], "min": 0, "max": 1 },
+    { "nome": "opzioni", "tipo": "componenti", "obbligatoria": true, "ammessi": ["opzioni-decisione"], "min": 1, "max": 1 },
+    { "nome": "raccomandazione", "tipo": "testo", "maxParole": 24 }
+  ]
+}

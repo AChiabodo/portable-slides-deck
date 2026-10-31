@@ -1,0 +1,16 @@
+{
+  "nome": "stato-avanzamento",
+  "scopo": "Slide di stato di un progetto: a sinistra i filoni di lavoro (semafori o barre di avanzamento), a destra lo stato complessivo, gli indicatori e il commento; in fondo una nota facoltativa.",
+  "quandoUsarlo": "Per un aggiornamento periodico: lo stato complessivo dice come va il progetto nel suo insieme (semaforo, poche voci come tempi, budget, ambito), i filoni di lavoro (1-2 componenti: semaforo per lo stato, barra-avanzamento per quanto è stato fatto) dicono dove sono i problemi, il commento spiega perché. Con molte righe nei filoni (più di 4) o nello stato complessivo (più di 3) il testo si rimpicciolisce: oltre 6 righe nei filoni conviene dividere su due slide. Per milestone con date usa timeline-milestone; per i rischi usa rischi-matrice.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 150,
+  "zone": [
+    { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo",     "obbligatoria": true, "maxParole": 12 },
+    { "nome": "complessivo", "tipo": "componenti", "ammessi": ["semaforo"], "min": 0, "max": 1 },
+    { "nome": "workstream", "tipo": "componenti", "obbligatoria": true, "ammessi": ["semaforo", "barra-avanzamento"], "min": 1, "max": 2 },
+    { "nome": "kpi", "tipo": "componenti", "ammessi": ["kpi"], "min": 0, "max": 1 },
+    { "nome": "commento", "tipo": "testo",         "maxParole": 24 },
+    { "nome": "nota", "tipo": "componenti", "ammessi": ["nota"], "min": 0, "max": 1 }
+  ]
+}

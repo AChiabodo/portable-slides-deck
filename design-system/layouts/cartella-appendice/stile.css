@@ -1,0 +1,91 @@
+/* Slide scura senza cornice, come `sezione`; la banda di accento a sinistra la distingue anche nei Temi con slide scure. */
+.slide-cartella-appendice {
+  background: var(--colore-copertina-sfondo);
+  background-image: none;
+  color: var(--colore-copertina-testo);
+  border-color: var(--colore-copertina-sfondo);
+}
+.slide-cartella-appendice::after,
+.slide-cartella-appendice .slide-contenuto::before {
+  display: none;
+}
+.slide-cartella-appendice::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: auto;
+  width: 1.4cqw;
+  padding: 0;
+  border: 0;
+  background: var(--colore-copertina-accento);
+}
+.slide-cartella-appendice .slide-contenuto {
+  justify-content: center;
+}
+.ca-corpo {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  align-items: center;
+  gap: 3em;
+  min-height: 0;
+}
+.ca-intestazione {
+  min-width: 0;
+  border-left: 0.5em solid var(--colore-copertina-accento);
+  padding-left: 1.4em;
+}
+.slide-cartella-appendice .occhiello {
+  color: var(--colore-copertina-accento);
+}
+.slide-cartella-appendice h2 {
+  font-size: 2.4em;
+  line-height: 1.08;
+}
+.ca-sottotitolo {
+  margin: 1em 0 0;
+  font-size: 1.1em;
+  color: var(--colore-copertina-testo);
+  opacity: 0.85;
+}
+.ca-contenuti {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: contenuto;
+}
+.ca-contenuti li {
+  display: grid;
+  grid-template-columns: 2.4em minmax(0, 1fr);
+  align-items: baseline;
+  padding: 0.55em 0;
+  border-bottom: var(--spessore-filetto) solid color-mix(in srgb, var(--colore-copertina-testo) 28%, transparent);
+  font-size: 1.1em;
+  line-height: 1.3;
+  counter-increment: contenuto;
+}
+.ca-contenuti li:first-child {
+  border-top: var(--spessore-filetto) solid color-mix(in srgb, var(--colore-copertina-testo) 28%, transparent);
+}
+.ca-contenuti li::before {
+  content: counter(contenuto, decimal-leading-zero);
+  font-family: var(--famiglia-numeri);
+  font-size: 0.85em;
+  font-weight: 700;
+  color: var(--colore-copertina-accento);
+}
+
+@container (max-width: 899px) {
+  .ca-corpo {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.8em;
+  }
+  .slide-cartella-appendice h2 {
+    font-size: 1.9em;
+  }
+}
