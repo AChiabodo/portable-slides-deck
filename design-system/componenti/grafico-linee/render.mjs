@@ -1,5 +1,5 @@
 const LARGHEZZA = 720;
-const ALTEZZA = 300;
+const ALTEZZE = { compatta: 220, standard: 300, alta: 400 };
 const MARGINE = { sinistra: 40, destra: 40, alto: 34, basso: 40 };
 const GUIDE = 4;
 const MARCATORI = ['cerchio', 'quadrato', 'rombo'];
@@ -12,7 +12,8 @@ function marcatore(tipo, x, y, classe) {
   return `<circle class="${classe}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="6.5"/>`;
 }
 
-export default function render({ titolo, linee }, { esc, t, id }) {
+export default function render({ titolo, linee }, { esc, t, id, regolazioni }) {
+  const ALTEZZA = ALTEZZE[regolazioni.altezza];
   const etichette = linee[0].serie.punti.map((p) => p.etichetta);
   const valori = linee.flatMap((l) => l.serie.punti.map((p) => p.valore));
   const minimo = Math.min(...valori);
@@ -40,12 +41,14 @@ export default function render({ titolo, linee }, { esc, t, id }) {
       const punti = l.serie.punti.map((p, i) => ({ x: px(i), y: py(p.valore), testo: p.testo, valore: p.valore }));
       const percorso = punti.map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
       // Il valore più alto di ogni punto sta sopra il marcatore, gli altri sotto: così le etichette non si sovrappongono.
-      const valoriTesto = punti
-        .map((p, i) => {
-          const sopra = linee.every((altra, j) => j === k || (altra.serie.punti[i]?.valore ?? -Infinity) <= p.valore);
-          return `<text class="valore-linea linea-${k + 1}" x="${p.x.toFixed(1)}" y="${(p.y + (sopra ? -13 : 24)).toFixed(1)}" text-anchor="middle">${esc(p.testo)}</text>`;
-        })
-        .join('');
+      const valoriTesto = regolazioni.valori === 'nascondi'
+        ? ''
+        : punti
+            .map((p, i) => {
+              const sopra = linee.every((altra, j) => j === k || (altra.serie.punti[i]?.valore ?? -Infinity) <= p.valore);
+              return `<text class="valore-linea linea-${k + 1}" x="${p.x.toFixed(1)}" y="${(p.y + (sopra ? -13 : 24)).toFixed(1)}" text-anchor="middle">${esc(p.testo)}</text>`;
+            })
+            .join('');
       const marcatori = punti.map((p) => marcatore(MARCATORI[k], p.x, p.y, `punto linea-${k + 1}`)).join('');
       return `<g><polyline class="linea linea-${k + 1}" points="${percorso}"/>${marcatori}${valoriTesto}</g>`;
     })
@@ -63,7 +66,8 @@ export default function render({ titolo, linee }, { esc, t, id }) {
   return (
     `<figure class="grafico grafico-linee">` +
     (nome ? `<figcaption>${nome}</figcaption>` : '') +
-    `<ul class="legenda">${legenda}</ul>` +
+    // Con più linee la legenda è l'unico modo per distinguerle: si nasconde solo con una linea.
+    (regolazioni.legenda === 'nascondi' && linee.length === 1 ? '' : `<ul class="legenda">${legenda}</ul>`) +
     `<svg viewBox="0 0 ${LARGHEZZA} ${ALTEZZA}" role="img" aria-labelledby="${id}-d"><desc id="${id}-d">${esc(descrizione)}</desc>` +
     `${guide}${asseX}${disegno}</svg></figure>`
   );

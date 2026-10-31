@@ -117,6 +117,8 @@ Il validatore rifiuta le Regolazioni non dichiarate e i valori fuori elenco. Sen
 
 Nel codice: `render({ zone, regolazioni, t, id })` per i Layout e `render(props, { esc, t, id, regolazioni })` per i Componenti ricevono sempre tutti i valori, con i predefiniti dove la Specifica tace. Per le Regolazioni solo CSS, il motore aggiunge alla `<section>` l'attributo `data-reg-<nome>="<valore>"` **solo** se il valore non è il predefinito: il CSS del Layout lo aggancia con `.slide-<layout>[data-reg-<nome>="<valore>"]`. Se la Regolazione cambia l'**ordine**, il `render` deve riordinare il markup e non usare `order` nel CSS, così lettura da tastiera e da screen reader seguono l'ordine visivo. I limiti di contenuto non dipendono dalla Regolazione: vanno tarati sul valore più stretto.
 
+**Tipo `punto`** (solo Componenti): unica eccezione alle liste chiuse. `"evidenzia": { "tipo": "punto", "serie": "serie" }` accetta l'etichetta di un punto della serie indicata dalla prop `serie`; il validatore la verifica contro l'Analisi e rifiuta etichette inesistenti. Non ha predefinito: se manca, nessun punto è evidenziato. Il `render` riceve il testo (o `undefined`); la distinzione non deve mai essere solo di colore (i grafici usano contorno o arco più spesso, grassetto sottolineato e una riga nella descrizione accessibile, tradotta con `grafici.evidenziato`).
+
 ### Regolazioni dei Layout
 
 | Layout | Regolazione (predefinito in grassetto) | Note |
@@ -128,6 +130,17 @@ Nel codice: `render({ zone, regolazioni, t, id })` per i Layout e `render(props,
 | `griglia-schede` | `densita` | |
 
 `ordine: invertito` riordina anche il markup, quindi anche l'impilamento sotto i 900px. `densita: compatta` riduce il corpo del testo (CSS condiviso in `base.css`).
+
+### Regolazioni dei Componenti
+
+| Componente | Regolazioni (predefinito in grassetto) |
+|---|---|
+| `grafico-barre` | `altezza`: `compatta`, **`standard`**, `alta` · `ordinamento`: **`dato`**, `crescente`, `decrescente` · `orientamento`: **`orizzontale`**, `verticale` · `valori`: **`mostra`**, `nascondi` · `evidenzia`: punto della serie |
+| `grafico-ciambella` | `altezza` · `ordinamento` · `valori` (in legenda) · `evidenzia` |
+| `grafico-linee` | `altezza` · `valori` · `legenda` (si nasconde solo con una linea: con più linee identifica le curve) |
+| `kpi` | `dimensione`: **`standard`**, `grande` |
+
+L'ordinamento è solo geometria: aggiorna anche la descrizione accessibile e non scrive numeri nuovi.
 
 ## Tema
 

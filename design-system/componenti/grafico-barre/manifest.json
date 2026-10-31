@@ -5,5 +5,12 @@
   "props": {
     "serie": { "tipo": "serie", "obbligatoria": true, "maxPunti": 8 },
     "titolo": { "tipo": "testo", "maxParole": 12 }
+  },
+  "regolazioni": {
+    "altezza": { "valori": ["compatta", "standard", "alta"], "predefinito": "standard" },
+    "ordinamento": { "valori": ["dato", "crescente", "decrescente"], "predefinito": "dato" },
+    "orientamento": { "valori": ["orizzontale", "verticale"], "predefinito": "orizzontale" },
+    "valori": { "valori": ["mostra", "nascondi"], "predefinito": "mostra" },
+    "evidenzia": { "tipo": "punto", "serie": "serie" }
   }
 }

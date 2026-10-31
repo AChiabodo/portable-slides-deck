@@ -5,5 +5,11 @@
   "props": {
     "serie": { "tipo": "serie", "obbligatoria": true, "maxPunti": 6 },
     "totale": { "tipo": "valore" }
+  },
+  "regolazioni": {
+    "altezza": { "valori": ["compatta", "standard", "alta"], "predefinito": "standard" },
+    "ordinamento": { "valori": ["dato", "crescente", "decrescente"], "predefinito": "dato" },
+    "valori": { "valori": ["mostra", "nascondi"], "predefinito": "mostra" },
+    "evidenzia": { "tipo": "punto", "serie": "serie" }
   }
 }

@@ -14,5 +14,10 @@
         "serie": { "tipo": "serie", "obbligatoria": true, "maxPunti": 10 }
       }
     }
+  },
+  "regolazioni": {
+    "altezza": { "valori": ["compatta", "standard", "alta"], "predefinito": "standard" },
+    "valori": { "valori": ["mostra", "nascondi"], "predefinito": "mostra" },
+    "legenda": { "valori": ["mostra", "nascondi"], "predefinito": "mostra" }
   }
 }

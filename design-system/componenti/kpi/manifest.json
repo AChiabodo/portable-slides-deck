@@ -13,5 +13,8 @@
         "valore": { "tipo": "valore", "obbligatoria": true }
       }
     }
+  },
+  "regolazioni": {
+    "dimensione": { "valori": ["standard", "grande"], "predefinito": "standard" }
   }
 }

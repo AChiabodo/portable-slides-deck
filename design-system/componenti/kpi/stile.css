@@ -35,6 +35,15 @@
   text-transform: var(--trasformazione-etichetta);
   color: var(--colore-tenue);
 }
+.kpi-riga[data-dimensione='grande'] .kpi {
+  padding: 1em 1.2em 1.1em;
+}
+.kpi-riga[data-dimensione='grande'] .kpi-valore {
+  font-size: 2.8em;
+}
+.kpi-riga[data-dimensione='grande'] .kpi-etichetta {
+  font-size: 0.95em;
+}
 @container (max-width: 600px) {
   .kpi-riga {
     grid-template-columns: minmax(0, 1fr);

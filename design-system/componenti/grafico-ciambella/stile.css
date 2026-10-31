@@ -14,6 +14,28 @@
   max-height: 100%;
   font-family: var(--font-sans);
 }
+.grafico-ciambella[data-altezza='compatta'] svg {
+  flex-basis: 8em;
+  width: 8em;
+}
+.grafico-ciambella[data-altezza='alta'] svg {
+  flex-basis: 14em;
+  width: 14em;
+}
+.grafico-ciambella .fetta.attenuata {
+  opacity: 0.4;
+}
+.grafico-ciambella .fetta.evidenziata {
+  stroke-width: 30;
+}
+.ciambella-voce.attenuata .ciambella-segno {
+  opacity: 0.4;
+}
+.ciambella-voce.evidenziata .ciambella-nome,
+.ciambella-voce.evidenziata .ciambella-valore {
+  font-weight: 800;
+  text-decoration: underline;
+}
 .grafico-ciambella .pista {
   fill: none;
   stroke: var(--colore-linea);

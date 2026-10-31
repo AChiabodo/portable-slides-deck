@@ -9,7 +9,8 @@
     "barre": "Grafico a barre",
     "linee": "Grafico a linee",
     "ciambella": "Grafico a ciambella",
-    "cascata": "Grafico a cascata"
+    "cascata": "Grafico a cascata",
+    "evidenziato": "Evidenziato"
   },
   "scelte": {
     "stato": {

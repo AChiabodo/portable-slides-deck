@@ -33,3 +33,14 @@
   fill: var(--colore-inchiostro);
   font-family: var(--famiglia-numeri);
 }
+.grafico-barre .barra.attenuata {
+  opacity: 0.4;
+}
+.grafico-barre .barra.evidenziata {
+  stroke: var(--colore-inchiostro);
+  stroke-width: 3;
+}
+.grafico-barre text.evidenziata {
+  font-weight: 800;
+  text-decoration: underline;
+}
