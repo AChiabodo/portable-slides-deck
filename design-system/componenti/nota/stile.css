@@ -4,17 +4,17 @@
   gap: 1em;
   padding: 0.8em 1.1em;
   background: var(--colore-accento-tenue);
-  border-left: 0.3em solid var(--colore-accento);
-  border-radius: 0.3em;
+  border-left: calc(0.3em * var(--bordo-scheda-accento)) solid var(--colore-accento);
+  border-radius: calc(0.3em * var(--raggio-scheda));
   color: var(--colore-inchiostro);
 }
 .nota-etichetta {
   flex: none;
-  font-family: var(--font-mono);
+  font-family: var(--famiglia-numeri);
   font-size: 0.75em;
   font-weight: 700;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
+  text-transform: var(--trasformazione-etichetta);
   color: var(--colore-accento);
 }
 .nota-testo {

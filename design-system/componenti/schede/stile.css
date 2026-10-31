@@ -14,13 +14,13 @@
   min-width: 0;
   padding: 1.1em 1.3em 1.2em;
   background: var(--colore-carta);
-  border: 1px solid var(--colore-linea);
-  border-top: 0.25em solid var(--colore-accento);
-  border-radius: 0.5em;
+  border: var(--spessore-filetto) solid var(--colore-linea);
+  border-top: calc(0.25em * var(--bordo-scheda-accento)) solid var(--colore-accento);
+  border-radius: calc(0.5em * var(--raggio-scheda));
   box-shadow: var(--ombra-scheda);
 }
 .scheda-numero {
-  font-family: var(--font-mono);
+  font-family: var(--famiglia-numeri);
   font-size: 0.8em;
   font-weight: 700;
   letter-spacing: 0.08em;

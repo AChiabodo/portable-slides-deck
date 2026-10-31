@@ -20,10 +20,10 @@
   flex: none;
   padding: 0.7em 1.3em;
   background: var(--colore-superficie);
-  border-bottom: 1px solid var(--colore-linea);
+  border-bottom: var(--spessore-filetto) solid var(--colore-linea);
   font-size: 0.85em;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-transform: var(--trasformazione-etichetta);
   color: var(--colore-tenue);
 }
 .affiancato-destra .affiancato-intestazione {

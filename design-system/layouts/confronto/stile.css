@@ -13,18 +13,18 @@
   flex-direction: column;
   overflow: hidden;
   background: var(--colore-carta);
-  border: 1px solid var(--colore-linea);
-  border-radius: 0.6em;
+  border: var(--spessore-filetto) solid var(--colore-linea);
+  border-radius: calc(0.6em * var(--raggio-scheda));
   box-shadow: var(--ombra-scheda);
 }
 .confronto-intestazione {
   margin: 0;
   padding: 0.75em 1.3em;
   background: var(--colore-superficie);
-  border-bottom: 1px solid var(--colore-linea);
+  border-bottom: var(--spessore-filetto) solid var(--colore-linea);
   font-size: 0.9em;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-transform: var(--trasformazione-etichetta);
   color: var(--colore-tenue);
 }
 .confronto-colonna:last-child .confronto-intestazione {
@@ -44,7 +44,7 @@
   flex: 1;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--colore-linea);
+  border-bottom: var(--spessore-filetto) solid var(--colore-linea);
   font-size: 1.15em;
 }
 .confronto-elenco li:last-child {

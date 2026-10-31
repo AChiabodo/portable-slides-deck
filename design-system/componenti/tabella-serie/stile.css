@@ -3,7 +3,7 @@
 }
 .tabella-serie figcaption {
   margin-bottom: 0.6em;
-  font-family: var(--font-mono);
+  font-family: var(--famiglia-numeri);
   font-size: 0.85em;
   color: var(--colore-tenue);
 }
@@ -20,11 +20,11 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   text-align: left;
-  text-transform: uppercase;
+  text-transform: var(--trasformazione-etichetta);
 }
 .tabella-serie tbody th {
   padding: 0.4em 0.7em;
-  font-family: var(--font-mono);
+  font-family: var(--famiglia-numeri);
   font-weight: 700;
   text-align: left;
   white-space: nowrap;
@@ -34,14 +34,14 @@
   min-width: 0;
 }
 .tabella-serie tbody tr {
-  border-bottom: 1px solid var(--colore-linea);
+  border-bottom: var(--spessore-filetto) solid var(--colore-linea);
 }
 .tabella-serie tbody tr:nth-child(even) {
   background: var(--colore-superficie);
 }
 .cella-valore {
   display: block;
-  font-family: var(--font-mono);
+  font-family: var(--famiglia-numeri);
   font-variant-numeric: tabular-nums;
 }
 .cella-barra {

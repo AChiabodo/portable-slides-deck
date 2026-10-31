@@ -40,9 +40,9 @@
   gap: 1em;
   padding: 0.7em 1.1em;
   background: color-mix(in srgb, var(--colore-copertina-testo) 8%, transparent);
-  border: 1px solid color-mix(in srgb, var(--colore-copertina-testo) 22%, transparent);
-  border-left: 0.3em solid var(--colore-copertina-accento);
-  border-radius: 0.4em;
+  border: var(--spessore-filetto) solid color-mix(in srgb, var(--colore-copertina-testo) 22%, transparent);
+  border-left: calc(0.3em * var(--bordo-scheda-accento)) solid var(--colore-copertina-accento);
+  border-radius: calc(0.4em * var(--raggio-scheda));
   font-size: 1.15em;
 }
 .chiusura-passi li::before {

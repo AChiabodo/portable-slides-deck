@@ -21,10 +21,10 @@
   gap: 0.35em;
   padding: 3.3em 1.1em 1.1em;
   background: var(--colore-carta);
-  border: 1px solid var(--colore-linea);
-  border-top: 0.25em solid var(--colore-accento);
-  border-left: 1px solid var(--colore-linea);
-  border-radius: 0.5em;
+  border: var(--spessore-filetto) solid var(--colore-linea);
+  border-top: calc(0.25em * var(--bordo-scheda-accento)) solid var(--colore-accento);
+  border-left: var(--spessore-filetto) solid var(--colore-linea);
+  border-radius: calc(0.5em * var(--raggio-scheda));
   box-shadow: var(--ombra-scheda);
 }
 .slide-percorso-fasi .passo::after {

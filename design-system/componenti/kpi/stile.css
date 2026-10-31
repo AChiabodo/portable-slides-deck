@@ -14,9 +14,9 @@
   min-width: 0;
   padding: 0.7em 1em 0.8em;
   background: var(--colore-carta);
-  border: 1px solid var(--colore-linea);
-  border-left: 0.3em solid var(--colore-accento);
-  border-radius: 0.4em;
+  border: var(--spessore-filetto) solid var(--colore-linea);
+  border-left: calc(0.3em * var(--bordo-scheda-accento)) solid var(--colore-accento);
+  border-radius: calc(0.4em * var(--raggio-scheda));
   box-shadow: var(--ombra-scheda);
 }
 .kpi-valore {
@@ -32,7 +32,7 @@
   font-size: 0.78em;
   font-weight: 600;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
+  text-transform: var(--trasformazione-etichetta);
   color: var(--colore-tenue);
 }
 @container (max-width: 600px) {

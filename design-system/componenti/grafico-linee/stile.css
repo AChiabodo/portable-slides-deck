@@ -5,7 +5,7 @@
 }
 .grafico-linee .tacca {
   fill: var(--colore-tenue);
-  font-family: var(--font-mono);
+  font-family: var(--famiglia-numeri);
   font-size: 17px;
 }
 .grafico-linee .linea {
@@ -39,7 +39,7 @@
   fill: var(--colore-inchiostro);
 }
 .grafico-linee .valore-linea {
-  font-family: var(--font-mono);
+  font-family: var(--famiglia-numeri);
   font-size: 17px;
   font-weight: 700;
 }

@@ -6,7 +6,7 @@
   font-size: 0.8em;
   font-weight: 700;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
+  text-transform: var(--trasformazione-etichetta);
   color: var(--colore-tenue);
 }
 .grafico svg {
@@ -31,5 +31,5 @@
 }
 .grafico-barre .valore {
   fill: var(--colore-inchiostro);
-  font-family: var(--font-mono);
+  font-family: var(--famiglia-numeri);
 }

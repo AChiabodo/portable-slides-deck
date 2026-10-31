@@ -18,9 +18,9 @@
   align-items: center;
   padding: 0.5em 1.2em 0.5em 1.6em;
   background: var(--colore-carta);
-  border: 1px solid var(--colore-linea);
-  border-left: 0.35em solid var(--colore-accento);
-  border-radius: 0.4em;
+  border: var(--spessore-filetto) solid var(--colore-linea);
+  border-left: calc(0.35em * var(--bordo-scheda-accento)) solid var(--colore-accento);
+  border-radius: calc(0.4em * var(--raggio-scheda));
   box-shadow: var(--ombra-scheda);
   font-size: 1.2em;
 }

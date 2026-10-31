@@ -20,8 +20,8 @@
   align-items: center;
   padding: 1.1em 1.3em;
   background: var(--colore-carta);
-  border: 1px solid var(--colore-linea);
-  border-radius: 0.6em;
+  border: var(--spessore-filetto) solid var(--colore-linea);
+  border-radius: calc(0.6em * var(--raggio-scheda));
   box-shadow: var(--ombra-scheda);
 }
 .rgc-grafico > * {
@@ -34,9 +34,9 @@
   margin: 0;
   padding: 1.1em 1.3em;
   background: var(--colore-carta);
-  border: 1px solid var(--colore-linea);
-  border-left: 0.3em solid var(--colore-accento);
-  border-radius: 0.6em;
+  border: var(--spessore-filetto) solid var(--colore-linea);
+  border-left: calc(0.3em * var(--bordo-scheda-accento)) solid var(--colore-accento);
+  border-radius: calc(0.6em * var(--raggio-scheda));
   box-shadow: var(--ombra-scheda);
   font-size: 1.1em;
 }
