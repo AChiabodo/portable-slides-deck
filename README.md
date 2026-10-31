@@ -276,7 +276,7 @@ L'elenco per ogni Layout e Componente è in [`docs/catalogo.md`](docs/catalogo.m
 ### 5. Condividere senza allegati
 `esporta-singolo` produce un unico `.html` autosufficiente da allegare a una mail; `esporta-pdf` il PDF per stampa e archivio.
 
-La presentazione dimostrativa [`esempi/catalogo-demo/`](esempi/catalogo-demo) (15 slide: proposta, stato, rischi, esperimento, decisione, appendice) riunisce più casi d'uso e usa ogni Layout e Componente nuovo. [`esempi/regolazioni-demo/`](esempi/regolazioni-demo) (4 slide) mostra le Regolazioni e i Layout a colonne.
+La presentazione dimostrativa [`esempi/catalogo-demo/`](esempi/catalogo-demo) (15 slide: proposta, stato, rischi, esperimento, decisione, appendice) riunisce più casi d'uso e usa ogni Layout e Componente nuovo. [`esempi/regolazioni-demo/`](esempi/regolazioni-demo) (4 slide) mostra le Regolazioni e i Layout a colonne; [`esempi/supporto-clienti/`](esempi/supporto-clienti) (8 slide, dati sintetici di un servizio clienti) le usa in una storia completa, con una slide in `sfondo: enfasi`.
 
 ---
 

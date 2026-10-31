@@ -1,0 +1,178 @@
+{
+  "titolo": "Supporto clienti: otto settimane di ticket",
+  "lingua": "it",
+  "tema": "executive",
+  "slide": [
+    {
+      "layout": "copertina",
+      "zone": {
+        "titolo": "Supporto clienti: otto settimane di ticket",
+        "sottotitolo": "Volumi, tempi di risposta e soddisfazione per canale, dati sintetici"
+      }
+    },
+    {
+      "layout": "indice",
+      "zone": {
+        "titolo": "Che cosa vedremo",
+        "voci": [
+          "Il volume cresce ogni settimana",
+          "La chat è il primo canale",
+          "Tempi e soddisfazione non coincidono",
+          "Tre canali, tre profili",
+          "Dove intervenire"
+        ]
+      }
+    },
+    {
+      "layout": "dashboard-analisi",
+      "zone": {
+        "occhiello": "Volume",
+        "titolo": "I ticket crescono ogni settimana",
+        "principale": [
+          {
+            "componente": "grafico-linee",
+            "titolo": "Ticket per settimana",
+            "linee": [{ "nome": "Ticket", "serie": "ticket_per_settimana" }],
+            "regolazioni": { "altezza": "alta" }
+          }
+        ],
+        "kpi": [
+          {
+            "componente": "kpi",
+            "voci": [
+              { "etichetta": "Ticket", "valore": "ticket_totale" },
+              { "etichetta": "Crescita", "valore": "crescita_ticket" },
+              { "etichetta": "Soddisfazione", "valore": "csat_medio" }
+            ]
+          }
+        ],
+        "commento": "Dalla prima all'ultima settimana i ticket crescono del {{crescita_ticket}}: la domanda non si è ancora stabilizzata."
+      },
+      "regolazioni": { "rapporto-colonne": "2-1" }
+    },
+    {
+      "layout": "risultato-grafico-commento",
+      "zone": {
+        "titolo": "La chat è già il primo canale, con il {{quota_chat}} dei ticket",
+        "kpi": [
+          {
+            "componente": "kpi",
+            "voci": [{ "etichetta": "Ticket in chat", "valore": "ticket_chat" }],
+            "regolazioni": { "dimensione": "grande" }
+          }
+        ],
+        "grafico": [
+          {
+            "componente": "grafico-barre",
+            "serie": "ticket_per_canale",
+            "titolo": "Ticket per canale",
+            "regolazioni": { "ordinamento": "decrescente", "evidenzia": "Chat" }
+          }
+        ],
+        "commento": "Chat ed email si equivalgono per volume; il telefono pesa la metà."
+      },
+      "regolazioni": { "rapporto-colonne": "2-1" }
+    },
+    {
+      "layout": "due-colonne",
+      "zone": {
+        "occhiello": "Canali",
+        "titolo": "Velocità e soddisfazione raccontano storie diverse",
+        "intestazione-1": "Per canale",
+        "colonna-1": [
+          {
+            "componente": "tabella-serie",
+            "intestazione": "Canale",
+            "colonne": [
+              { "titolo": "Prima risposta", "serie": "tempo_per_canale" },
+              { "titolo": "Voto", "serie": "csat_per_canale" }
+            ]
+          }
+        ],
+        "intestazione-2": "Argomenti",
+        "colonna-2": [
+          {
+            "componente": "grafico-ciambella",
+            "serie": "ticket_per_categoria",
+            "regolazioni": { "ordinamento": "decrescente", "evidenzia": "Fatturazione" }
+          }
+        ],
+        "commento": "La chat risponde in {{tempo_chat}} ma è il canale meno apprezzato; il telefono risponde subito e soddisfa di più."
+      },
+      "regolazioni": { "rapporto-colonne": "3-2", "allineamento-verticale": "centro" }
+    },
+    {
+      "layout": "tre-colonne",
+      "zone": {
+        "occhiello": "Profili",
+        "titolo": "Tre canali, tre profili",
+        "intestazione-1": "Email",
+        "colonna-1": [
+          {
+            "componente": "kpi",
+            "voci": [
+              { "etichetta": "Risposta", "valore": "tempo_email" },
+              { "etichetta": "Voto", "valore": "csat_email" }
+            ]
+          }
+        ],
+        "intestazione-2": "Chat",
+        "colonna-2": [
+          {
+            "componente": "kpi",
+            "voci": [
+              { "etichetta": "Risposta", "valore": "tempo_chat" },
+              { "etichetta": "Voto", "valore": "csat_chat" }
+            ]
+          }
+        ],
+        "intestazione-3": "Telefono",
+        "colonna-3": [
+          {
+            "componente": "kpi",
+            "voci": [
+              { "etichetta": "Risposta", "valore": "tempo_telefono" },
+              { "etichetta": "Voto", "valore": "csat_telefono" }
+            ]
+          }
+        ],
+        "commento": "Da sinistra, in ordine di volume: chat, email, telefono."
+      },
+      "regolazioni": { "ordine": "2-1-3" }
+    },
+    {
+      "layout": "risultato-grafico-commento",
+      "zone": {
+        "titolo": "Il vero ritardo è l'email: prima risposta in {{tempo_email}}",
+        "kpi": [
+          {
+            "componente": "kpi",
+            "voci": [{ "etichetta": "Email, prima risposta", "valore": "tempo_email" }],
+            "regolazioni": { "dimensione": "grande" }
+          }
+        ],
+        "grafico": [
+          {
+            "componente": "grafico-barre",
+            "serie": "tempo_per_canale",
+            "titolo": "Ore alla prima risposta",
+            "regolazioni": { "ordinamento": "decrescente", "evidenzia": "Email" }
+          }
+        ],
+        "commento": "Accorciare l'email vale più di qualsiasi altro intervento sui tempi."
+      },
+      "regolazioni": { "sfondo": "enfasi", "rapporto-colonne": "1-1" }
+    },
+    {
+      "layout": "chiusura",
+      "zone": {
+        "titolo": "Tre decisioni per le prossime settimane",
+        "passi": [
+          "Portare la prima risposta via email sotto le quattro ore",
+          "Indagare perché la chat soddisfa meno nonostante la velocità",
+          "Preparare la capacità della chat per la crescita attesa"
+        ]
+      }
+    }
+  ]
+}

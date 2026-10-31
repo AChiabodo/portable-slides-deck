@@ -1,0 +1,347 @@
+{
+  "valori": {
+    "ticket_totale": {
+      "etichetta": "Ticket del periodo",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0
+      },
+      "valore": 3293,
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "ticket",
+        "operazione": "somma"
+      }
+    },
+    "crescita_ticket": {
+      "etichetta": "Crescita dei ticket dalla prima all'ultima settimana",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 1
+      },
+      "valore": 47.7,
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "ticket",
+        "operazione": "somma per settimana, variazione % S1 -> S8"
+      }
+    },
+    "tempo_medio": {
+      "etichetta": "Tempo medio alla prima risposta",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 1,
+        "unita": "h"
+      },
+      "valore": 4.3,
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "ore_prima_risposta",
+        "operazione": "media pesata sui ticket"
+      }
+    },
+    "csat_medio": {
+      "etichetta": "Soddisfazione media (da 1 a 5)",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 1
+      },
+      "valore": 4.1,
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "csat",
+        "operazione": "media pesata sui ticket"
+      }
+    },
+    "quota_chat": {
+      "etichetta": "Quota dei ticket in chat",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 1
+      },
+      "valore": 40.4,
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "ticket",
+        "operazione": "somma Chat / somma totale"
+      }
+    },
+    "ticket_email": {
+      "etichetta": "Ticket Email",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0
+      },
+      "valore": 1307,
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "ticket",
+        "operazione": "somma, canale Email"
+      }
+    },
+    "tempo_email": {
+      "etichetta": "Prima risposta Email",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 1,
+        "unita": "h"
+      },
+      "valore": 9.4,
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "ore_prima_risposta",
+        "operazione": "media pesata sui ticket, canale Email"
+      }
+    },
+    "csat_email": {
+      "etichetta": "Soddisfazione Email",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 1
+      },
+      "valore": 4.1,
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "csat",
+        "operazione": "media pesata sui ticket, canale Email"
+      }
+    },
+    "ticket_chat": {
+      "etichetta": "Ticket Chat",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0
+      },
+      "valore": 1332,
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "ticket",
+        "operazione": "somma, canale Chat"
+      }
+    },
+    "tempo_chat": {
+      "etichetta": "Prima risposta Chat",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 1,
+        "unita": "h"
+      },
+      "valore": 1.3,
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "ore_prima_risposta",
+        "operazione": "media pesata sui ticket, canale Chat"
+      }
+    },
+    "csat_chat": {
+      "etichetta": "Soddisfazione Chat",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 1
+      },
+      "valore": 3.8,
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "csat",
+        "operazione": "media pesata sui ticket, canale Chat"
+      }
+    },
+    "ticket_telefono": {
+      "etichetta": "Ticket Telefono",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0
+      },
+      "valore": 654,
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "ticket",
+        "operazione": "somma, canale Telefono"
+      }
+    },
+    "tempo_telefono": {
+      "etichetta": "Prima risposta Telefono",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 1,
+        "unita": "h"
+      },
+      "valore": 0.5,
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "ore_prima_risposta",
+        "operazione": "media pesata sui ticket, canale Telefono"
+      }
+    },
+    "csat_telefono": {
+      "etichetta": "Soddisfazione Telefono",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 1
+      },
+      "valore": 4.5,
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "csat",
+        "operazione": "media pesata sui ticket, canale Telefono"
+      }
+    }
+  },
+  "serie": {
+    "ticket_per_settimana": {
+      "etichetta": "Ticket per settimana",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0
+      },
+      "punti": [
+        {
+          "etichetta": "S1",
+          "valore": 329
+        },
+        {
+          "etichetta": "S2",
+          "valore": 363
+        },
+        {
+          "etichetta": "S3",
+          "valore": 377
+        },
+        {
+          "etichetta": "S4",
+          "valore": 391
+        },
+        {
+          "etichetta": "S5",
+          "valore": 433
+        },
+        {
+          "etichetta": "S6",
+          "valore": 452
+        },
+        {
+          "etichetta": "S7",
+          "valore": 462
+        },
+        {
+          "etichetta": "S8",
+          "valore": 486
+        }
+      ],
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "ticket",
+        "operazione": "somma per settimana"
+      }
+    },
+    "ticket_per_canale": {
+      "etichetta": "Ticket per canale",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0
+      },
+      "punti": [
+        {
+          "etichetta": "Chat",
+          "valore": 1332
+        },
+        {
+          "etichetta": "Email",
+          "valore": 1307
+        },
+        {
+          "etichetta": "Telefono",
+          "valore": 654
+        }
+      ],
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "ticket",
+        "operazione": "somma per canale"
+      }
+    },
+    "ticket_per_categoria": {
+      "etichetta": "Ticket per categoria",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0
+      },
+      "punti": [
+        {
+          "etichetta": "Fatturazione",
+          "valore": 982
+        },
+        {
+          "etichetta": "Accesso",
+          "valore": 924
+        },
+        {
+          "etichetta": "Funzioni",
+          "valore": 892
+        },
+        {
+          "etichetta": "Altro",
+          "valore": 495
+        }
+      ],
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "ticket",
+        "operazione": "somma per categoria"
+      }
+    },
+    "tempo_per_canale": {
+      "etichetta": "Ore alla prima risposta per canale",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 1,
+        "unita": "h"
+      },
+      "punti": [
+        {
+          "etichetta": "Email",
+          "valore": 9.4
+        },
+        {
+          "etichetta": "Chat",
+          "valore": 1.3
+        },
+        {
+          "etichetta": "Telefono",
+          "valore": 0.5
+        }
+      ],
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "ore_prima_risposta",
+        "operazione": "media pesata sui ticket per canale"
+      }
+    },
+    "csat_per_canale": {
+      "etichetta": "Soddisfazione per canale",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 1
+      },
+      "punti": [
+        {
+          "etichetta": "Email",
+          "valore": 4.1
+        },
+        {
+          "etichetta": "Chat",
+          "valore": 3.8
+        },
+        {
+          "etichetta": "Telefono",
+          "valore": 4.5
+        }
+      ],
+      "provenienza": {
+        "file": "dati/ticket.csv",
+        "colonna": "csat",
+        "operazione": "media pesata sui ticket per canale"
+      }
+    }
+  }
+}
