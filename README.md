@@ -80,6 +80,9 @@ Lo scaffold contiene una cartella `dati/`, un `analisi.py` da completare, un `an
 | `genera <cartella>` | Valida e genera `dist/index.html` con gli asset |
 | `esporta-singolo <cartella>` | Valida e produce `dist/presentazione.html`, un unico file da inviare |
 | `esporta-pdf <cartella>` | Produce `dist/presentazione.pdf` con Edge headless |
+| `anteprima <cartella> [--slide=N]` | Valida, genera e salva `dist/anteprime/slide-NN.png` (una per slide, o la sola slide N) con Edge headless, per controllare l'aspetto senza aprire il browser |
+
+`anteprima` e `esporta-pdf` usano Edge: se non è nel percorso standard, imposta `EDGE_PATH`.
 
 Ogni comando accetta `--catalogo <cartella>` (ripetibile) per aggiungere radici di Catalogo locali. Durante la presentazione: `←` `→` (o `Spazio`) per scorrere, `Home`/`End` per inizio e fine, `F` per lo schermo intero. Sotto i 900 px di larghezza la presentazione diventa una lettura verticale.
 

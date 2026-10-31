@@ -9,7 +9,7 @@ const PERCORSI_EDGE = [
   'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe',
 ];
 
-function trovaEdge() {
+export function trovaEdge() {
   return [process.env.EDGE_PATH, ...PERCORSI_EDGE].find((p) => p && existsSync(p));
 }
 
