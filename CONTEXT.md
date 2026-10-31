@@ -47,3 +47,11 @@ _Avoid_: Chart, immagine
 **Esportazione singola**:
 La presentazione impacchettata in un unico file autosufficiente, pronta da inviare senza asset a corredo.
 _Avoid_: Bundle, build
+
+**Stato**:
+Il giudizio dichiarato da chi presenta su un elemento di progetto (milestone, filone di lavoro, azione): completato, in linea, a rischio, in ritardo, non avviato. Non è un dato dell'Analisi e non si calcola: si sceglie da un elenco chiuso e si mostra sempre con icona e testo, mai solo con il colore.
+_Avoid_: Semaforo (è il componente che lo mostra), RAG, status
+
+**Esito**:
+Il giudizio su un criterio di un esperimento o PoC: superato, parziale, non superato. Come lo Stato, è una scelta da elenco chiuso; il risultato misurato che lo motiva è invece un valore dell'Analisi.
+_Avoid_: Verdetto, pass/fail
