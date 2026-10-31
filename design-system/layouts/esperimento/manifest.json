@@ -4,6 +4,11 @@
   "quandoUsarlo": "Per raccontare una prova in ordine: cosa si voleva verificare, come, che cosa è risultato e cosa se ne conclude. Il titolo afferma l'esito. Con due risultati affiancali solo se si leggono insieme. Non per un'analisi senza ipotesi: usa dashboard-analisi.",
   "livelloTitolo": 2,
   "maxParoleSlide": 120,
+  "regolazioni": {
+    "rapporto": { "valori": ["1-1", "2-1", "1-2"], "predefinito": "1-1", "richiede": { "zona": "risultato", "min": 2 } },
+    "allineamento-verticale": { "valori": ["centro", "alto"], "predefinito": "centro" },
+    "densita": { "valori": ["comoda", "compatta"], "predefinito": "comoda" }
+  },
   "zone": [
     { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
     { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 16 },

@@ -37,6 +37,11 @@ h3 {
   left: 0;
 }
 
+/* Regolazione `densita` condivisa dai Layout che la dichiarano: testo e spazi (in em) ridotti di circa l'8%. */
+.slide[data-reg-densita="compatta"] .slide-contenuto {
+  font-size: 3.9cqw;
+}
+
 .presentazione {
   display: flex;
   flex-direction: column;
@@ -206,6 +211,9 @@ h3 {
 }
 
 @media (min-width: 900px) {
+  .slide[data-reg-densita="compatta"] .slide-contenuto {
+    font-size: 1.43cqw;
+  }
   .slide {
     aspect-ratio: 16 / 9;
   }
@@ -319,6 +327,9 @@ h3 {
   .slide-contenuto {
     padding: 3.4cqw 5cqw 6.6cqw;
     font-size: 1.55cqw;
+  }
+  .slide[data-reg-densita="compatta"] .slide-contenuto {
+    font-size: 1.43cqw;
   }
   .slide-contenuto::before {
     height: 0.55cqw;

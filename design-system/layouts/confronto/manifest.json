@@ -4,6 +4,11 @@
   "quandoUsarlo": "Per confrontare due situazioni, opzioni o periodi (prima e dopo, scenario A e B). Le voci delle due colonne si rispondono una a una.",
   "livelloTitolo": 2,
   "maxParoleSlide": 80,
+  "regolazioni": {
+    "rapporto-colonne": { "valori": ["1-1", "3-2", "2-3", "2-1", "1-2"], "predefinito": "1-1" },
+    "ordine": { "valori": ["normale", "invertito"], "predefinito": "normale" },
+    "densita": { "valori": ["comoda", "compatta"], "predefinito": "comoda" }
+  },
   "zone": [
     { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 14 },
     { "nome": "intestazione-sinistra", "tipo": "testo", "obbligatoria": true, "maxParole": 4 },

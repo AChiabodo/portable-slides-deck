@@ -4,6 +4,9 @@
   "quandoUsarlo": "Per presentare un concetto scomposto in parti parallele (cos'è, caratteristiche, vantaggi, ruoli). Per sequenze ordinate usa percorso-fasi, per confrontare due alternative confronto-affiancato.",
   "livelloTitolo": 2,
   "maxParoleSlide": 130,
+  "regolazioni": {
+    "densita": { "valori": ["comoda", "compatta"], "predefinito": "comoda" }
+  },
   "zone": [
     { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
     { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 18 },

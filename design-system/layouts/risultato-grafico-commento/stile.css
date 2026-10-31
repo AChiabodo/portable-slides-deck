@@ -7,7 +7,7 @@
 .rgc-corpo {
   flex: 1;
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  grid-template-columns: minmax(0, var(--rgc-grafico, 3fr)) minmax(0, var(--rgc-commento, 2fr));
   gap: 1.4em;
   align-items: stretch;
   margin-top: 1.2em;
@@ -45,5 +45,24 @@
   .rgc-corpo {
     grid-template-columns: minmax(0, 1fr);
     gap: 1.2em;
+  }
+}
+
+/* Regolazioni: il rapporto è grafico:commento, anche con l'ordine invertito. */
+@container (min-width: 900px) {
+  .slide-risultato-grafico-commento[data-reg-rapporto-colonne="1-1"] .rgc-corpo {
+    --rgc-grafico: 1fr;
+    --rgc-commento: 1fr;
+  }
+  .slide-risultato-grafico-commento[data-reg-rapporto-colonne="2-1"] .rgc-corpo {
+    --rgc-grafico: 2fr;
+    --rgc-commento: 1fr;
+  }
+  .slide-risultato-grafico-commento[data-reg-rapporto-colonne="1-2"] .rgc-corpo {
+    --rgc-grafico: 1fr;
+    --rgc-commento: 2fr;
+  }
+  .slide-risultato-grafico-commento[data-reg-ordine="invertito"] .rgc-corpo {
+    grid-template-columns: minmax(0, var(--rgc-commento, 2fr)) minmax(0, var(--rgc-grafico, 3fr));
   }
 }

@@ -56,3 +56,30 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Regolazioni: il rapporto va da sinistra a destra, nell'ordine in cui le colonne appaiono. */
+@container (min-width: 900px) {
+  .slide-confronto[data-reg-rapporto-colonne="3-2"] .confronto-corpo {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+  .slide-confronto[data-reg-rapporto-colonne="2-3"] .confronto-corpo {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  }
+  .slide-confronto[data-reg-rapporto-colonne="2-1"] .confronto-corpo {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+  .slide-confronto[data-reg-rapporto-colonne="1-2"] .confronto-corpo {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+}
+/* Con l'ordine invertito l'evidenza resta sulla colonna di destra della Specifica, ora la prima. */
+.slide-confronto[data-reg-ordine="invertito"] .confronto-colonna:first-child .confronto-intestazione {
+  background: var(--colore-accento);
+  border-bottom-color: var(--colore-accento);
+  color: var(--colore-carta);
+}
+.slide-confronto[data-reg-ordine="invertito"] .confronto-colonna:last-child .confronto-intestazione {
+  background: var(--colore-superficie);
+  border-bottom-color: var(--colore-linea);
+  color: var(--colore-tenue);
+}

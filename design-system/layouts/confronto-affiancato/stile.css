@@ -57,3 +57,22 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Regolazioni: il rapporto va da sinistra a destra, nell'ordine in cui i pannelli appaiono. */
+@container (min-width: 900px) {
+  .slide-confronto-affiancato[data-reg-rapporto-colonne="3-2"] .affiancato-corpo {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+  .slide-confronto-affiancato[data-reg-rapporto-colonne="2-3"] .affiancato-corpo {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  }
+  .slide-confronto-affiancato[data-reg-rapporto-colonne="2-1"] .affiancato-corpo {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+  .slide-confronto-affiancato[data-reg-rapporto-colonne="1-2"] .affiancato-corpo {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+}
+.slide-confronto-affiancato[data-reg-allineamento-verticale="alto"] .affiancato-contenuto {
+  justify-content: flex-start;
+}

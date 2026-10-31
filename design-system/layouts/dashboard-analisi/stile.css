@@ -8,7 +8,7 @@
   flex: 1;
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  grid-template-columns: minmax(0, var(--dash-principale, 3fr)) minmax(0, var(--dash-lato, 2fr));
   grid-template-rows: minmax(0, 1fr);
   gap: 1.2em;
   margin-top: 1em;
@@ -76,4 +76,28 @@
     flex: none;
     height: auto;
   }
+}
+
+/* Regolazioni: i rapporti valgono solo con le colonne affiancate. */
+@container (min-width: 900px) {
+  .slide-dashboard-analisi[data-reg-rapporto-colonne="1-1"] .dash-corpo {
+    --dash-principale: 1fr;
+    --dash-lato: 1fr;
+  }
+  .slide-dashboard-analisi[data-reg-rapporto-colonne="2-1"] .dash-corpo {
+    --dash-principale: 2fr;
+    --dash-lato: 1fr;
+  }
+  .slide-dashboard-analisi[data-reg-rapporto-colonne="1-2"] .dash-corpo {
+    --dash-principale: 1fr;
+    --dash-lato: 2fr;
+  }
+  .slide-dashboard-analisi[data-reg-ordine="invertito"] .dash-corpo:not(.dash-solo) {
+    grid-template-columns: minmax(0, var(--dash-lato, 2fr)) minmax(0, var(--dash-principale, 3fr));
+  }
+}
+/* Due componenti in `principale`: altezza relativa, dall'alto in basso. */
+.slide-dashboard-analisi[data-reg-rapporto="2-1"] .dash-principale > :first-child,
+.slide-dashboard-analisi[data-reg-rapporto="1-2"] .dash-principale > :last-child {
+  flex-grow: 2;
 }

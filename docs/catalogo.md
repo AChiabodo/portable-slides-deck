@@ -117,6 +117,18 @@ Il validatore rifiuta le Regolazioni non dichiarate e i valori fuori elenco. Sen
 
 Nel codice: `render({ zone, regolazioni, t, id })` per i Layout e `render(props, { esc, t, id, regolazioni })` per i Componenti ricevono sempre tutti i valori, con i predefiniti dove la Specifica tace. Per le Regolazioni solo CSS, il motore aggiunge alla `<section>` l'attributo `data-reg-<nome>="<valore>"` **solo** se il valore non è il predefinito: il CSS del Layout lo aggancia con `.slide-<layout>[data-reg-<nome>="<valore>"]`. Se la Regolazione cambia l'**ordine**, il `render` deve riordinare il markup e non usare `order` nel CSS, così lettura da tastiera e da screen reader seguono l'ordine visivo. I limiti di contenuto non dipendono dalla Regolazione: vanno tarati sul valore più stretto.
 
+### Regolazioni dei Layout
+
+| Layout | Regolazione (predefinito in grassetto) | Note |
+|---|---|---|
+| `dashboard-analisi` | `rapporto-colonne`: **`3-2`**, `1-1`, `2-1`, `1-2` · `ordine`: **`normale`**, `invertito` · `rapporto`: **`1-1`**, `2-1`, `1-2` · `densita`: **`comoda`**, `compatta` | `rapporto-colonne` è principale:laterale; `rapporto` tra i due componenti della zona `principale` (richiede 2 componenti) |
+| `confronto`, `confronto-affiancato` | `rapporto-colonne`: **`1-1`**, `3-2`, `2-3`, `2-1`, `1-2` · `ordine`: **`normale`**, `invertito` · `densita` (+ `allineamento-verticale`: **`centro`**, `alto` solo su `confronto-affiancato`) | `rapporto-colonne` è da sinistra a destra; in `confronto` l'evidenza resta sulla colonna «destra» anche se invertita |
+| `esperimento` | `rapporto`: **`1-1`**, `2-1`, `1-2` (richiede 2 componenti in `risultato`) · `allineamento-verticale` · `densita` | |
+| `risultato-grafico-commento` | `rapporto-colonne` (grafico:commento) · `ordine` · `densita` | |
+| `griglia-schede` | `densita` | |
+
+`ordine: invertito` riordina anche il markup, quindi anche l'impilamento sotto i 900px. `densita: compatta` riduce il corpo del testo (CSS condiviso in `base.css`).
+
 ## Tema
 
 `temi/<nome>/tema.json`: `variabili` (proprietà CSS senza `--`, es. `colore-carta`) e `contrasti`, coppie di variabili colore verificate contro WCAG AA (rapporto ≥ 4,5:1). Un Tema sotto soglia è rifiutato dal validatore. Un nuovo Tema deve definire le stesse variabili degli altri (un test lo controlla), comprese `colore-accento-tenue`, `colore-accento-secondario`, `colore-positivo` e `ombra-scheda` usate da cornice e schede: copia `executive` o `quiet-editorial` e cambia i valori.

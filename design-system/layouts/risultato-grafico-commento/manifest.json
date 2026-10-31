@@ -4,6 +4,11 @@
   "quandoUsarlo": "Caso principale per presentare un'evidenza dei dati. Il titolo è una frase con il risultato, non un'etichetta del tema; il commento spiega il perché.",
   "livelloTitolo": 2,
   "maxParoleSlide": 70,
+  "regolazioni": {
+    "rapporto-colonne": { "valori": ["3-2", "1-1", "2-1", "1-2"], "predefinito": "3-2" },
+    "ordine": { "valori": ["normale", "invertito"], "predefinito": "normale" },
+    "densita": { "valori": ["comoda", "compatta"], "predefinito": "comoda" }
+  },
   "zone": [
     { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 20 },
     { "nome": "kpi", "tipo": "componenti", "ammessi": ["kpi"], "min": 0, "max": 1 },

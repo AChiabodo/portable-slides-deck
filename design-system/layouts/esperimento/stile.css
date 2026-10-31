@@ -169,3 +169,18 @@
     box-shadow: none;
   }
 }
+
+/* Regolazioni. `rapporto`: altezza relativa dei due risultati, dall'alto in basso. */
+.slide-esperimento[data-reg-rapporto="2-1"] .es-componenti > :first-child,
+.slide-esperimento[data-reg-rapporto="1-2"] .es-componenti > :last-child {
+  flex: 2 1 0;
+}
+.slide-esperimento[data-reg-rapporto="2-1"] .es-componenti > :last-child,
+.slide-esperimento[data-reg-rapporto="1-2"] .es-componenti > :first-child {
+  flex: 1 1 0;
+}
+.slide-esperimento[data-reg-allineamento-verticale="alto"] .es-componenti,
+.slide-esperimento[data-reg-allineamento-verticale="alto"] .es-ipotesi,
+.slide-esperimento[data-reg-allineamento-verticale="alto"] .es-metodo {
+  justify-content: flex-start;
+}

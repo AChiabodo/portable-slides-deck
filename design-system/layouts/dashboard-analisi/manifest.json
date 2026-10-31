@@ -4,6 +4,12 @@
   "quandoUsarlo": "Per presentare un'evidenza dei dati con più livelli di lettura: il grafico o la tabella mostrano il dettaglio, i KPI il numero da ricordare, il commento il perché, la nota l'avvertenza o la conclusione operativa. È il layout d'analisi di default per i temi con cornice.",
   "livelloTitolo": 2,
   "maxParoleSlide": 120,
+  "regolazioni": {
+    "rapporto-colonne": { "valori": ["3-2", "1-1", "2-1", "1-2"], "predefinito": "3-2" },
+    "ordine": { "valori": ["normale", "invertito"], "predefinito": "normale" },
+    "rapporto": { "valori": ["1-1", "2-1", "1-2"], "predefinito": "1-1", "richiede": { "zona": "principale", "min": 2 } },
+    "densita": { "valori": ["comoda", "compatta"], "predefinito": "comoda" }
+  },
   "zone": [
     { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
     { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 20 },
