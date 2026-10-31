@@ -1,0 +1,337 @@
+{
+  "titolo": "Assistente di ricerca documentale: proof of concept",
+  "lingua": "it",
+  "tema": "istituzionale",
+  "numeriAmmessi": ["85", "3", "95"],
+  "slide": [
+    {
+      "layout": "copertina",
+      "zone": {
+        "titolo": "Assistente di ricerca documentale",
+        "sottotitolo": "Proposta, stato di avanzamento e risultati del proof of concept"
+      }
+    },
+    {
+      "layout": "sezione",
+      "zone": {
+        "titolo": "La proposta",
+        "sottotitolo": "Che cosa chiediamo e perché ora"
+      }
+    },
+    {
+      "layout": "sommario-esecutivo",
+      "zone": {
+        "occhiello": "Sommario",
+        "titolo": "L'assistente è pronto per un pilota in un reparto",
+        "identita": [
+          {
+            "componente": "scheda-dati",
+            "voci": [
+              { "etichetta": "Progetto", "valore": "Assistente di ricerca documentale" },
+              { "etichetta": "Ufficio", "valore": "Qualità e conformità" },
+              { "etichetta": "Responsabile", "valore": "Marta Rossi" },
+              { "etichetta": "Fase", "valore": "Proof of concept" }
+            ]
+          }
+        ],
+        "kpi": [
+          {
+            "componente": "kpi",
+            "voci": [
+              { "etichetta": "Risposte corrette", "valore": "precisione" },
+              { "etichetta": "Tempo di ricerca ridotto", "valore": "riduzione_tempo" },
+              { "etichetta": "Costo previsto", "valore": "costo_previsto" }
+            ]
+          }
+        ],
+        "messaggi": [
+          "L'assistente risponde correttamente a oltre otto domande su dieci del campione di prova.",
+          "Il tempo di ricerca si riduce in modo netto rispetto alla ricerca per parole chiave in uso.",
+          "Il costo previsto resta sotto il budget approvato.",
+          "Da migliorare: la citazione della fonte non è ancora completa."
+        ],
+        "raccomandazione": "Approvare un pilota di alcuni mesi nel reparto Qualità, con il budget attuale."
+      }
+    },
+    {
+      "layout": "decisione",
+      "zone": {
+        "occhiello": "Decisione",
+        "titolo": "Come proseguire dopo il proof of concept",
+        "richiesta": "Approvare la fase pilota dell'assistente nel reparto Qualità.",
+        "contesto": "Il proof of concept ha raggiunto gli obiettivi sui tempi e sull'accuratezza. Serve scegliere il perimetro del passo successivo.",
+        "evidenze": [
+          {
+            "componente": "scheda-dati",
+            "voci": [
+              { "etichetta": "Documenti indicizzati", "valore": "{{corpus_totale}}" },
+              { "etichetta": "Risposte corrette", "valore": "{{precisione}}" },
+              { "etichetta": "Costo previsto", "valore": "{{costo_previsto}}" }
+            ]
+          }
+        ],
+        "opzioni": [
+          {
+            "componente": "opzioni-decisione",
+            "opzioni": [
+              {
+                "titolo": "Pilota nel reparto",
+                "ruolo": "raccomandata",
+                "vantaggi": "Valida l'assistente con utenti reali e rischio contenuto.",
+                "svantaggi": "Richiede un referente di reparto per tutta la fase."
+              },
+              {
+                "titolo": "Estensione a tutta l'azienda",
+                "ruolo": "alternativa",
+                "vantaggi": "Beneficio immediato per tutti gli uffici.",
+                "svantaggi": "Costi più alti e rischio sulla qualità delle risposte."
+              },
+              {
+                "titolo": "Sospendere il progetto",
+                "ruolo": "alternativa",
+                "vantaggi": "Nessun nuovo costo.",
+                "svantaggi": "Si perde il lavoro svolto e il beneficio sui tempi."
+              }
+            ]
+          }
+        ],
+        "raccomandazione": "Procedere con il pilota e riesaminare i risultati a fine fase."
+      }
+    },
+    {
+      "layout": "sezione",
+      "zone": {
+        "titolo": "Stato di avanzamento",
+        "sottotitolo": "Milestone, workstream e rischi"
+      }
+    },
+    {
+      "layout": "stato-avanzamento",
+      "zone": {
+        "occhiello": "Stato",
+        "titolo": "Il progetto procede, con un punto di attenzione sull'interfaccia",
+        "complessivo": [
+          {
+            "componente": "semaforo",
+            "voci": [
+              { "etichetta": "Perimetro", "stato": "in-linea", "nota": "Invariato rispetto alla proposta" },
+              { "etichetta": "Tempi", "stato": "a-rischio", "nota": "L'interfaccia è in ritardo sul piano" },
+              { "etichetta": "Costi", "stato": "in-linea", "nota": "Sotto il budget approvato" },
+              { "etichetta": "Qualità", "stato": "in-linea", "nota": "Criteri di accettazione rispettati" }
+            ]
+          }
+        ],
+        "workstream": [
+          {
+            "componente": "barra-avanzamento",
+            "voci": [
+              { "etichetta": "Dati", "valore": "ws_dati", "stato": "completato" },
+              { "etichetta": "Motore", "valore": "ws_motore", "stato": "in-linea" },
+              { "etichetta": "Interfaccia", "valore": "ws_interfaccia", "stato": "a-rischio" },
+              { "etichetta": "Valutazione", "valore": "ws_valutazione", "stato": "in-linea" }
+            ]
+          }
+        ],
+        "kpi": [
+          {
+            "componente": "kpi",
+            "voci": [
+              { "etichetta": "Avanzamento", "valore": "avanzamento_complessivo" },
+              { "etichetta": "Prossima scadenza", "valore": "prossima_scadenza" }
+            ]
+          }
+        ],
+        "commento": "{{milestone_completate}} milestone su {{milestone_totale}} sono chiuse. Il rischio principale riguarda i tempi dell'interfaccia di consultazione.",
+        "nota": [
+          {
+            "componente": "nota",
+            "etichetta": "Decisione",
+            "testo": "Serve confermare un secondo sviluppatore per recuperare il ritardo."
+          }
+        ]
+      }
+    },
+    {
+      "layout": "timeline-milestone",
+      "zone": {
+        "occhiello": "Milestone",
+        "titolo": "Le prime due milestone sono chiuse, le altre seguono il piano",
+        "introduzione": "Le date sono quelle concordate con lo sponsor. Lo stato è il giudizio del responsabile di progetto.",
+        "timeline": [
+          {
+            "componente": "timeline",
+            "voci": [
+              { "titolo": "Requisiti", "data": "m1_data", "stato": "completato" },
+              { "titolo": "Indicizzazione", "data": "m2_data", "stato": "completato" },
+              { "titolo": "Prototipo", "data": "m3_data", "stato": "in-linea", "nota": "Motore quasi pronto" },
+              { "titolo": "Interfaccia", "data": "m4_data", "stato": "a-rischio", "nota": "In ritardo" },
+              { "titolo": "Test utenti", "data": "m5_data", "stato": "in-linea" },
+              { "titolo": "Decisione", "data": "m6_data", "stato": "non-avviato" }
+            ]
+          }
+        ],
+        "dettaglio": [
+          {
+            "componente": "elenco-azioni",
+            "azioni": [
+              { "azione": "Confermare il secondo sviluppatore", "responsabile": "Marta Rossi", "scadenza": "a1_scadenza", "stato": "in-linea" },
+              { "azione": "Preparare il gruppo di utenti per i test", "responsabile": "Luca Bianchi", "scadenza": "a2_scadenza", "stato": "non-avviato" },
+              { "azione": "Redigere i criteri di accettazione", "responsabile": "Elena Verdi", "scadenza": "a3_scadenza", "stato": "a-rischio" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "layout": "rischi-matrice",
+      "zone": {
+        "occhiello": "Rischi",
+        "titolo": "Due rischi richiedono un presidio costante",
+        "matrice": [
+          {
+            "componente": "matrice-rischi",
+            "rischi": [
+              { "titolo": "Qualità dei documenti", "probabilita": "alto", "impatto": "alto" },
+              { "titolo": "Citazione delle fonti", "probabilita": "medio", "impatto": "alto" },
+              { "titolo": "Adozione da parte degli utenti", "probabilita": "medio", "impatto": "medio" },
+              { "titolo": "Costo del calcolo", "probabilita": "basso", "impatto": "medio" },
+              { "titolo": "Riservatezza dei dati", "probabilita": "basso", "impatto": "alto" }
+            ]
+          }
+        ],
+        "mitigazioni": [
+          "Qualità dei documenti: una revisione a campione dei file prima di ogni indicizzazione.",
+          "Citazione delle fonti: la risposta senza fonte viene segnalata e non mostrata come certa.",
+          "Adozione: sessioni di prova con gli utenti già durante lo sviluppo dell'interfaccia.",
+          "Riservatezza dei dati: il servizio resta nella rete aziendale, senza invio all'esterno."
+        ]
+      }
+    },
+    {
+      "layout": "sezione",
+      "zone": {
+        "titolo": "Risultati del proof of concept",
+        "sottotitolo": "Prove, corpus e costi"
+      }
+    },
+    {
+      "layout": "esperimento",
+      "zone": {
+        "occhiello": "Esperimento",
+        "titolo": "L'assistente supera due criteri su tre",
+        "ipotesi": "Una ricerca semantica riduce i tempi senza perdere accuratezza rispetto alla ricerca per parole chiave.",
+        "metodo": "Venti domande reali, in quattro categorie, poste sia con la ricerca attuale sia con l'assistente.",
+        "risultato": [
+          {
+            "componente": "criteri-esito",
+            "criteri": [
+              { "criterio": "Risposte corrette", "soglia": "Almeno 85%", "risultato": "precisione", "esito": "superato" },
+              { "criterio": "Tempo medio di ricerca", "soglia": "Al massimo 3 minuti", "risultato": "tempo_assistente", "esito": "superato" },
+              { "criterio": "Risposte con fonte citata", "soglia": "Almeno 95%", "risultato": "fonti_citate", "esito": "parziale" }
+            ]
+          },
+          {
+            "componente": "grafico-barre",
+            "serie": "tempo_assistente_categoria",
+            "titolo": "Tempo medio per categoria"
+          }
+        ],
+        "conclusione": "Accuratezza e tempi sono in linea con gli obiettivi. La citazione della fonte va migliorata prima del pilota."
+      }
+    },
+    {
+      "layout": "esperimento",
+      "zone": {
+        "occhiello": "Corpus",
+        "titolo": "Il corpus copre i quattro tipi di documento",
+        "ipotesi": "Un corpus rappresentativo dell'archivio è la condizione per risultati attendibili.",
+        "metodo": "Indicizzazione di tutti i documenti dell'archivio qualità, senza esclusioni.",
+        "risultato": [
+          {
+            "componente": "grafico-ciambella",
+            "serie": "corpus_per_tipo",
+            "totale": "corpus_totale"
+          }
+        ],
+        "conclusione": "I verbali e la normativa pesano di più. I contratti sono i meno numerosi.",
+        "dati": [
+          {
+            "componente": "scheda-dati",
+            "voci": [
+              { "etichetta": "Formati", "valore": "PDF e Word" },
+              { "etichetta": "Lingua", "valore": "Italiano" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "layout": "esperimento",
+      "zone": {
+        "occhiello": "Costi",
+        "titolo": "Il costo previsto resta sotto il budget approvato",
+        "ipotesi": "Il proof of concept si conclude entro il budget approvato.",
+        "metodo": "Confronto tra il budget approvato e le variazioni previste voce per voce.",
+        "risultato": [
+          {
+            "componente": "grafico-cascata",
+            "serie": "budget_cascata"
+          },
+          {
+            "componente": "kpi",
+            "voci": [
+              { "etichetta": "Budget approvato", "valore": "budget_approvato" },
+              { "etichetta": "Costo previsto", "valore": "costo_previsto" }
+            ]
+          }
+        ],
+        "conclusione": "Il risparmio sul calcolo e sulla consulenza compensa le licenze e i test con gli utenti."
+      }
+    },
+    {
+      "layout": "chiusura",
+      "zone": {
+        "titolo": "Chiediamo di avviare il pilota nel reparto Qualità",
+        "passi": [
+          "Confermare il secondo sviluppatore per l'interfaccia",
+          "Migliorare la citazione delle fonti prima del pilota",
+          "Riesaminare i risultati a fine fase e decidere l'estensione"
+        ]
+      }
+    },
+    {
+      "layout": "cartella-appendice",
+      "zone": {
+        "titolo": "Appendice",
+        "sottotitolo": "Dati di dettaglio a supporto dei risultati",
+        "contenuti": ["Tempi di ricerca per categoria"]
+      }
+    },
+    {
+      "layout": "tabella-ampia",
+      "zone": {
+        "occhiello": "Appendice",
+        "titolo": "L'assistente è più rapido in tutte le categorie",
+        "tabella": [
+          {
+            "componente": "tabella-serie",
+            "titolo": "Tempo medio di ricerca per categoria",
+            "intestazione": "Categoria",
+            "colonne": [
+              { "titolo": "Ricerca attuale", "serie": "tempo_attuale_categoria" },
+              { "titolo": "Assistente", "serie": "tempo_assistente_categoria" }
+            ]
+          }
+        ],
+        "nota": [
+          {
+            "componente": "nota",
+            "etichetta": "Lettura",
+            "testo": "Il guadagno di tempo maggiore riguarda i contratti, che con la ricerca attuale sono i più lenti."
+          }
+        ],
+        "fonte": "Prove interne, campione di venti domande"
+      }
+    }
+  ]
+}

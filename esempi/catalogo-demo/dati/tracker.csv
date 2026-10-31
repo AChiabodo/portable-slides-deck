@@ -1,0 +1,7 @@
+id,workstream,milestone,data_fine,avanzamento
+M1,Dati,Raccolta dei requisiti,2025-02-14,100
+M2,Dati,Indicizzazione dei documenti,2025-03-28,100
+M3,Motore,Prototipo di ricerca,2025-05-09,80
+M4,Interfaccia,Interfaccia di consultazione,2025-06-06,50
+M5,Valutazione,Test con gli utenti,2025-06-27,30
+M6,Valutazione,Relazione e decisione,2025-07-18,0

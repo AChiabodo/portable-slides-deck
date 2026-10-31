@@ -1,0 +1,547 @@
+{
+  "valori": {
+    "avanzamento_complessivo": {
+      "etichetta": "Avanzamento complessivo del progetto",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 0
+      },
+      "valore": 60.0,
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "avanzamento",
+        "operazione": "media di tutte le milestone"
+      }
+    },
+    "milestone_completate": {
+      "etichetta": "Milestone completate",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0
+      },
+      "valore": 2,
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "avanzamento",
+        "operazione": "conteggio delle milestone al 100%"
+      }
+    },
+    "milestone_totale": {
+      "etichetta": "Milestone del progetto",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0
+      },
+      "valore": 6,
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "id",
+        "operazione": "conteggio"
+      }
+    },
+    "prossima_scadenza": {
+      "etichetta": "Prossima scadenza",
+      "formato": {
+        "tipo": "data"
+      },
+      "valore": "2025-05-09",
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "data_fine",
+        "operazione": "minimo tra le milestone non completate"
+      }
+    },
+    "m1_data": {
+      "etichetta": "Scadenza di Raccolta dei requisiti",
+      "formato": {
+        "tipo": "data"
+      },
+      "valore": "2025-02-14",
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "data_fine",
+        "operazione": "valore della milestone M1"
+      }
+    },
+    "m1_avanzamento": {
+      "etichetta": "Avanzamento di Raccolta dei requisiti",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 0
+      },
+      "valore": 100,
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "avanzamento",
+        "operazione": "valore della milestone M1"
+      }
+    },
+    "m2_data": {
+      "etichetta": "Scadenza di Indicizzazione dei documenti",
+      "formato": {
+        "tipo": "data"
+      },
+      "valore": "2025-03-28",
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "data_fine",
+        "operazione": "valore della milestone M2"
+      }
+    },
+    "m2_avanzamento": {
+      "etichetta": "Avanzamento di Indicizzazione dei documenti",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 0
+      },
+      "valore": 100,
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "avanzamento",
+        "operazione": "valore della milestone M2"
+      }
+    },
+    "m3_data": {
+      "etichetta": "Scadenza di Prototipo di ricerca",
+      "formato": {
+        "tipo": "data"
+      },
+      "valore": "2025-05-09",
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "data_fine",
+        "operazione": "valore della milestone M3"
+      }
+    },
+    "m3_avanzamento": {
+      "etichetta": "Avanzamento di Prototipo di ricerca",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 0
+      },
+      "valore": 80,
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "avanzamento",
+        "operazione": "valore della milestone M3"
+      }
+    },
+    "m4_data": {
+      "etichetta": "Scadenza di Interfaccia di consultazione",
+      "formato": {
+        "tipo": "data"
+      },
+      "valore": "2025-06-06",
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "data_fine",
+        "operazione": "valore della milestone M4"
+      }
+    },
+    "m4_avanzamento": {
+      "etichetta": "Avanzamento di Interfaccia di consultazione",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 0
+      },
+      "valore": 50,
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "avanzamento",
+        "operazione": "valore della milestone M4"
+      }
+    },
+    "m5_data": {
+      "etichetta": "Scadenza di Test con gli utenti",
+      "formato": {
+        "tipo": "data"
+      },
+      "valore": "2025-06-27",
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "data_fine",
+        "operazione": "valore della milestone M5"
+      }
+    },
+    "m5_avanzamento": {
+      "etichetta": "Avanzamento di Test con gli utenti",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 0
+      },
+      "valore": 30,
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "avanzamento",
+        "operazione": "valore della milestone M5"
+      }
+    },
+    "m6_data": {
+      "etichetta": "Scadenza di Relazione e decisione",
+      "formato": {
+        "tipo": "data"
+      },
+      "valore": "2025-07-18",
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "data_fine",
+        "operazione": "valore della milestone M6"
+      }
+    },
+    "m6_avanzamento": {
+      "etichetta": "Avanzamento di Relazione e decisione",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 0
+      },
+      "valore": 0,
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "avanzamento",
+        "operazione": "valore della milestone M6"
+      }
+    },
+    "ws_dati": {
+      "etichetta": "Avanzamento del workstream Dati",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 0
+      },
+      "valore": 100.0,
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "avanzamento",
+        "operazione": "media delle milestone del workstream Dati"
+      }
+    },
+    "ws_motore": {
+      "etichetta": "Avanzamento del workstream Motore",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 0
+      },
+      "valore": 80.0,
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "avanzamento",
+        "operazione": "media delle milestone del workstream Motore"
+      }
+    },
+    "ws_interfaccia": {
+      "etichetta": "Avanzamento del workstream Interfaccia",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 0
+      },
+      "valore": 50.0,
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "avanzamento",
+        "operazione": "media delle milestone del workstream Interfaccia"
+      }
+    },
+    "ws_valutazione": {
+      "etichetta": "Avanzamento del workstream Valutazione",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 0
+      },
+      "valore": 15.0,
+      "provenienza": {
+        "file": "dati/tracker.csv",
+        "colonna": "avanzamento",
+        "operazione": "media delle milestone del workstream Valutazione"
+      }
+    },
+    "a1_scadenza": {
+      "etichetta": "Scadenza dell'azione A1",
+      "formato": {
+        "tipo": "data"
+      },
+      "valore": "2025-06-20",
+      "provenienza": {
+        "file": "dati/azioni.csv",
+        "colonna": "scadenza",
+        "operazione": "valore dell'azione A1"
+      }
+    },
+    "a2_scadenza": {
+      "etichetta": "Scadenza dell'azione A2",
+      "formato": {
+        "tipo": "data"
+      },
+      "valore": "2025-06-27",
+      "provenienza": {
+        "file": "dati/azioni.csv",
+        "colonna": "scadenza",
+        "operazione": "valore dell'azione A2"
+      }
+    },
+    "a3_scadenza": {
+      "etichetta": "Scadenza dell'azione A3",
+      "formato": {
+        "tipo": "data"
+      },
+      "valore": "2025-07-04",
+      "provenienza": {
+        "file": "dati/azioni.csv",
+        "colonna": "scadenza",
+        "operazione": "valore dell'azione A3"
+      }
+    },
+    "prove_totale": {
+      "etichetta": "Domande del campione di prova",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0
+      },
+      "valore": 20,
+      "provenienza": {
+        "file": "dati/prove.csv",
+        "colonna": "id",
+        "operazione": "conteggio"
+      }
+    },
+    "precisione": {
+      "etichetta": "Risposte corrette",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 0
+      },
+      "valore": 85.0,
+      "provenienza": {
+        "file": "dati/prove.csv",
+        "colonna": "corretta",
+        "operazione": "media * 100"
+      }
+    },
+    "fonti_citate": {
+      "etichetta": "Risposte con fonte citata",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 0
+      },
+      "valore": 90.0,
+      "provenienza": {
+        "file": "dati/prove.csv",
+        "colonna": "fonte_citata",
+        "operazione": "media * 100"
+      }
+    },
+    "tempo_assistente": {
+      "etichetta": "Tempo medio con l'assistente",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 1,
+        "unita": "min"
+      },
+      "valore": 2.8,
+      "provenienza": {
+        "file": "dati/prove.csv",
+        "colonna": "minuti_assistente",
+        "operazione": "media"
+      }
+    },
+    "tempo_attuale": {
+      "etichetta": "Tempo medio con la ricerca attuale",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 1,
+        "unita": "min"
+      },
+      "valore": 13.9,
+      "provenienza": {
+        "file": "dati/prove.csv",
+        "colonna": "minuti_attuale",
+        "operazione": "media"
+      }
+    },
+    "riduzione_tempo": {
+      "etichetta": "Riduzione del tempo di ricerca",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 0
+      },
+      "valore": 80.0,
+      "provenienza": {
+        "file": "dati/prove.csv",
+        "colonna": "minuti_assistente, minuti_attuale",
+        "operazione": "1 - media assistente / media attuale, in %"
+      }
+    },
+    "corpus_totale": {
+      "etichetta": "Documenti indicizzati",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0
+      },
+      "valore": 1450,
+      "provenienza": {
+        "file": "dati/corpus.csv",
+        "colonna": "documenti",
+        "operazione": "somma"
+      }
+    },
+    "budget_approvato": {
+      "etichetta": "Budget approvato",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0,
+        "unita": "€"
+      },
+      "valore": 60000,
+      "provenienza": {
+        "file": "dati/budget.csv",
+        "colonna": "importo",
+        "operazione": "prima voce"
+      }
+    },
+    "costo_previsto": {
+      "etichetta": "Costo previsto",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0,
+        "unita": "€"
+      },
+      "valore": 57000,
+      "provenienza": {
+        "file": "dati/budget.csv",
+        "colonna": "importo",
+        "operazione": "somma di tutte le voci"
+      }
+    }
+  },
+  "serie": {
+    "tempo_assistente_categoria": {
+      "etichetta": "Tempo medio con l'assistente per categoria",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 1,
+        "unita": "min"
+      },
+      "punti": [
+        {
+          "etichetta": "Normativa",
+          "valore": 2.0
+        },
+        {
+          "etichetta": "Procedure",
+          "valore": 2.6
+        },
+        {
+          "etichetta": "Contratti",
+          "valore": 3.8
+        },
+        {
+          "etichetta": "Verbali",
+          "valore": 2.8
+        }
+      ],
+      "provenienza": {
+        "file": "dati/prove.csv",
+        "colonna": "minuti_assistente",
+        "operazione": "media per categoria"
+      }
+    },
+    "tempo_attuale_categoria": {
+      "etichetta": "Tempo medio con la ricerca attuale per categoria",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 1,
+        "unita": "min"
+      },
+      "punti": [
+        {
+          "etichetta": "Normativa",
+          "valore": 11.8
+        },
+        {
+          "etichetta": "Procedure",
+          "valore": 10.2
+        },
+        {
+          "etichetta": "Contratti",
+          "valore": 19.2
+        },
+        {
+          "etichetta": "Verbali",
+          "valore": 14.4
+        }
+      ],
+      "provenienza": {
+        "file": "dati/prove.csv",
+        "colonna": "minuti_attuale",
+        "operazione": "media per categoria"
+      }
+    },
+    "corpus_per_tipo": {
+      "etichetta": "Documenti indicizzati per tipo",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0
+      },
+      "punti": [
+        {
+          "etichetta": "Verbali",
+          "valore": 540
+        },
+        {
+          "etichetta": "Normativa",
+          "valore": 420
+        },
+        {
+          "etichetta": "Procedure",
+          "valore": 310
+        },
+        {
+          "etichetta": "Contratti",
+          "valore": 180
+        }
+      ],
+      "provenienza": {
+        "file": "dati/corpus.csv",
+        "colonna": "documenti",
+        "operazione": "valore per tipo"
+      }
+    },
+    "budget_cascata": {
+      "etichetta": "Dal budget approvato al costo previsto",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0,
+        "unita": "€"
+      },
+      "punti": [
+        {
+          "etichetta": "Budget approvato",
+          "valore": 60000
+        },
+        {
+          "etichetta": "Calcolo in cloud",
+          "valore": -6000
+        },
+        {
+          "etichetta": "Licenze del modello",
+          "valore": 4500
+        },
+        {
+          "etichetta": "Consulenza sui dati",
+          "valore": -3500
+        },
+        {
+          "etichetta": "Test con gli utenti",
+          "valore": 2000
+        },
+        {
+          "etichetta": "Costo previsto",
+          "valore": 57000
+        }
+      ],
+      "provenienza": {
+        "file": "dati/budget.csv",
+        "colonna": "importo",
+        "operazione": "voci in ordine, più la somma finale"
+      }
+    }
+  }
+}
