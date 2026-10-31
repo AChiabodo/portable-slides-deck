@@ -28,6 +28,8 @@ Le radici del Catalogo sono `design-system/` e, per prove o estensioni locali, o
 | `rischi-matrice` | rischi per probabilità e impatto, con mitigazioni | occhiello, titolo, matrice (matrice-rischi), mitigazioni (2-5) |
 | `tabella-ampia` | una tabella a tutta larghezza (dati, criteri, azioni) | occhiello, titolo, tabella (tabella-serie, criteri-esito, elenco-azioni), nota, fonte |
 | `esperimento` | PoC o prova: ipotesi, metodo, risultato, conclusione | occhiello, titolo, ipotesi, metodo, risultato (1-2 tra grafici, criteri-esito, kpi, tabella-serie), conclusione, dati (scheda-dati) |
+| `due-colonne` | due contenuti liberi affiancati, con proporzioni e ordine regolabili | occhiello, titolo, intestazione-1/2, colonna-1/2 (1-2 componenti ciascuna; senza barre e linee), commento |
+| `tre-colonne` | tre contenuti stretti affiancati (KPI, schede, note, semafori) | titolo, intestazione-1/2/3, colonna-1/2/3 (1-2 componenti ciascuna; senza grafici), commento |
 | `cartella-appendice` | apertura scura dell'appendice, con l'elenco dei contenuti | titolo, sottotitolo, contenuti (1-6); l'occhiello è fisso |
 
 Componenti: `kpi`, `grafico-barre`, `grafico-linee` (1-3 linee), `tabella-serie` (1-5 colonne, una serie ciascuna), `schede` (2-6), `flusso` (2-5 passi), `nota`, più i componenti per avanzamento, decisioni e report:
@@ -128,6 +130,8 @@ Nel codice: `render({ zone, regolazioni, t, id })` per i Layout e `render(props,
 | `esperimento` | `rapporto`: **`1-1`**, `2-1`, `1-2` (richiede 2 componenti in `risultato`) · `allineamento-verticale` · `densita` | |
 | `risultato-grafico-commento` | `rapporto-colonne` (grafico:commento) · `ordine` · `densita` | |
 | `griglia-schede` | `densita` | |
+| `due-colonne` | `rapporto-colonne`: **`1-1`**, `3-2`, `2-3`, `2-1`, `1-2` · `ordine`: **`normale`**, `invertito` · `allineamento-verticale`: **`alto`**, `centro` · `densita` | `rapporto-colonne` è da sinistra a destra; ogni colonna è un contenitore: i Componenti si adattano alla sua larghezza, non a quella della slide. Barre e linee non sono ammesse perché con la colonna più stretta (`1-2`, `2-1`) diventano illeggibili |
+| `tre-colonne` | `rapporto-colonne`: **`1-1-1`**, `2-1-1`, `1-2-1`, `1-1-2` · `ordine`: **`1-2-3`**, `1-3-2`, `2-1-3`, `2-3-1`, `3-1-2`, `3-2-1` · `allineamento-verticale` · `densita` | `ordine` dice quale colonna sta in ogni posizione, da sinistra: `3-1-2` mette per prima la colonna 3. Nessun grafico: le colonne sono strette |
 
 `ordine: invertito` riordina anche il markup, quindi anche l'impilamento sotto i 900px. `densita: compatta` riduce il corpo del testo (CSS condiviso in `base.css`).
 

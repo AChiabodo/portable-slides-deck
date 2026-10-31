@@ -1,0 +1,24 @@
+{
+  "nome": "tre-colonne",
+  "scopo": "Tre colonne libere, ciascuna con un'intestazione facoltativa e uno o due componenti compatti, e un commento in fondo. Larghezza e ordine delle colonne sono regolabili.",
+  "quandoUsarlo": "Per tre contenuti paralleli e brevi (tre KPI con la loro nota, tre schede dati, tre stati). Le colonne sono strette: niente grafici a barre o a linee, usa due-colonne.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 130,
+  "regolazioni": {
+    "rapporto-colonne": { "valori": ["1-1-1", "2-1-1", "1-2-1", "1-1-2"], "predefinito": "1-1-1" },
+    "ordine": { "valori": ["1-2-3", "1-3-2", "2-1-3", "2-3-1", "3-1-2", "3-2-1"], "predefinito": "1-2-3" },
+    "allineamento-verticale": { "valori": ["alto", "centro"], "predefinito": "alto" },
+    "densita": { "valori": ["comoda", "compatta"], "predefinito": "comoda" }
+  },
+  "zone": [
+    { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 18 },
+    { "nome": "intestazione-1", "tipo": "testo", "maxParole": 4 },
+    { "nome": "colonna-1", "tipo": "componenti", "obbligatoria": true, "ammessi": ["kpi", "schede", "scheda-dati", "barra-avanzamento", "semaforo", "nota"], "min": 1, "max": 2 },
+    { "nome": "intestazione-2", "tipo": "testo", "maxParole": 4 },
+    { "nome": "colonna-2", "tipo": "componenti", "obbligatoria": true, "ammessi": ["kpi", "schede", "scheda-dati", "barra-avanzamento", "semaforo", "nota"], "min": 1, "max": 2 },
+    { "nome": "intestazione-3", "tipo": "testo", "maxParole": 4 },
+    { "nome": "colonna-3", "tipo": "componenti", "obbligatoria": true, "ammessi": ["kpi", "schede", "scheda-dati", "barra-avanzamento", "semaforo", "nota"], "min": 1, "max": 2 },
+    { "nome": "commento", "tipo": "testo", "maxParole": 40 }
+  ]
+}

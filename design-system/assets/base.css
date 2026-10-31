@@ -170,6 +170,76 @@ h3 {
   box-shadow: var(--ombra-scheda);
 }
 
+/* Colonne generiche, condivise da `due-colonne` e `tre-colonne`; i rapporti stanno nello stile di ciascun Layout. */
+.col-testa {
+  flex: none;
+}
+.col-corpo {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--colonne), minmax(0, 1fr));
+  gap: 1.4em;
+  margin-top: 1.1em;
+}
+.col-colonna {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9em;
+  padding: 0;
+  overflow: hidden;
+}
+.col-intestazione {
+  flex: none;
+  padding: 0.7em 1.3em;
+  background: var(--colore-superficie);
+  border-bottom: var(--spessore-filetto) solid var(--colore-linea);
+  font-size: 0.85em;
+  letter-spacing: 0.08em;
+  text-transform: var(--trasformazione-etichetta);
+  color: var(--colore-tenue);
+}
+.col-contenuto {
+  container-type: inline-size;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1em;
+  min-height: 0;
+  padding: 1.1em 1.3em 1em;
+  font-size: 0.94em;
+}
+.col-colonna > .col-intestazione + .col-contenuto {
+  padding-top: 0.2em;
+}
+.slide[data-reg-allineamento-verticale="centro"] .col-contenuto {
+  justify-content: center;
+}
+.col-commento {
+  flex: none;
+  margin: 1em 0 0;
+  padding: 0.9em 1.3em;
+  background: var(--colore-carta);
+  border: var(--spessore-filetto) solid var(--colore-linea);
+  border-left: calc(0.3em * var(--bordo-scheda-accento)) solid var(--colore-accento);
+  border-radius: calc(0.6em * var(--raggio-scheda));
+  box-shadow: var(--ombra-scheda);
+  font-size: 1.05em;
+}
+@container (max-width: 899px) {
+  .col-corpo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* Dentro una colonna stretta i valori dei KPI non devono andare a capo. */
+@container (max-width: 240px) {
+  .col-contenuto .kpi-valore,
+  .col-contenuto .kpi-riga[data-dimensione="grande"] .kpi-valore {
+    font-size: 1.7em;
+  }
+}
+
 /* Stato: icona di forma propria e testo, il colore da solo non basta. Usare `badgeStato` di assets/stato.mjs. */
 [data-stato] {
   --stato-contrasto: var(--colore-carta);

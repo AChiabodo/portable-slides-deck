@@ -1,0 +1,86 @@
+{
+  "valori": {
+    "ricavi_totale": {
+      "etichetta": "Ricavi del semestre",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0,
+        "unita": "€"
+      },
+      "valore": 557600,
+      "provenienza": {
+        "file": "dati/vendite.csv",
+        "colonna": "ricavi",
+        "operazione": "somma"
+      }
+    },
+    "ordini_totale": {
+      "etichetta": "Ordini del semestre",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0
+      },
+      "valore": 4269,
+      "provenienza": {
+        "file": "dati/vendite.csv",
+        "colonna": "ordini",
+        "operazione": "somma"
+      }
+    },
+    "crescita_semestre": {
+      "etichetta": "Crescita dei ricavi da gennaio a giugno",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 1
+      },
+      "valore": 28.9,
+      "provenienza": {
+        "file": "dati/vendite.csv",
+        "colonna": "ricavi",
+        "operazione": "somma per mese, variazione % 2024-01 -> 2024-06"
+      }
+    },
+    "quota_nord": {
+      "etichetta": "Quota dei ricavi del Nord",
+      "formato": {
+        "tipo": "percentuale",
+        "decimali": 1
+      },
+      "valore": 50.6,
+      "provenienza": {
+        "file": "dati/vendite.csv",
+        "colonna": "ricavi",
+        "operazione": "somma Nord / somma totale"
+      }
+    }
+  },
+  "serie": {
+    "ricavi_per_regione": {
+      "etichetta": "Ricavi del semestre per regione",
+      "formato": {
+        "tipo": "numero",
+        "decimali": 0,
+        "unita": "€"
+      },
+      "punti": [
+        {
+          "etichetta": "Nord",
+          "valore": 281900
+        },
+        {
+          "etichetta": "Centro",
+          "valore": 172600
+        },
+        {
+          "etichetta": "Sud",
+          "valore": 103100
+        }
+      ],
+      "provenienza": {
+        "file": "dati/vendite.csv",
+        "colonna": "ricavi",
+        "operazione": "somma per regione"
+      }
+    }
+  }
+}

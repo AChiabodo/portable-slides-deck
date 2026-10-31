@@ -1,0 +1,100 @@
+{
+  "titolo": "Regolazioni: proporzioni, ordine e dimensioni",
+  "lingua": "it",
+  "tema": "quiet-editorial",
+  "slide": [
+    {
+      "layout": "dashboard-analisi",
+      "zone": {
+        "occhiello": "Regolazioni",
+        "titolo": "Grafico e KPI a pari peso, con i KPI a sinistra",
+        "principale": [
+          { "componente": "grafico-barre", "serie": "ricavi_per_regione", "titolo": "Ricavi per regione" }
+        ],
+        "kpi": [
+          {
+            "componente": "kpi",
+            "voci": [
+              { "etichetta": "Ricavi", "valore": "ricavi_totale" },
+              { "etichetta": "Ordini", "valore": "ordini_totale" }
+            ]
+          }
+        ],
+        "commento": "Il Nord pesa per {{quota_nord}} dei ricavi."
+      },
+      "regolazioni": { "rapporto-colonne": "1-1", "ordine": "invertito" }
+    },
+    {
+      "layout": "risultato-grafico-commento",
+      "zone": {
+        "titolo": "Barre verticali, con il Nord evidenziato",
+        "kpi": [
+          {
+            "componente": "kpi",
+            "voci": [
+              { "etichetta": "Crescita", "valore": "crescita_semestre" }
+            ],
+            "regolazioni": { "dimensione": "grande" }
+          }
+        ],
+        "grafico": [
+          {
+            "componente": "grafico-barre",
+            "serie": "ricavi_per_regione",
+            "titolo": "Ricavi per regione",
+            "regolazioni": { "orientamento": "verticale", "evidenzia": "Nord" }
+          }
+        ],
+        "commento": "Il Nord pesa per {{quota_nord}} dei ricavi."
+      },
+      "regolazioni": { "rapporto-colonne": "2-1", "densita": "compatta" }
+    },
+    {
+      "layout": "due-colonne",
+      "zone": {
+        "occhiello": "Colonne",
+        "titolo": "Due colonne: la prima più larga, centrate in verticale",
+        "intestazione-1": "Dove si vende",
+        "colonna-1": [
+          {
+            "componente": "grafico-ciambella",
+            "serie": "ricavi_per_regione",
+            "regolazioni": { "ordinamento": "decrescente", "evidenzia": "Nord" }
+          }
+        ],
+        "intestazione-2": "Quanto",
+        "colonna-2": [
+          {
+            "componente": "kpi",
+            "voci": [
+              { "etichetta": "Ricavi", "valore": "ricavi_totale" },
+              { "etichetta": "Ordini", "valore": "ordini_totale" }
+            ]
+          }
+        ],
+        "commento": "Il Nord pesa per {{quota_nord}} dei ricavi."
+      },
+      "regolazioni": { "rapporto-colonne": "3-2", "allineamento-verticale": "centro" }
+    },
+    {
+      "layout": "tre-colonne",
+      "zone": {
+        "titolo": "Tre colonne: la terza passa in prima posizione",
+        "intestazione-1": "Ricavi",
+        "colonna-1": [
+          { "componente": "kpi", "voci": [{ "etichetta": "Ricavi", "valore": "ricavi_totale" }] }
+        ],
+        "intestazione-2": "Ordini",
+        "colonna-2": [
+          { "componente": "kpi", "voci": [{ "etichetta": "Ordini", "valore": "ordini_totale" }] }
+        ],
+        "intestazione-3": "Lettura",
+        "colonna-3": [
+          { "componente": "nota", "etichetta": "Nota", "testo": "La crescita riguarda tutte le regioni." }
+        ],
+        "commento": "Il Nord pesa per {{quota_nord}} dei ricavi."
+      },
+      "regolazioni": { "rapporto-colonne": "1-1-2", "ordine": "3-1-2" }
+    }
+  ]
+}

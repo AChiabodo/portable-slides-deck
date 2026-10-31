@@ -176,7 +176,7 @@ Ogni Tema dichiara le coppie di colori da verificare e il validatore lo **rifiut
 
 ## I Layout in breve
 
-Il Catalogo offre 21 Layout. Gli esempi grafici qui sotto vengono dalla presentazione dimostrativa `esempi/catalogo-demo/` (tema `istituzionale`).
+Il Catalogo offre 23 Layout. Gli esempi grafici qui sotto vengono dalla presentazione dimostrativa `esempi/catalogo-demo/` (tema `istituzionale`).
 
 | Layout | Quando usarlo |
 |---|---|
@@ -184,6 +184,7 @@ Il Catalogo offre 21 Layout. Gli esempi grafici qui sotto vengono dalla presenta
 | `risultato-grafico-commento`, `dashboard-analisi` | Evidenza dei dati: KPI, grafici, commento |
 | `punti-chiave`, `messaggio`, `sintesi`, `griglia-schede` | Argomenti, frasi da ricordare, conclusioni |
 | `confronto`, `confronto-affiancato` | Due situazioni a confronto |
+| `due-colonne`, `tre-colonne` | Colonne libere con larghezza e ordine regolabili |
 | `sommario-esecutivo`, `decisione` | Per chi decide: raccomandazione e opzioni |
 | `stato-avanzamento`, `timeline-milestone`, `percorso-fasi` | Gestione di progetto |
 | `rischi-matrice`, `tabella-ampia`, `esperimento`, `cartella-appendice` | Rischi, tabelle, PoC, appendice |
@@ -270,7 +271,7 @@ L'elenco per ogni Layout e Componente è in [`docs/catalogo.md`](docs/catalogo.m
 ### 5. Condividere senza allegati
 `esporta-singolo` produce un unico `.html` autosufficiente da allegare a una mail; `esporta-pdf` il PDF per stampa e archivio.
 
-La presentazione dimostrativa [`esempi/catalogo-demo/`](esempi/catalogo-demo) (15 slide: proposta, stato, rischi, esperimento, decisione, appendice) riunisce più casi d'uso e usa ogni Layout e Componente nuovo.
+La presentazione dimostrativa [`esempi/catalogo-demo/`](esempi/catalogo-demo) (15 slide: proposta, stato, rischi, esperimento, decisione, appendice) riunisce più casi d'uso e usa ogni Layout e Componente nuovo. [`esempi/regolazioni-demo/`](esempi/regolazioni-demo) (4 slide) mostra le Regolazioni e i Layout a colonne.
 
 ---
 

@@ -1,0 +1,12 @@
+/* Il rapporto va da sinistra a destra, nell'ordine in cui le colonne appaiono. Le regole di base sono in base.css. */
+@container (min-width: 900px) {
+  .slide-tre-colonne[data-reg-rapporto-colonne="2-1-1"] .col-corpo {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .slide-tre-colonne[data-reg-rapporto-colonne="1-2-1"] .col-corpo {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  }
+  .slide-tre-colonne[data-reg-rapporto-colonne="1-1-2"] .col-corpo {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 2fr);
+  }
+}

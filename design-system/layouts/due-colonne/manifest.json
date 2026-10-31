@@ -1,0 +1,22 @@
+{
+  "nome": "due-colonne",
+  "scopo": "Due colonne libere, ciascuna con un'intestazione facoltativa e uno o due componenti, e un commento in fondo. Larghezza e ordine delle colonne sono regolabili.",
+  "quandoUsarlo": "Per affiancare due contenuti che non sono un confronto prima/dopo (un grafico e i suoi KPI, una tabella e una nota) quando nessun Layout specifico ha le proporzioni giuste. I grafici a barre e a linee, che con una colonna stretta diventano illeggibili, non sono ammessi: affiancali con dashboard-analisi o risultato-grafico-commento. Per un vero confronto con colonna evidenziata usa confronto-affiancato; per un cruscotto usa dashboard-analisi.",
+  "livelloTitolo": 2,
+  "maxParoleSlide": 130,
+  "regolazioni": {
+    "rapporto-colonne": { "valori": ["1-1", "3-2", "2-3", "2-1", "1-2"], "predefinito": "1-1" },
+    "ordine": { "valori": ["normale", "invertito"], "predefinito": "normale" },
+    "allineamento-verticale": { "valori": ["alto", "centro"], "predefinito": "alto" },
+    "densita": { "valori": ["comoda", "compatta"], "predefinito": "comoda" }
+  },
+  "zone": [
+    { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },
+    { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 18 },
+    { "nome": "intestazione-1", "tipo": "testo", "maxParole": 5 },
+    { "nome": "colonna-1", "tipo": "componenti", "obbligatoria": true, "ammessi": ["kpi", "grafico-ciambella", "tabella-serie", "schede", "scheda-dati", "flusso", "barra-avanzamento", "semaforo", "nota"], "min": 1, "max": 2 },
+    { "nome": "intestazione-2", "tipo": "testo", "maxParole": 5 },
+    { "nome": "colonna-2", "tipo": "componenti", "obbligatoria": true, "ammessi": ["kpi", "grafico-ciambella", "tabella-serie", "schede", "scheda-dati", "flusso", "barra-avanzamento", "semaforo", "nota"], "min": 1, "max": 2 },
+    { "nome": "commento", "tipo": "testo", "maxParole": 40 }
+  ]
+}
