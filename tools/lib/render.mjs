@@ -7,10 +7,18 @@ import { risolviTesto } from './testo.mjs';
 
 const cerca = (oggetto, chiave) => chiave.split('.').reduce((o, k) => o?.[k], oggetto);
 
+/** Valori effettivi delle Regolazioni dichiarate dal manifest: quelli della Specifica, altrimenti i predefiniti (nessuno per un punto). */
+function risolviRegolazioni(manifest, dati) {
+  return Object.fromEntries(
+    Object.entries(manifest.regolazioni ?? {}).map(([nome, def]) => [nome, dati?.[nome] ?? def.predefinito]),
+  );
+}
+
 function renderComponente(dati, id, ctx) {
   const componente = ctx.risorse.componenti.get(dati.componente);
   const props = risolviOggetto(componente.manifest.props, dati, ctx);
-  return componente.render(props, { esc, t: ctx.t, id });
+  const regolazioni = risolviRegolazioni(componente.manifest, dati.regolazioni);
+  return componente.render(props, { esc, t: ctx.t, id, regolazioni });
 }
 
 function renderZone(layout, slide, id, ctx) {
@@ -35,9 +43,15 @@ function renderZone(layout, slide, id, ctx) {
 function renderSlide(slide, numero, ctx) {
   const layout = ctx.risorse.layout.get(slide.layout);
   const id = `slide-${numero}`;
-  const interno = layout.render({ zone: renderZone(layout, slide, id, ctx), t: ctx.t, id });
+  const regolazioni = risolviRegolazioni(layout.manifest, slide.regolazioni);
+  const interno = layout.render({ zone: renderZone(layout, slide, id, ctx), regolazioni, t: ctx.t, id });
+  // Solo i valori diversi dal predefinito diventano attributi: senza Regolazioni l'HTML non cambia.
+  const attributi = Object.entries(layout.manifest.regolazioni ?? {})
+    .filter(([nome, def]) => regolazioni[nome] !== def.predefinito)
+    .map(([nome]) => ` data-reg-${nome}="${regolazioni[nome]}"`)
+    .join('');
   return (
-    `<section class="slide slide-${layout.manifest.nome}" id="${id}" aria-labelledby="${id}-titolo" data-indice="${numero}" data-titolo="${esc(ctx.titolo)}">` +
+    `<section class="slide slide-${layout.manifest.nome}" id="${id}" aria-labelledby="${id}-titolo" data-indice="${numero}" data-titolo="${esc(ctx.titolo)}"${attributi}>` +
     `<div class="slide-contenuto">${interno}</div></section>`
   );
 }

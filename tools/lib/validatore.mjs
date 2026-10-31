@@ -63,10 +63,11 @@ function validaSlide(slide, percorso, ctx) {
     );
   }
   for (const chiave of Object.keys(slide)) {
-    if (!['layout', 'zone'].includes(chiave)) ctx.errore(percorso, `campo "${chiave}" non previsto`);
+    if (!['layout', 'zone', 'regolazioni'].includes(chiave)) ctx.errore(percorso, `campo "${chiave}" non previsto`);
   }
   const zone = isOggetto(slide.zone) ? slide.zone : {};
   const definite = layout.manifest.zone;
+  validaRegolazioni(layout.manifest, slide.regolazioni, percorso, ctx, zone);
 
   for (const nome of Object.keys(zone)) {
     if (!definite.some((z) => z.nome === nome)) {
@@ -122,6 +123,40 @@ function validaElenco(valore, percorso, zona, ctx) {
   valore.forEach((voce, i) => validaTesto(voce, `${percorso} › voce ${i + 1}`, zona.maxParoleVoce, ctx));
 }
 
+function validaRegolazioni(manifest, dati, percorso, ctx, zone, props) {
+  if (dati === undefined) return;
+  const definite = manifest.regolazioni ?? {};
+  if (!isOggetto(dati)) return ctx.errore(`${percorso} › regolazioni`, 'deve essere un oggetto');
+  for (const [nome, valore] of Object.entries(dati)) {
+    const posizione = `${percorso} › regolazione "${nome}"`;
+    const def = Object.hasOwn(definite, nome) ? definite[nome] : undefined;
+    if (!def) {
+      const previste = Object.keys(definite);
+      ctx.errore(posizione, `non prevista da "${manifest.nome}"${previste.length ? ` (previste: ${elenca(previste)})` : ' (nessuna Regolazione disponibile)'}`);
+    } else if (def.tipo === 'punto') {
+      validaPunto(def, valore, posizione, props, ctx);
+    } else if (!def.valori.includes(valore)) {
+      ctx.errore(posizione, `valore "${valore}" non ammesso (ammessi: ${elenca(def.valori)})`);
+    } else if (def.richiede && valore !== def.predefinito) {
+      const presenti = Array.isArray(zone?.[def.richiede.zona]) ? zone[def.richiede.zona].length : 0;
+      if (presenti < def.richiede.min) {
+        ctx.errore(posizione, `richiede almeno ${def.richiede.min} componenti nella zona "${def.richiede.zona}" (presenti: ${presenti})`);
+      }
+    }
+  }
+}
+
+/** Una Regolazione di tipo "punto" indica l'etichetta di un punto della serie scelta dal Componente. */
+function validaPunto(def, valore, posizione, props, ctx) {
+  const nomeSerie = props?.[def.serie];
+  // Se la serie è sbagliata l'errore è già segnalato dalle proprietà.
+  if (typeof nomeSerie !== 'string' || !Object.hasOwn(ctx.analisi.serie, nomeSerie)) return;
+  const etichette = ctx.analisi.serie[nomeSerie].punti.map((p) => p.etichetta);
+  if (typeof valore !== 'string' || !etichette.includes(valore)) {
+    ctx.errore(posizione, `punto "${valore}" non presente nella serie "${nomeSerie}" (punti: ${elenca(etichette)})`);
+  }
+}
+
 function validaComponenti(valore, percorso, zona, ctx) {
   if (!Array.isArray(valore)) return ctx.errore(percorso, 'deve essere un elenco di componenti');
   if (zona.min !== undefined && valore.length < zona.min) ctx.errore(percorso, `almeno ${zona.min} componenti`);
@@ -139,8 +174,10 @@ function validaComponenti(valore, percorso, zona, ctx) {
     if (!zona.ammessi.includes(dati.componente)) {
       return ctx.errore(posizione, `componente "${dati.componente}" non ammesso nella zona (ammessi: ${elenca(zona.ammessi)})`);
     }
-    const { componente: _nome, ...props } = dati;
-    validaOggetto(componente.manifest.props, props, `${posizione} (${dati.componente})`, ctx);
+    const { componente: _nome, regolazioni, ...props } = dati;
+    const dove = `${posizione} (${dati.componente})`;
+    validaRegolazioni(componente.manifest, regolazioni, dove, ctx, undefined, props);
+    validaOggetto(componente.manifest.props, props, dove, ctx);
   });
 }
 

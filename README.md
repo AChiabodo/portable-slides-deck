@@ -230,6 +230,25 @@ I Componenti riempiono le zone dei Layout e ricevono dati dall'Analisi, non test
 
 ---
 
+## Le Regolazioni
+
+Layout e Componenti possono offrire **Regolazioni**: scelte da elenco chiuso che cambiano proporzioni, ordine o dimensione senza toccare contenuto o numeri ([ADR 0003](docs/adr/0003-regolazioni-chiuse-e-additive.md)). Senza Regolazioni l'aspetto è quello di sempre.
+
+```json
+{
+  "layout": "dashboard-analisi",
+  "regolazioni": { "rapporto-colonne": "2-1", "ordine": "invertito" },
+  "zone": {
+    "principale": [{ "componente": "grafico-barre", "serie": "ricavi_per_regione",
+                     "regolazioni": { "altezza": "alta", "ordinamento": "decrescente", "evidenzia": "Nord" } }]
+  }
+}
+```
+
+L'elenco per ogni Layout e Componente è in [`docs/catalogo.md`](docs/catalogo.md#regolazioni); il validatore rifiuta le Regolazioni non previste e i valori fuori elenco, indicando quelli ammessi.
+
+---
+
 ## Casi d'uso
 
 ### 1. Report di analisi dati

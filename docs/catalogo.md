@@ -90,6 +90,33 @@ Esattamente una zona ha `"ruolo": "titolo"` (tipo `testo`, obbligatoria): il mot
 
 Le slide sono contenitori 16:9 con `container-type: inline-size`: dimensiona il testo con `em`/`cqw` e usa `@container` per adattare il layout alla larghezza (vedi `componenti/kpi/stile.css`).
 
+## Regolazioni
+
+Una **Regolazione** è una scelta da elenco chiuso che cambia disposizione, ordine o dimensione di un Layout o di un Componente senza toccare contenuto o numeri (vedi `docs/adr/0003-regolazioni-chiuse-e-additive.md`). Il manifest le dichiara in `regolazioni`:
+
+```json
+"regolazioni": {
+  "rapporto-colonne": { "valori": ["3-2", "1-1", "2-1"], "predefinito": "3-2" },
+  "rapporto": { "valori": ["1-1", "2-1"], "predefinito": "1-1", "richiede": { "zona": "principale", "min": 2 } }
+}
+```
+
+- `valori` (almeno 2, solo `a-z`, `0-9`, `-`) e `predefinito`: il predefinito deve riprodurre l'aspetto che il Layout o il Componente aveva prima della Regolazione.
+- `richiede` (solo Layout): la Regolazione ha senso solo se la zona di componenti indicata ne contiene almeno `min`. Il validatore rifiuta un valore diverso dal predefinito se la condizione non è soddisfatta.
+- Non servono traduzioni: una Regolazione non è testo mostrato. `regolazioni` è un nome riservato e non può essere una prop.
+
+La Specifica le scrive in un campo `regolazioni`, separato da `zone` e dalle prop, sulla slide e sul Componente:
+
+```json
+{ "layout": "dashboard-analisi",
+  "regolazioni": { "rapporto-colonne": "2-1" },
+  "zone": { "principale": [{ "componente": "grafico-barre", "serie": "…", "regolazioni": { "altezza": "alta" } }] } }
+```
+
+Il validatore rifiuta le Regolazioni non dichiarate e i valori fuori elenco. Senza `regolazioni` l'HTML generato è identico a quello di prima.
+
+Nel codice: `render({ zone, regolazioni, t, id })` per i Layout e `render(props, { esc, t, id, regolazioni })` per i Componenti ricevono sempre tutti i valori, con i predefiniti dove la Specifica tace. Per le Regolazioni solo CSS, il motore aggiunge alla `<section>` l'attributo `data-reg-<nome>="<valore>"` **solo** se il valore non è il predefinito: il CSS del Layout lo aggancia con `.slide-<layout>[data-reg-<nome>="<valore>"]`. Se la Regolazione cambia l'**ordine**, il `render` deve riordinare il markup e non usare `order` nel CSS, così lettura da tastiera e da screen reader seguono l'ordine visivo. I limiti di contenuto non dipendono dalla Regolazione: vanno tarati sul valore più stretto.
+
 ## Tema
 
 `temi/<nome>/tema.json`: `variabili` (proprietà CSS senza `--`, es. `colore-carta`) e `contrasti`, coppie di variabili colore verificate contro WCAG AA (rapporto ≥ 4,5:1). Un Tema sotto soglia è rifiutato dal validatore. Un nuovo Tema deve definire le stesse variabili degli altri (un test lo controlla), comprese `colore-accento-tenue`, `colore-accento-secondario`, `colore-positivo` e `ombra-scheda` usate da cornice e schede: copia `executive` o `quiet-editorial` e cambia i valori.

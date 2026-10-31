@@ -24,6 +24,10 @@ _Avoid_: Widget, blocco, modulo
 L'insieme di layout e componenti ammessi, ciascuno con regole su quando usarlo e quali dati richiede. L'agente compone solo da qui; aggiungerne di nuovi è un'operazione prevista.
 _Avoid_: Libreria, kit
 
+**Regolazione**:
+Una scelta da elenco chiuso, dichiarata dal Layout o dal Componente che la offre, che ne cambia disposizione, ordine o dimensione (es. rapporto tra colonne, altezza di un grafico) senza cambiare contenuto né numeri. Se non è indicata vale il predefinito, che coincide con l'aspetto di prima.
+_Avoid_: Variante, opzione, impostazione
+
 **Specifica**:
 La descrizione strutturata di una presentazione (quali slide, con quali layout, componenti e riferimenti all'Analisi) da cui questa viene generata. È la fonte di verità; la presentazione non si modifica a mano.
 _Avoid_: Sorgente, bozza, configurazione

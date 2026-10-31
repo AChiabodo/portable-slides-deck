@@ -64,12 +64,53 @@ function erroriDefinizioniProp(defs, percorso = 'props') {
   return errori;
 }
 
+/** Le Regolazioni sono elenchi chiusi con un predefinito; `richiede` (solo Layout) lega una Regolazione al contenuto di una zona. */
+function erroriRegolazioni(m, tipo) {
+  if (m.regolazioni === undefined) return [];
+  if (typeof m.regolazioni !== 'object' || m.regolazioni === null || Array.isArray(m.regolazioni)) {
+    return ['"regolazioni" deve essere un oggetto'];
+  }
+  const errori = [];
+  for (const [nome, def] of Object.entries(m.regolazioni)) {
+    const dove = `regolazione "${nome}"`;
+    if (!NOME_VALIDO.test(nome)) errori.push(`${dove}: nome non valido (a-z, 0-9, -)`);
+    if (typeof def !== 'object' || def === null) {
+      errori.push(`${dove}: definizione non valida`);
+      continue;
+    }
+    if (def.tipo !== undefined) {
+      // Unica eccezione alle liste chiuse: un punto di una serie, verificato contro l'Analisi.
+      if (def.tipo !== 'punto') errori.push(`${dove}: tipo "${def.tipo}" sconosciuto (previsto solo "punto")`);
+      else if (tipo !== 'componente') errori.push(`${dove}: il tipo "punto" è previsto solo per i Componenti`);
+      else if (m.props?.[def.serie]?.tipo !== 'serie') errori.push(`${dove}: "serie" deve citare una proprietà di tipo serie`);
+      continue;
+    }
+    const valori = def.valori;
+    if (!Array.isArray(valori) || valori.length < 2 || !valori.every((v) => typeof v === 'string' && NOME_VALIDO.test(v))) {
+      errori.push(`${dove}: "valori" deve elencare almeno 2 valori (a-z, 0-9, -)`);
+    } else if (new Set(valori).size !== valori.length) {
+      errori.push(`${dove}: "valori" contiene duplicati`);
+    } else if (!valori.includes(def.predefinito)) {
+      errori.push(`${dove}: "predefinito" deve essere uno dei valori`);
+    }
+    if (def.richiede !== undefined) {
+      const zona = m.zone?.find((z) => z.nome === def.richiede?.zona);
+      if (tipo !== 'layout') errori.push(`${dove}: "richiede" è previsto solo per i Layout`);
+      else if (!zona || zona.tipo !== 'componenti') errori.push(`${dove}: "richiede" deve citare una zona di tipo componenti del Layout`);
+      else if (!Number.isInteger(def.richiede.min) || def.richiede.min < 1) errori.push(`${dove}: "richiede.min" deve essere un intero ≥ 1`);
+    }
+  }
+  return errori;
+}
+
 function erroriManifest(m, tipo) {
   if (typeof m.nome !== 'string' || !NOME_VALIDO.test(m.nome)) return ['nome mancante o non valido (a-z, 0-9, -)'];
   if (typeof m.scopo !== 'string' || !m.scopo) return ['scopo mancante'];
-  if (tipo === 'layout') return erroriManifestLayout(m);
+  if (tipo === 'layout') return [...erroriManifestLayout(m), ...erroriRegolazioni(m, tipo)];
   if (typeof m.props !== 'object' || m.props === null) return ['props mancanti'];
-  return erroriDefinizioniProp(m.props);
+  const errori = erroriDefinizioniProp(m.props);
+  if (Object.hasOwn(m.props, 'regolazioni')) errori.push('"regolazioni" è un nome riservato: non può essere una proprietà');
+  return [...errori, ...erroriRegolazioni(m, tipo)];
 }
 
 /**
