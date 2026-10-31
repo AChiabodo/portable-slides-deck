@@ -1,0 +1,94 @@
+.azioni {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+.azioni thead th {
+  padding: 0.5em 0.8em;
+  background: var(--colore-inchiostro);
+  color: var(--colore-carta);
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: left;
+  text-transform: var(--trasformazione-etichetta);
+}
+.azioni tbody th,
+.azioni td {
+  padding: 0.8em 0.9em;
+  text-align: left;
+  vertical-align: middle;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.azioni tbody th {
+  font-weight: 700;
+}
+.azioni tbody tr {
+  background: var(--colore-carta);
+  border-bottom: var(--spessore-filetto) solid var(--colore-linea);
+}
+.azioni tbody tr:nth-child(even) {
+  background: var(--colore-superficie);
+}
+.azioni-scadenza {
+  font-family: var(--famiglia-numeri);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.azioni-responsabile {
+  color: var(--colore-tenue);
+}
+.azioni-stato {
+  white-space: nowrap;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+@container (max-width: 600px) {
+  .azioni,
+  .azioni tbody {
+    display: block;
+  }
+  .azioni thead {
+    display: none;
+  }
+  .azioni tbody tr {
+    display: grid;
+    gap: 0.15em;
+    margin-bottom: 0.7em;
+    padding: 0.6em 0.9em;
+    background: var(--colore-carta);
+    border: var(--spessore-filetto) solid var(--colore-linea);
+    border-left: calc(0.3em * var(--bordo-scheda-accento)) solid var(--colore-accento);
+    border-radius: calc(0.5em * var(--raggio-scheda));
+    box-shadow: var(--ombra-scheda);
+  }
+  .azioni tbody tr:nth-child(even) {
+    background: var(--colore-carta);
+  }
+  .azioni tbody th,
+  .azioni td {
+    display: grid;
+    grid-template-columns: 7.5em minmax(0, 1fr);
+    align-items: baseline;
+    gap: 0.6em;
+    padding: 0.15em 0;
+  }
+  .azioni td:empty {
+    display: none;
+  }
+  .azioni [data-etichetta]::before {
+    content: attr(data-etichetta);
+    font-family: var(--font-sans);
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: var(--trasformazione-etichetta);
+    color: var(--colore-tenue);
+  }
+}
+@media print {
+  .azioni tbody tr {
+    box-shadow: none;
+  }
+}

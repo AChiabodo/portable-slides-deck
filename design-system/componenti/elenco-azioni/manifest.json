@@ -1,0 +1,23 @@
+{
+  "nome": "elenco-azioni",
+  "scopo": "Tabella delle azioni da fare: cosa, chi, entro quando e, se serve, a che punto è.",
+  "quandoUsarlo": "Per i prossimi passi o le azioni aperte di un progetto (1-6 righe), ciascuna con un responsabile e una scadenza dell'Analisi. Lo stato è facoltativo. Non per una sequenza narrativa di fasi: usa flusso; non per milestone su un asse temporale: usa timeline.",
+  "props": {
+    "azioni": {
+      "tipo": "lista",
+      "obbligatoria": true,
+      "min": 1,
+      "max": 6,
+      "elementi": {
+        "azione": { "tipo": "testo", "obbligatoria": true, "maxParole": 12 },
+        "responsabile": { "tipo": "testo", "obbligatoria": true, "maxParole": 4 },
+        "scadenza": { "tipo": "valore", "obbligatoria": true },
+        "stato": {
+          "tipo": "scelta",
+          "opzioni": ["completato", "in-linea", "a-rischio", "in-ritardo", "non-avviato"],
+          "vocabolario": "stato"
+        }
+      }
+    }
+  }
+}

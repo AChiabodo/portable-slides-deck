@@ -1,0 +1,19 @@
+{
+  "nome": "timeline",
+  "scopo": "Asse orizzontale con 2-7 milestone: marcatore con l'icona dello stato, data, titolo e nota breve.",
+  "quandoUsarlo": "Per mostrare milestone o tappe di un progetto con la loro data e il loro stato. Le milestone sono ordinate per data e posizionate in proporzione alle date (se le date coincidono o non sono date, sono distribuite in modo uniforme; se due tappe sono troppo vicine, i marcatori vengono distanziati per non sovrapporre le etichette). Sotto i 600px di larghezza diventa un elenco verticale. Non usarla per processi senza date (usa flusso) né per più di 7 tappe.",
+  "props": {
+    "voci": {
+      "tipo": "lista",
+      "obbligatoria": true,
+      "min": 2,
+      "max": 7,
+      "elementi": {
+        "titolo": { "tipo": "testo", "obbligatoria": true, "maxParole": 6 },
+        "data": { "tipo": "valore", "obbligatoria": true },
+        "stato": { "tipo": "scelta", "obbligatoria": true, "opzioni": ["completato", "in-linea", "a-rischio", "in-ritardo", "non-avviato"], "vocabolario": "stato" },
+        "nota": { "tipo": "testo", "maxParole": 10 }
+      }
+    }
+  }
+}

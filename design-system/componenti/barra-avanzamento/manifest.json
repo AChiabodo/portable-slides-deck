@@ -1,0 +1,18 @@
+{
+  "nome": "barra-avanzamento",
+  "scopo": "Da 1 a 6 barre orizzontali che mostrano l'avanzamento di altrettante attività, con etichetta, valore e, se serve, stato.",
+  "quandoUsarlo": "Per mostrare quanto è stato fatto di ciascuna attività o workstream. La barra si riempie in proporzione al valore (da 0 a 100) solo se il valore dell'Analisi è una percentuale; con altri formati si mostra solo il testo del valore, senza barra. Lo stato è facoltativo e compare accanto all'etichetta. Non usarla per confrontare grandezze diverse da un avanzamento (grafico a barre) né per più di 6 voci.",
+  "props": {
+    "voci": {
+      "tipo": "lista",
+      "obbligatoria": true,
+      "min": 1,
+      "max": 6,
+      "elementi": {
+        "etichetta": { "tipo": "testo", "obbligatoria": true, "maxParole": 6 },
+        "valore": { "tipo": "valore", "obbligatoria": true },
+        "stato": { "tipo": "scelta", "opzioni": ["completato", "in-linea", "a-rischio", "in-ritardo", "non-avviato"], "vocabolario": "stato" }
+      }
+    }
+  }
+}

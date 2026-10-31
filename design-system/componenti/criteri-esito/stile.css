@@ -1,0 +1,95 @@
+.criteri {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+.criteri thead th {
+  padding: 0.5em 0.8em;
+  background: var(--colore-inchiostro);
+  color: var(--colore-carta);
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: left;
+  text-transform: var(--trasformazione-etichetta);
+}
+.criteri tbody th,
+.criteri td {
+  padding: 0.8em 0.9em;
+  text-align: left;
+  vertical-align: middle;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.criteri tbody th {
+  font-weight: 700;
+}
+.criteri tbody tr {
+  background: var(--colore-carta);
+  border-bottom: var(--spessore-filetto) solid var(--colore-linea);
+}
+.criteri tbody tr:nth-child(even) {
+  background: var(--colore-superficie);
+}
+.criteri-risultato {
+  font-family: var(--famiglia-numeri);
+  font-variant-numeric: tabular-nums;
+}
+.criteri-soglia {
+  color: var(--colore-tenue);
+}
+.criteri tbody .criteri-risultato {
+  font-weight: 700;
+}
+.criteri-esito {
+  white-space: nowrap;
+}
+.criteri tbody .criteri-esito {
+  font-size: 0.9em;
+  font-weight: 700;
+}
+@container (max-width: 600px) {
+  .criteri,
+  .criteri tbody {
+    display: block;
+  }
+  .criteri thead {
+    display: none;
+  }
+  .criteri tbody tr {
+    display: grid;
+    gap: 0.15em;
+    margin-bottom: 0.7em;
+    padding: 0.6em 0.9em;
+    background: var(--colore-carta);
+    border: var(--spessore-filetto) solid var(--colore-linea);
+    border-left: calc(0.3em * var(--bordo-scheda-accento)) solid var(--colore-accento);
+    border-radius: calc(0.5em * var(--raggio-scheda));
+    box-shadow: var(--ombra-scheda);
+  }
+  .criteri tbody tr:nth-child(even) {
+    background: var(--colore-carta);
+  }
+  .criteri tbody th,
+  .criteri td {
+    display: grid;
+    grid-template-columns: 7.5em minmax(0, 1fr);
+    align-items: baseline;
+    gap: 0.6em;
+    padding: 0.15em 0;
+  }
+  .criteri [data-etichetta]::before {
+    content: attr(data-etichetta);
+    font-family: var(--font-sans);
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: var(--trasformazione-etichetta);
+    color: var(--colore-tenue);
+  }
+}
+@media print {
+  .criteri tbody tr {
+    box-shadow: none;
+  }
+}

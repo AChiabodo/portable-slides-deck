@@ -1,0 +1,44 @@
+.scheda-dati dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8em 1em;
+  margin: 0;
+}
+.scheda-dati-voce {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+  min-width: 0;
+  padding: 0.55em 1em 0.65em;
+  background: var(--colore-carta);
+  border: var(--spessore-filetto) solid var(--colore-linea);
+  border-left: calc(0.3em * var(--bordo-scheda-accento)) solid var(--colore-accento);
+  border-radius: calc(0.5em * var(--raggio-scheda));
+  box-shadow: var(--ombra-scheda);
+}
+.scheda-dati dt {
+  font-family: var(--font-sans);
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: var(--trasformazione-etichetta);
+  color: var(--colore-tenue);
+}
+.scheda-dati dd {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+@container (max-width: 600px) {
+  .scheda-dati dl {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media print {
+  .scheda-dati-voce {
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "nome": "matrice-rischi",
+  "scopo": "Matrice 3x3 probabilità/impatto con i rischi numerati nelle celle e una legenda a testo con titolo, probabilità e impatto di ciascuno.",
+  "quandoUsarlo": "Per mostrare dove cadono 1-8 rischi di un progetto e quali meritano attenzione. Colonne = impatto da basso ad alto, righe = probabilità con l'alta in alto; le celle sono più scure al crescere della gravità, che si legge anche senza colore dai marcatori numerati e dalla legenda. Non usarla per rischi senza una stima di probabilità e impatto né per più di 8 voci.",
+  "props": {
+    "rischi": {
+      "tipo": "lista",
+      "obbligatoria": true,
+      "min": 1,
+      "max": 8,
+      "elementi": {
+        "titolo": { "tipo": "testo", "obbligatoria": true, "maxParole": 6 },
+        "probabilita": { "tipo": "scelta", "obbligatoria": true, "opzioni": ["basso", "medio", "alto"], "vocabolario": "livello" },
+        "impatto": { "tipo": "scelta", "obbligatoria": true, "opzioni": ["basso", "medio", "alto"], "vocabolario": "livello" }
+      }
+    }
+  }
+}

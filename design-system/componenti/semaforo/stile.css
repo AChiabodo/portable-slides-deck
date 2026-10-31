@@ -1,0 +1,48 @@
+.semaforo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.semaforo-riga {
+  display: grid;
+  grid-template-columns: 9.5em minmax(0, 1fr) minmax(0, 1.6fr);
+  align-items: center;
+  column-gap: 1em;
+  min-width: 0;
+  padding: 0.6em 1em;
+  background: var(--colore-carta);
+  border: var(--spessore-filetto) solid var(--colore-linea);
+  border-left: calc(0.3em * var(--bordo-scheda-accento)) solid var(--stato-colore);
+  border-radius: calc(0.5em * var(--raggio-scheda));
+  box-shadow: var(--ombra-scheda);
+}
+.semaforo-stato {
+  font-size: 0.85em;
+  font-weight: 700;
+}
+.semaforo-etichetta {
+  min-width: 0;
+  font-weight: 700;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+.semaforo-nota {
+  min-width: 0;
+  font-size: 0.9em;
+  line-height: 1.3;
+  color: var(--colore-tenue);
+}
+@container (max-width: 600px) {
+  .semaforo-riga {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.2em;
+  }
+}
+@media print {
+  .semaforo-riga {
+    box-shadow: none;
+  }
+}

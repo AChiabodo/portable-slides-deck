@@ -1,0 +1,23 @@
+{
+  "nome": "opzioni-decisione",
+  "scopo": "Da 2 a 4 opzioni affiancate, ciascuna con vantaggi e svantaggi; l'opzione raccomandata è evidenziata.",
+  "quandoUsarlo": "Per chiedere una decisione tra alternative concrete (2-4), con pro e contro in prosa breve. Segna come raccomandata al più una opzione (il motore non lo impone). Non per confrontare due situazioni qualunque: per quello usa confronto o confronto-affiancato; non per misure numeriche: usa tabella-serie.",
+  "props": {
+    "opzioni": {
+      "tipo": "lista",
+      "obbligatoria": true,
+      "min": 2,
+      "max": 4,
+      "elementi": {
+        "titolo": { "tipo": "testo", "obbligatoria": true, "maxParole": 5 },
+        "ruolo": {
+          "tipo": "scelta",
+          "opzioni": ["raccomandata", "alternativa"],
+          "vocabolario": "ruolo-opzione"
+        },
+        "vantaggi": { "tipo": "testo", "obbligatoria": true, "maxParole": 20 },
+        "svantaggi": { "tipo": "testo", "obbligatoria": true, "maxParole": 20 }
+      }
+    }
+  }
+}

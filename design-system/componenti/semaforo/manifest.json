@@ -1,0 +1,23 @@
+{
+  "nome": "semaforo",
+  "scopo": "Elenco di voci (workstream, aree, deliverable) ciascuna con il suo stato, un'etichetta e una breve nota.",
+  "quandoUsarlo": "Per dire a colpo d'occhio come sta ciascuna parte di un progetto (1-8 voci). Lo stato è sempre reso con icona e testo. Non per valori misurati o percentuali di avanzamento: per quelli usa barra-avanzamento; non per sequenze di milestone nel tempo: usa timeline.",
+  "props": {
+    "voci": {
+      "tipo": "lista",
+      "obbligatoria": true,
+      "min": 1,
+      "max": 8,
+      "elementi": {
+        "etichetta": { "tipo": "testo", "obbligatoria": true, "maxParole": 6 },
+        "stato": {
+          "tipo": "scelta",
+          "obbligatoria": true,
+          "opzioni": ["completato", "in-linea", "a-rischio", "in-ritardo", "non-avviato"],
+          "vocabolario": "stato"
+        },
+        "nota": { "tipo": "testo", "maxParole": 14 }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "nome": "grafico-cascata",
+  "scopo": "Grafico a cascata: dal valore iniziale al valore finale attraverso le variazioni intermedie, con barre flottanti e linee di raccordo.",
+  "quandoUsarlo": "Per spiegare come si passa da un valore a un altro (es. dal budget iniziale al consuntivo, dai ricavi all'utile). Convenzione: il primo punto della serie è il valore iniziale, l'ultimo è il valore finale e quelli in mezzo sono le variazioni (positive o negative). Il valore finale deve già essere calcolato nell'Analisi: il grafico non lo ricava. Non usarlo per confrontare categorie indipendenti (grafico a barre) né per andamenti nel tempo (grafico a linee).",
+  "props": {
+    "serie": { "tipo": "serie", "obbligatoria": true, "maxPunti": 8 }
+  }
+}

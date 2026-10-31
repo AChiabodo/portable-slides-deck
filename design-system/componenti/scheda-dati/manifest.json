@@ -1,0 +1,17 @@
+{
+  "nome": "scheda-dati",
+  "scopo": "Scheda di identità o di riepilogo: coppie etichetta-valore (es. responsabile, periodo, budget) in due colonne.",
+  "quandoUsarlo": "Per i dati identificativi di un progetto, un esperimento o una proposta (2-8 coppie), con valori brevi in testo. Non per indicatori numerici da evidenziare: usa kpi; non per confronti tra serie: usa tabella-serie.",
+  "props": {
+    "voci": {
+      "tipo": "lista",
+      "obbligatoria": true,
+      "min": 2,
+      "max": 8,
+      "elementi": {
+        "etichetta": { "tipo": "testo", "obbligatoria": true, "maxParole": 3 },
+        "valore": { "tipo": "testo", "obbligatoria": true, "maxParole": 8 }
+      }
+    }
+  }
+}

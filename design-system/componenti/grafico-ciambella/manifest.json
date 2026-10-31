@@ -1,0 +1,9 @@
+{
+  "nome": "grafico-ciambella",
+  "scopo": "Anello che mostra come un totale si ripartisce tra 2-6 parti, con legenda di etichetta e valore di ogni parte e, se c'è, il totale al centro.",
+  "quandoUsarlo": "Per mostrare la composizione di un tutto (quote di budget, mix di prodotti, esiti di un campione) con poche parti e valori positivi. Non usarlo per confrontare molte categorie, per valori che non sommano a un tutto o per andamenti nel tempo: servono un grafico a barre o a linee. I valori non positivi restano in legenda ma non hanno arco.",
+  "props": {
+    "serie": { "tipo": "serie", "obbligatoria": true, "maxPunti": 6 },
+    "totale": { "tipo": "valore" }
+  }
+}

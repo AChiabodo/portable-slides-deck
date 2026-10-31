@@ -1,0 +1,24 @@
+{
+  "nome": "criteri-esito",
+  "scopo": "Tabella dei criteri di accettazione: criterio, soglia attesa, risultato misurato ed esito.",
+  "quandoUsarlo": "Per mostrare se un PoC, un test o una verifica ha raggiunto i criteri stabiliti (1-6 righe): la soglia è testo, il risultato è un valore dell'Analisi, l'esito è sempre reso con icona e testo. Non per confrontare molte serie di dati: usa tabella-serie.",
+  "props": {
+    "criteri": {
+      "tipo": "lista",
+      "obbligatoria": true,
+      "min": 1,
+      "max": 6,
+      "elementi": {
+        "criterio": { "tipo": "testo", "obbligatoria": true, "maxParole": 10 },
+        "soglia": { "tipo": "testo", "obbligatoria": true, "maxParole": 6 },
+        "risultato": { "tipo": "valore", "obbligatoria": true },
+        "esito": {
+          "tipo": "scelta",
+          "obbligatoria": true,
+          "opzioni": ["superato", "parziale", "non-superato"],
+          "vocabolario": "esito"
+        }
+      }
+    }
+  }
+}

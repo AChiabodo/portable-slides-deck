@@ -1,0 +1,43 @@
+.grafico-cascata {
+  min-width: 0;
+}
+.grafico-cascata svg {
+  font-family: var(--font-sans);
+  font-size: 18px;
+}
+.grafico-cascata .asse {
+  stroke: var(--colore-tenue);
+  stroke-width: 2;
+}
+.grafico-cascata .raccordo {
+  stroke: var(--colore-tenue);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+}
+.grafico-cascata .barra.estremo {
+  fill: var(--colore-accento);
+}
+.grafico-cascata .barra.su {
+  fill: var(--colore-positivo);
+}
+.grafico-cascata .barra.giu {
+  fill: var(--colore-negativo);
+}
+.grafico-cascata .barra.nulla {
+  fill: var(--colore-tenue);
+}
+.grafico-cascata .segno.su {
+  fill: var(--colore-positivo);
+}
+.grafico-cascata .segno.giu {
+  fill: var(--colore-negativo);
+}
+.grafico-cascata .valore {
+  fill: var(--colore-inchiostro);
+  font-family: var(--famiglia-numeri);
+  font-size: 18px;
+  font-weight: 700;
+}
+.grafico-cascata .nome {
+  fill: var(--colore-inchiostro);
+}
