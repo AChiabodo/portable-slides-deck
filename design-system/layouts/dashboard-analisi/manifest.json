@@ -8,7 +8,8 @@
     "rapporto-colonne": { "valori": ["3-2", "1-1", "2-1", "1-2"], "predefinito": "3-2" },
     "ordine": { "valori": ["normale", "invertito"], "predefinito": "normale" },
     "rapporto": { "valori": ["1-1", "2-1", "1-2"], "predefinito": "1-1", "richiede": { "zona": "principale", "min": 2 } },
-    "densita": { "valori": ["comoda", "compatta"], "predefinito": "comoda" }
+    "densita": { "valori": ["comoda", "compatta"], "predefinito": "comoda" },
+    "sfondo": { "valori": ["standard", "enfasi"], "predefinito": "standard" }
   },
   "zone": [
     { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },

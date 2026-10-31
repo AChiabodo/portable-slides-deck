@@ -7,7 +7,8 @@
   "regolazioni": {
     "rapporto-colonne": { "valori": ["3-2", "1-1", "2-1", "1-2"], "predefinito": "3-2" },
     "ordine": { "valori": ["normale", "invertito"], "predefinito": "normale" },
-    "densita": { "valori": ["comoda", "compatta"], "predefinito": "comoda" }
+    "densita": { "valori": ["comoda", "compatta"], "predefinito": "comoda" },
+    "sfondo": { "valori": ["standard", "enfasi"], "predefinito": "standard" }
   },
   "zone": [
     { "nome": "titolo", "tipo": "testo", "ruolo": "titolo", "obbligatoria": true, "maxParole": 20 },

@@ -110,7 +110,17 @@ function erroriManifest(m, tipo) {
   if (typeof m.props !== 'object' || m.props === null) return ['props mancanti'];
   const errori = erroriDefinizioniProp(m.props);
   if (Object.hasOwn(m.props, 'regolazioni')) errori.push('"regolazioni" è un nome riservato: non può essere una proprietà');
-  return [...errori, ...erroriRegolazioni(m, tipo)];
+  return [...errori, ...erroriRegolazioni(m, tipo), ...erroriIncompatibilita(m)];
+}
+
+/** `incompatibileCon` elenca, per nome di Regolazione di slide, i valori con cui il Componente non è leggibile. */
+function erroriIncompatibilita(m) {
+  if (m.incompatibileCon === undefined) return [];
+  const c = m.incompatibileCon;
+  if (typeof c !== 'object' || c === null || Array.isArray(c)) return ['"incompatibileCon" deve essere un oggetto'];
+  return Object.entries(c)
+    .filter(([, valori]) => !Array.isArray(valori) || !valori.length || !valori.every((v) => typeof v === 'string'))
+    .map(([nome]) => `incompatibileCon "${nome}": deve elencare uno o più valori (testo)`);
 }
 
 /**

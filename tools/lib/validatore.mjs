@@ -68,6 +68,7 @@ function validaSlide(slide, percorso, ctx) {
   const zone = isOggetto(slide.zone) ? slide.zone : {};
   const definite = layout.manifest.zone;
   validaRegolazioni(layout.manifest, slide.regolazioni, percorso, ctx, zone);
+  ctx.regolazioniSlide = isOggetto(slide.regolazioni) ? slide.regolazioni : {};
 
   for (const nome of Object.keys(zone)) {
     if (!definite.some((z) => z.nome === nome)) {
@@ -176,6 +177,12 @@ function validaComponenti(valore, percorso, zona, ctx) {
     }
     const { componente: _nome, regolazioni, ...props } = dati;
     const dove = `${posizione} (${dati.componente})`;
+    for (const [nome, valoriVietati] of Object.entries(componente.manifest.incompatibileCon ?? {})) {
+      const scelto = ctx.regolazioniSlide?.[nome];
+      if (valoriVietati.includes(scelto)) {
+        ctx.errore(dove, `non compatibile con la Regolazione "${nome}: ${scelto}" della slide`);
+      }
+    }
     validaRegolazioni(componente.manifest, regolazioni, dove, ctx, undefined, props);
     validaOggetto(componente.manifest.props, props, dove, ctx);
   });

@@ -246,6 +246,8 @@ Layout e Componenti possono offrire **Regolazioni**: scelte da elenco chiuso che
 }
 ```
 
+Cinque Layout offrono anche `"sfondo": "enfasi"` (la slide usa i colori di copertina del Tema, con contrasto verificato su tutti i Temi). Un Componente non leggibile su quello sfondo può dichiararlo con `incompatibileCon` nel manifest: il validatore rifiuta la combinazione.
+
 L'elenco per ogni Layout e Componente è in [`docs/catalogo.md`](docs/catalogo.md#regolazioni); il validatore rifiuta le Regolazioni non previste e i valori fuori elenco, indicando quelli ammessi.
 
 ---

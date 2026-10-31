@@ -280,6 +280,37 @@ h3 {
   color: var(--stato-colore);
 }
 
+/* Regolazione `sfondo: enfasi`, condivisa dai Layout che la dichiarano. Nessuna variabile nuova nei Temi: la slide
+   riusa quelle di copertina e rimappa i colori che i Componenti già usano. I colori semantici sono schiariti verso
+   il testo di copertina; `--orig-*` ne conserva il valore del Tema, perché una variabile non può riferirsi a se stessa. */
+:root {
+  --orig-accento-secondario: var(--colore-accento-secondario);
+  --orig-positivo: var(--colore-positivo);
+  --orig-negativo: var(--colore-negativo);
+  --orig-stato-ok: var(--colore-stato-ok);
+  --orig-stato-attenzione: var(--colore-stato-attenzione);
+  --orig-stato-critico: var(--colore-stato-critico);
+  --orig-stato-neutro: var(--colore-stato-neutro);
+}
+.slide[data-reg-sfondo="enfasi"] {
+  --colore-superficie: var(--colore-copertina-sfondo);
+  --colore-carta: color-mix(in srgb, var(--colore-copertina-testo) 9%, var(--colore-copertina-sfondo));
+  --colore-inchiostro: var(--colore-copertina-testo);
+  --colore-tenue: color-mix(in srgb, var(--colore-copertina-testo) 78%, var(--colore-copertina-sfondo));
+  --colore-linea: color-mix(in srgb, var(--colore-copertina-testo) 28%, var(--colore-copertina-sfondo));
+  --colore-accento: var(--colore-copertina-accento);
+  --colore-accento-tenue: color-mix(in srgb, var(--colore-copertina-accento) 20%, var(--colore-copertina-sfondo));
+  --colore-accento-secondario: color-mix(in srgb, var(--orig-accento-secondario) 38%, var(--colore-copertina-testo));
+  --colore-positivo: color-mix(in srgb, var(--orig-positivo) 38%, var(--colore-copertina-testo));
+  --colore-negativo: color-mix(in srgb, var(--orig-negativo) 38%, var(--colore-copertina-testo));
+  --colore-stato-ok: color-mix(in srgb, var(--orig-stato-ok) 38%, var(--colore-copertina-testo));
+  --colore-stato-attenzione: color-mix(in srgb, var(--orig-stato-attenzione) 38%, var(--colore-copertina-testo));
+  --colore-stato-critico: color-mix(in srgb, var(--orig-stato-critico) 38%, var(--colore-copertina-testo));
+  --colore-stato-neutro: color-mix(in srgb, var(--orig-stato-neutro) 38%, var(--colore-copertina-testo));
+  background-image: none;
+  color: var(--colore-inchiostro);
+}
+
 @media (min-width: 900px) {
   .slide[data-reg-densita="compatta"] .slide-contenuto {
     font-size: 1.43cqw;

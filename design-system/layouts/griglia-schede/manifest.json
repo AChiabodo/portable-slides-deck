@@ -5,7 +5,8 @@
   "livelloTitolo": 2,
   "maxParoleSlide": 130,
   "regolazioni": {
-    "densita": { "valori": ["comoda", "compatta"], "predefinito": "comoda" }
+    "densita": { "valori": ["comoda", "compatta"], "predefinito": "comoda" },
+    "sfondo": { "valori": ["standard", "enfasi"], "predefinito": "standard" }
   },
   "zone": [
     { "nome": "occhiello", "tipo": "testo", "maxParole": 4 },

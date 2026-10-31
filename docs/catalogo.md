@@ -135,6 +135,16 @@ Nel codice: `render({ zone, regolazioni, t, id })` per i Layout e `render(props,
 
 `ordine: invertito` riordina anche il markup, quindi anche l'impilamento sotto i 900px. `densita: compatta` riduce il corpo del testo (CSS condiviso in `base.css`).
 
+**`sfondo`**: **`standard`**, `enfasi`, offerta da `dashboard-analisi`, `risultato-grafico-commento`, `griglia-schede`, `due-colonne` e `tre-colonne`. Con `enfasi` la slide usa i colori di copertina del Tema (`colore-copertina-*`: nessuna variabile nuova nei Temi) e `base.css` rimappa carta, superficie, inchiostro, accento e colori di stato dentro `.slide[data-reg-sfondo="enfasi"]`, quindi i Componenti restano leggibili senza CSS proprio. Il test `tests/sfondo.test.mjs` verifica il contrasto AA su tutti i Temi. Un Layout che vuole offrirla dichiara la Regolazione `sfondo` con questi due valori e nessuna logica di render. Lo stato non è mai affidato al solo colore anche in `enfasi`.
+
+Un Componente che non è leggibile su `enfasi` lo dichiara nel manifest, e il validatore rifiuta la combinazione:
+
+```json
+"incompatibileCon": { "sfondo": ["enfasi"] }
+```
+
+La chiave è il nome di una Regolazione di slide, il valore l'elenco dei valori incompatibili (array non vuoto di stringhe). Il campo è generico, non solo per `sfondo`. Oggi nessun Componente lo dichiara.
+
 ### Regolazioni dei Componenti
 
 | Componente | Regolazioni (predefinito in grassetto) |
