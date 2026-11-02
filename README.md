@@ -310,6 +310,10 @@ npm test
 - [docs/catalogo.md](docs/catalogo.md): Catalogo e come estenderlo
 - [docs/adr/](docs/adr): decisioni di progettazione
 
+## Ispirazione e ringraziamenti
+
+Questo lavoro prende ispirazione e base di partenza dal repository [Studio](https://github.com/duiliocirino/Studio). Grazie a Duilio Cirino per aver condiviso il progetto e aver fornito un riferimento per questa iniziativa.
+
 ## Licenza
 
 [Apache License 2.0](LICENSE)
